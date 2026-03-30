@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Settings - Lumina Nexus</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#4f46e5",
+              "on-secondary-fixed-variant": "#413f82",
+              "on-secondary-container": "#454386",
+              "primary": "#3525cd",
+              "primary-fixed-dim": "#c3c0ff",
+              "secondary-container": "#b6b4ff",
+              "tertiary-fixed-dim": "#ffb695",
+              "surface-tint": "#4d44e3",
+              "tertiary-fixed": "#ffdbcc",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "on-primary-fixed": "#0f0069",
+              "error-container": "#ffdad6",
+              "on-error": "#ffffff",
+              "outline-variant": "#c7c4d8",
+              "on-surface-variant": "#464555",
+              "on-primary": "#ffffff",
+              "surface-dim": "#d8dadc",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#e0e3e5",
+              "on-primary-fixed-variant": "#3323cc",
+              "outline": "#777587",
+              "on-tertiary-fixed": "#351000",
+              "tertiary": "#7e3000",
+              "secondary-fixed-dim": "#c3c0ff",
+              "surface-container-highest": "#e0e3e5",
+              "tertiary-container": "#a44100",
+              "on-error-container": "#93000a",
+              "surface-bright": "#f7f9fb",
+              "surface-container": "#eceef0",
+              "secondary-fixed": "#e2dfff",
+              "inverse-on-surface": "#eff1f3",
+              "inverse-primary": "#c3c0ff",
+              "on-primary-container": "#dad7ff",
+              "on-background": "#191c1e",
+              "on-secondary-fixed": "#140f54",
+              "background": "#f7f9fb",
+              "on-tertiary-container": "#ffd2be",
+              "secondary": "#58579b",
+              "on-tertiary": "#ffffff",
+              "inverse-surface": "#2d3133",
+              "surface": "#f7f9fb",
+              "primary-fixed": "#e2dfff",
+              "error": "#ba1a1a",
+              "on-surface": "#191c1e",
+              "surface-container-high": "#e6e8ea",
+              "surface-container-low": "#f2f4f6",
+              "on-secondary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Manrope", "sans-serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      body { font-family: 'Manrope', sans-serif; -webkit-font-smoothing: antialiased; }
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-[#f7f9fb] dark:bg-slate-900 flex items-center px-4 h-16 w-full docked full-width top-0 sticky z-40">
+<div class="flex items-center gap-4 w-full">
+<button class="text-[#3525cd] dark:text-[#4f46e5] w-10 h-10 flex items-center justify-center hover:bg-[#e6e8ea] dark:hover:bg-slate-700 transition-colors duration-200 ease-in-out rounded-lg">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-manrope font-bold text-lg tracking-tight text-[#191c1e] dark:text-slate-100">Settings</h1>
+<div class="ml-auto">
+<span class="font-manrope font-extrabold text-[#3525cd] dark:text-[#4f46e5] text-sm tracking-widest">LN</span>
+</div>
+</div>
+</header>
+<main class="px-4 py-6 space-y-8">
+<!-- Profile Section -->
+<section class="relative">
+<div class="bg-surface-container-lowest p-6 rounded-lg flex items-center gap-5 shadow-[0_4px_24px_rgba(25,28,30,0.02)]">
+<div class="relative">
+<img alt="Alex Stratum" class="w-20 h-20 rounded-lg object-cover ring-4 ring-surface-container-low" data-alt="Close-up professional portrait of a young man with a confident expression in a bright studio setting with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdRwDN4NqtB61Zub9tvUJOed4zEPcc-BvJJXKWcopUq3vYuinhzCqGYy3HGDwBsKIt9oXWzdXbZ3L9G3U2_Au87XqcfO4O9yK5aW9FiQzvkNhAAWNFobMlIk74YZGCL1P0epaYKYXVJbvlo08rXVOE3pgDLe4gmLr2aRbyxweRYczj-eoxwoMfrlwm1kDlxeTY0Ru-K8Lz_S5Jq5hBtBZcQm8LsMEPFIfmRHU4aaQrNYBcCWsm2N3xfzG1Rj1IIDf3r5hixoZi9rQ"/>
+<div class="absolute -bottom-1 -right-1 bg-primary-container w-6 h-6 rounded-full flex items-center justify-center border-2 border-surface-container-lowest">
+<span class="material-symbols-outlined text-white text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div>
+<h2 class="text-xl font-headline font-extrabold tracking-tight text-on-surface">Alex Stratum</h2>
+<p class="text-sm font-label font-medium text-primary tracking-wide">Enterprise Admin</p>
+</div>
+</div>
+</section>
+<!-- Appearance -->
+<section class="space-y-3">
+<h3 class="text-xs font-label font-bold uppercase tracking-[0.15em] text-outline px-1">Interface</h3>
+<div class="bg-surface-container-low rounded-lg overflow-hidden">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">dark_mode</span>
+<span class="font-medium">Dark Mode</span>
+</div>
+<button class="w-12 h-6 bg-surface-container-high rounded-full relative transition-colors duration-300">
+<div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300"></div>
+</button>
+</div>
+</div>
+</section>
+<!-- AI Preferences -->
+<section class="space-y-3">
+<h3 class="text-xs font-label font-bold uppercase tracking-[0.15em] text-outline px-1">AI Intelligence</h3>
+<div class="bg-surface-container-low rounded-lg overflow-hidden flex flex-col gap-[1px]">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<span class="font-medium">Predictive Analytics</span>
+</div>
+<button class="w-12 h-6 bg-primary-container rounded-full relative transition-colors duration-300">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm"></div>
+</button>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">settings</span>
+<span class="font-medium">Auto-resource Optimization</span>
+</div>
+<button class="w-12 h-6 bg-primary-container rounded-full relative transition-colors duration-300">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm"></div>
+</button>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">notifications_active</span>
+<span class="font-medium">Smart Notifications</span>
+</div>
+<button class="w-12 h-6 bg-surface-container-high rounded-full relative transition-colors duration-300">
+<div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</button>
+</div>
+</div>
+</section>
+<!-- Security & Access -->
+<section class="space-y-3">
+<h3 class="text-xs font-label font-bold uppercase tracking-[0.15em] text-outline px-1">Security &amp; Access</h3>
+<div class="space-y-3">
+<button class="w-full flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg hover:bg-surface-container-low transition-colors duration-200 group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">vibration</span>
+<span class="font-medium">Two-Factor Authentication</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-label font-bold text-primary bg-primary-container/10 px-2 py-1 rounded">ENABLED</span>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</button>
+<button class="w-full flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg hover:bg-surface-container-low transition-colors duration-200 group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">face</span>
+<span class="font-medium">Biometric Lock</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-label font-medium text-outline">FaceID/TouchID</span>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</button>
+<button class="w-full flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg hover:bg-surface-container-low transition-colors duration-200 group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">devices</span>
+<span class="font-medium">Session Management</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-label font-bold text-on-surface-variant bg-surface-container-high px-2 py-1 rounded">3 ACTIVE</span>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</button>
+</div>
+</section>
+<!-- Multi-tenant Controls -->
+<section class="space-y-3">
+<h3 class="text-xs font-label font-bold uppercase tracking-[0.15em] text-outline px-1">Tenant Infrastructure</h3>
+<div class="grid grid-cols-1 gap-3">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">hub</span>
+<span class="font-medium">Global Tenant Visibility</span>
+</div>
+<button class="w-12 h-6 bg-primary-container rounded-full relative">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</button>
+</div>
+<button class="w-full flex items-center justify-between p-4 bg-primary-container text-white rounded-lg shadow-lg shadow-primary-container/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">corporate_fare</span>
+<span class="font-semibold">Organization Defaults</span>
+</div>
+<span class="material-symbols-outlined">settings_suggest</span>
+</button>
+</div>
+</section>
+<!-- App Information -->
+<section class="space-y-3">
+<h3 class="text-xs font-label font-bold uppercase tracking-[0.15em] text-outline px-1">Resources</h3>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest rounded-lg hover:bg-surface-container-low transition-all duration-200 border-b-2 border-transparent active:border-primary">
+<span class="material-symbols-outlined text-primary text-3xl mb-2">support_agent</span>
+<span class="font-bold text-sm">Support</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest rounded-lg hover:bg-surface-container-low transition-all duration-200 border-b-2 border-transparent active:border-primary">
+<span class="material-symbols-outlined text-primary text-3xl mb-2">menu_book</span>
+<span class="font-bold text-sm">Docs</span>
+</button>
+</div>
+</section>
+<!-- Version Footer -->
+<footer class="pt-8 pb-4 text-center">
+<p class="text-[10px] font-label font-extrabold text-outline-variant tracking-[0.2em] uppercase">
+                LUMINA NEXUS V4.2.0-ALPHA
+            </p>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 py-3 pb-safe bg-white/70 dark:bg-slate-900/70 backdrop-blur-md shadow-[0_-4px_32px_rgba(25,28,30,0.04)] border-t border-[#c7c4d8]/15">
+<button class="flex flex-col items-center justify-center text-[#191c1e] dark:text-slate-400 p-2 hover:bg-[#f2f4f6] dark:hover:bg-slate-800 transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-manrope font-medium text-[10px] uppercase tracking-wider mt-1">Dash</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#191c1e] dark:text-slate-400 p-2 hover:bg-[#f2f4f6] dark:hover:bg-slate-800 transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-manrope font-medium text-[10px] uppercase tracking-wider mt-1">Tasks</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#191c1e] dark:text-slate-400 p-2 hover:bg-[#f2f4f6] dark:hover:bg-slate-800 transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-manrope font-medium text-[10px] uppercase tracking-wider mt-1">AI</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-[#4f46e5] text-white rounded-[0.25rem] p-2 scale-105 transition-all duration-300">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-manrope font-medium text-[10px] uppercase tracking-wider mt-1">Setup</span>
+</button>
+</nav>
+</body></html>

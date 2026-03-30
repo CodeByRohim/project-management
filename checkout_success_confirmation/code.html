@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#0f1930",
+                        "on-background": "#dee5ff",
+                        "surface-bright": "#1f2b49",
+                        "outline-variant": "#40485d",
+                        "on-tertiary": "#33005b",
+                        "surface-container-high": "#141f38",
+                        "on-secondary-fixed": "#373f54",
+                        "tertiary-container": "#af5cfe",
+                        "on-error-container": "#ffb2b9",
+                        "on-secondary-container": "#c8d0ea",
+                        "tertiary-dim": "#9c48ea",
+                        "surface-container-low": "#091328",
+                        "secondary-fixed-dim": "#ccd4ee",
+                        "on-secondary": "#4a5167",
+                        "surface-dim": "#060e20",
+                        "on-primary-container": "#0a0081",
+                        "secondary": "#dae2fd",
+                        "surface-container-lowest": "#000000",
+                        "on-primary-fixed": "#000000",
+                        "secondary-container": "#3f465c",
+                        "on-tertiary-fixed": "#270048",
+                        "primary-fixed-dim": "#8387ff",
+                        "on-surface": "#dee5ff",
+                        "on-tertiary-container": "#000000",
+                        "background": "#060e20",
+                        "primary": "#a3a6ff",
+                        "tertiary": "#c180ff",
+                        "on-surface-variant": "#a3aac4",
+                        "on-primary": "#0f00a4",
+                        "surface-variant": "#192540",
+                        "primary-dim": "#6063ee",
+                        "outline": "#6d758c",
+                        "error-container": "#a70138",
+                        "inverse-primary": "#494bd7",
+                        "tertiary-fixed-dim": "#c488ff",
+                        "surface-container-highest": "#192540",
+                        "tertiary-fixed": "#ce9bff",
+                        "error-dim": "#d73357",
+                        "primary-fixed": "#9396ff",
+                        "on-tertiary-fixed-variant": "#560094",
+                        "secondary-fixed": "#dae2fd",
+                        "secondary-dim": "#ccd4ee",
+                        "surface": "#060e20",
+                        "primary-container": "#9396ff",
+                        "on-secondary-fixed-variant": "#535b71",
+                        "inverse-surface": "#faf8ff",
+                        "inverse-on-surface": "#4d556b",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "surface-tint": "#a3a6ff",
+                        "on-error": "#490013",
+                        "error": "#ff6e84"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #060e20; color: #dee5ff; }
+        .glass-card {
+            background: rgba(25, 37, 64, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .ai-glow {
+            box-shadow: 0 0 20px rgba(193, 128, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="min-h-screen selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar - Mapped from Shared Components JSON -->
+<header class="bg-[#060e20] dark:bg-[#060e20] docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 h-16 max-w-7xl mx-auto">
+<div class="text-xl font-extrabold tracking-tighter text-[#a3a6ff] font-['Manrope']">
+                Stratum AI
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 font-['Manrope'] text-sm">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+<span>Select Plan</span>
+</div>
+<div class="w-8 h-px bg-outline-variant/30"></div>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 font-['Manrope'] text-sm">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+<span>Payment</span>
+</div>
+<div class="w-8 h-px bg-outline-variant/30"></div>
+<div class="text-[#a3a6ff] border-b-2 border-[#a3a6ff] pb-1 font-['Manrope'] text-sm font-bold">
+                    Confirmation
+                </div>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-slate-500 dark:text-slate-400 hover:text-white transition-colors duration-300 scale-95 transition-transform">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 pt-12 pb-24 relative overflow-hidden">
+<!-- Background Ambient Glow -->
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-tertiary/10 rounded-full blur-[120px]"></div>
+<div class="absolute top-1/2 -left-24 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
+<div class="flex flex-col items-center text-center space-y-12 relative z-10">
+<!-- Success Hero -->
+<div class="space-y-6 max-w-3xl">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-highest border border-outline-variant/20 text-tertiary text-xs font-bold tracking-widest uppercase">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+                    Upgrade Successful
+                </div>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tight text-on-background">
+                    Welcome to the <br/>
+<span class="bg-gradient-to-r from-primary via-tertiary to-primary-dim bg-clip-text text-transparent">Architect Layer</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl font-body leading-relaxed">
+                    Your environment has been reconfigured. Professional intelligence modules are now online and synced with your workspace.
+                </p>
+</div>
+<!-- Feature Unlock Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-8">
+<!-- Main Feature Card -->
+<div class="md:col-span-2 glass-card rounded-xl p-8 border border-outline-variant/10 flex flex-col justify-between ai-glow">
+<div class="flex justify-between items-start">
+<div class="space-y-2">
+<span class="text-primary-fixed-dim text-xs font-bold font-label uppercase tracking-widest">Core Upgrade</span>
+<h3 class="text-2xl font-headline font-bold text-on-surface">Unlimited Pro Computations</h3>
+</div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+</div>
+<div class="mt-8 flex gap-4">
+<div class="flex-1 p-4 rounded-lg bg-surface-container-low border border-outline-variant/5">
+<span class="text-on-surface-variant text-xs font-medium block mb-1">Response Latency</span>
+<span class="text-primary font-bold text-lg">-85% Faster</span>
+</div>
+<div class="flex-1 p-4 rounded-lg bg-surface-container-low border border-outline-variant/5">
+<span class="text-on-surface-variant text-xs font-medium block mb-1">Model Precision</span>
+<span class="text-tertiary font-bold text-lg">99.9% Rank</span>
+</div>
+</div>
+</div>
+<!-- Secondary Feature 1 -->
+<div class="glass-card rounded-xl p-8 border border-outline-variant/10 space-y-4">
+<div class="w-10 h-10 rounded-full bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">group</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface">Team Collaboration</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                        Invite up to 25 seats with shared architectural context and synchronized neural memory.
+                    </p>
+</div>
+<!-- Secondary Feature 2 -->
+<div class="glass-card rounded-xl p-8 border border-outline-variant/10 space-y-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">auto_graph</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface">Advanced Insights</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                        Export production-ready analytics with custom formatting and real-time inference monitoring.
+                    </p>
+</div>
+<!-- Visual Asset / Data Visualization -->
+<div class="md:col-span-2 relative h-48 rounded-xl overflow-hidden">
+<img alt="Abstract digital network visualization" class="w-full h-full object-cover" data-alt="Abstract flowing digital network of light particles and connections in deep navy and violet tones, high-tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLTs9P8Y74CgSrYsm2gtqWZ-dV2wPeMIFdu76cGKrgKV2zFCZAqL5yJaNGX03Wywob6nYS0xxIoL60AGM20XUzeTt11Q2oVGNYUFkO2kVc0YXZMqhP73LbdXtrLlFl2ERy2eM2JRZYgZ19FC7Ko85TRaw4RtscPDPA6_56B9-7z8BD8c880IKc20JyPLkGdHb4v1fv5GgNht9gHLPD6z3ssxL9QRQQdYFzINagfMLPG5SeWwYhNcQDyAj2NjsrJt0xsa2sItPoTEU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+<div class="absolute bottom-6 left-8">
+<span class="text-white/80 font-bold tracking-tight">Active Plan: Pro Enterprise Tier</span>
+</div>
+</div>
+</div>
+<!-- CTAs -->
+<div class="flex flex-col sm:flex-row items-center gap-6 mt-12 w-full max-w-xl">
+<button class="w-full sm:flex-1 h-14 bg-primary text-on-primary font-bold rounded-lg flex items-center justify-center gap-2 hover:bg-primary-dim transition-all active:scale-95 shadow-lg shadow-primary/20">
+                    Go to Dashboard
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="w-full sm:flex-1 h-14 glass-card border border-outline-variant/30 text-on-surface font-bold rounded-lg flex items-center justify-center gap-2 hover:bg-surface-container-highest transition-all active:scale-95">
+<span class="material-symbols-outlined">person_add</span>
+                    Invite Team Members
+                </button>
+</div>
+<!-- Receipt Info -->
+<div class="pt-12 border-t border-outline-variant/10 w-full max-w-2xl flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline-variant/20 overflow-hidden">
+<img alt="Company placeholder logo" class="w-full h-full object-cover" data-alt="Modern minimalist logo mark for an AI technology company, monochromatic navy on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCzKZy7c03-GOkLW-ZRudUAPV0f6K3c5-zheRWimqDVgj9J-hl6Qw6HbpHP0tJb09IxVg4J6syKCQswnSylGg8_JtVaO3in4WynU2dYZpjv7JQCyBNtAe6d3hKV0uKu_WPGDhhsNQc8JvgkSEz4kDlVSsqVO5FppRd5_RWUW9ZMw3u4Yn-3Xw80Xp5ij8xexrhUiiPHA5k-0dP8iir2yzDdJAhe30QIHiIJ4JrBVw3RrIWmKRmJLHb1sD0eebvH1ak5LIkccuCzjQ"/>
+</div>
+<div class="text-left">
+<div class="text-sm font-bold text-on-surface">Order #ST-99201-AI</div>
+<div class="text-xs text-on-surface-variant">Confirmed on Oct 24, 2023</div>
+</div>
+</div>
+<button class="text-xs font-label font-bold text-primary-fixed-dim hover:text-white transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">download</span>
+                    DOWNLOAD TAX INVOICE
+                </button>
+</div>
+</div>
+</main>
+<!-- Contextual Footer Shell -->
+<footer class="mt-auto border-t border-outline-variant/5 bg-surface-container-low/50 py-12">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col gap-2">
+<div class="text-sm font-extrabold tracking-tighter text-[#a3a6ff] opacity-60">Stratum AI</div>
+<div class="text-xs text-on-surface-variant">© 2023 Stratum Intelligence Corp. All rights reserved.</div>
+</div>
+<div class="flex gap-8 text-xs font-bold text-on-surface-variant tracking-wider">
+<a class="hover:text-primary transition-colors" href="#">SECURITY</a>
+<a class="hover:text-primary transition-colors" href="#">PRIVACY POLICY</a>
+<a class="hover:text-primary transition-colors" href="#">HELP CENTER</a>
+</div>
+</div>
+</footer>
+</body></html>

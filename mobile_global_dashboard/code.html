@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#9396ff",
+              "primary-dim": "#6063ee",
+              "tertiary-fixed-dim": "#c488ff",
+              "surface-container": "#0f1930",
+              "surface-container-lowest": "#000000",
+              "tertiary-dim": "#9c48ea",
+              "surface": "#060e20",
+              "secondary-dim": "#ccd4ee",
+              "on-secondary-fixed-variant": "#535b71",
+              "on-surface": "#dee5ff",
+              "primary-container": "#9396ff",
+              "tertiary-container": "#af5cfe",
+              "on-primary-fixed-variant": "#0e009d",
+              "on-background": "#dee5ff",
+              "primary-fixed-dim": "#8387ff",
+              "surface-container-high": "#141f38",
+              "on-secondary-fixed": "#373f54",
+              "surface-container-highest": "#192540",
+              "secondary-fixed-dim": "#ccd4ee",
+              "on-primary": "#0f00a4",
+              "outline": "#6d758c",
+              "on-primary-fixed": "#000000",
+              "tertiary": "#c180ff",
+              "secondary-fixed": "#dae2fd",
+              "on-error-container": "#ffb2b9",
+              "surface-variant": "#192540",
+              "on-secondary-container": "#c8d0ea",
+              "inverse-primary": "#494bd7",
+              "primary": "#a3a6ff",
+              "error-dim": "#d73357",
+              "on-primary-container": "#0a0081",
+              "secondary": "#dae2fd",
+              "surface-container-low": "#091328",
+              "outline-variant": "#40485d",
+              "secondary-container": "#3f465c",
+              "on-surface-variant": "#a3aac4",
+              "on-tertiary-fixed-variant": "#560094",
+              "on-error": "#490013",
+              "error": "#ff6e84",
+              "tertiary-fixed": "#ce9bff",
+              "on-secondary": "#4a5167",
+              "background": "#060e20",
+              "on-tertiary": "#33005b",
+              "inverse-surface": "#faf8ff",
+              "on-tertiary-fixed": "#270048",
+              "surface-bright": "#1f2b49",
+              "surface-tint": "#a3a6ff",
+              "error-container": "#a70138",
+              "on-tertiary-container": "#000000",
+              "surface-dim": "#060e20",
+              "inverse-on-surface": "#4d556b"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(25, 37, 64, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .ai-glow {
+            box-shadow: 0 0 20px rgba(193, 128, 255, 0.15);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-[#060e20] docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 bg-[#091328]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="close up headshot of a professional man with a friendly expression in a modern office setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmMdVontgCmbicIbovSW4cVN6w3H5e_LtGcbTdbrla5-Urh_Pl28PiNVY_SHqb3nxhZwwNCprabACRbk0BOHEZzsz6zPvV40R1bGOtA4AqH3iBz7nif4NGxhrQtVF36rQLymh0yab7W1Q97iOaN951td8xpOURIoJVwSKJYuh0tLkmDdiqzdifU1VsLqjBuv4_ZWhmTp-E33OIrWXwTCK8n_t2Tbi0CD5svRkOUDzLShUaT_GESoEzTkeju9-utSQvXsb4IL85R8Q"/>
+</div>
+<h1 class="font-['Manrope'] font-bold tracking-tight text-lg text-indigo-400 dark:text-[#a3a6ff]">Tenant</h1>
+</div>
+<button class="text-[#4F46E5] dark:text-[#a3a6ff] hover:bg-[#192540] transition-colors duration-200 p-2 rounded-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="swap_horiz">swap_horiz</span>
+</button>
+</div>
+</header>
+<main class="px-6 pt-6 space-y-8">
+<!-- Section 1: AI Summary Card -->
+<section>
+<div class="label-sm text-on-surface-variant font-medium tracking-widest uppercase mb-3 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary ai-glow"></span>
+                Predictive Intelligence
+            </div>
+<div class="bg-gradient-to-br from-surface-container-high to-surface-container-low rounded-xl p-6 relative overflow-hidden border border-outline-variant/10">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="text-on-surface-variant text-xs mb-1">Estimated Completion</p>
+<h2 class="text-3xl font-headline font-extrabold text-primary">Oct 24</h2>
+</div>
+<div class="text-right">
+<p class="text-on-surface-variant text-xs mb-1">Health Score</p>
+<span class="text-2xl font-headline font-bold text-tertiary">94%</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between text-sm">
+<span class="text-on-surface/80">Velocity Stability</span>
+<span class="text-primary-fixed-dim">High Confidence</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-[88%] bg-gradient-to-r from-primary-dim to-primary rounded-full"></div>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed italic">
+                            "AI models detect no significant blocking patterns. Current resource distribution is optimal for Q4 milestones."
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Resource Friction Alert -->
+<section>
+<div class="glass-panel border-l-4 border-error-dim rounded-xl p-5 ai-glow">
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-lg bg-error-container/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined" data-icon="priority_high">priority_high</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<h3 class="font-headline font-bold text-on-surface">Resource Friction</h3>
+<span class="text-[10px] font-bold px-2 py-0.5 bg-error/10 text-error rounded-full border border-error/20">CRITICAL</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-snug">
+                            Over-allocation detected in <span class="text-on-surface font-semibold underline decoration-error/40">Nexus Core</span>. 4 developers are bottlenecked by 1 reviewer.
+                        </p>
+<div class="mt-4 flex gap-3">
+<button class="bg-surface-container-highest hover:bg-surface-bright text-xs font-bold py-2 px-4 rounded-md transition-all active:scale-95">Ignore</button>
+<button class="bg-primary-dim text-on-primary text-xs font-bold py-2 px-4 rounded-md transition-all active:scale-95 shadow-lg shadow-primary-dim/20">Resolve Friction</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Project List -->
+<section class="space-y-4">
+<div class="flex justify-between items-end mb-2">
+<h3 class="font-headline font-bold text-xl text-on-surface">Active Portfolios</h3>
+<span class="text-xs text-primary font-semibold">View All</span>
+</div>
+<!-- List Items without Dividers (Using Spacing Scale) -->
+<div class="space-y-5">
+<!-- Project 1 -->
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 group hover:bg-surface-container transition-colors">
+<div class="w-1.5 h-12 bg-secondary-dim rounded-full"></div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline font-bold text-on-surface">Project Helios</h4>
+<div class="flex items-center gap-1 text-[10px] text-tertiary">
+<span class="material-symbols-outlined text-xs" data-icon="bolt">bolt</span>
+                                AI CERTAINTY: 98%
+                            </div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<img alt="Team" class="w-6 h-6 rounded-full border border-surface-container-low object-cover" data-alt="portrait of a confident woman leader in a minimal workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4YXngsGGM_KvGTgtXDgER4YTrdjdgHrpRvR60Ly-J7FRse92jZuIaRvEGm5yDa9isvkt_RXlP1iJkC2NGi7QmiJegaWTu1op_no8YM8vlg0iNTxQgpE7DaQtdZ42XWk8fme9d26S4FaXUrOTMHXGXu_nQ2Erg98NVFAxvtN7yZo2LPmqioN7D3HZhFvNfVCJad7Z8i_0zuDXShP0iC55kd7TQ_dRzcXToJNO4Yh9tQxSWUGOEvM2vd86BW8-u7RKez8q5XH3D-r0"/>
+<img alt="Team" class="w-6 h-6 rounded-full border border-surface-container-low object-cover" data-alt="professional man in tech environment with blurred background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOltVAN5bFsYycrKObmkcI1IhrOxGNep5g4yhh1KsSvqaXqar0o1JTFRP_wnyxH_eIkGCQoZZuL_DIaAEpVnIQY2XnajY5Mtx4MQx9ytrwj9LIoz48XjyEsLSHQW-OgsEgnogYAcvCti5-QsH6SmmkTL7V8F-XMeOwAKiqvfVawp1YmCHoh193EmtqUNp0pZvFlZNWtotzbv4Ht1L-y1_OrnYPBA3_clUsd4saUU58d7wQsdIdefccMTc9msHYTztiS1wRXYpy2MA"/>
+<div class="w-6 h-6 rounded-full border border-surface-container-low bg-surface-container-highest flex items-center justify-center text-[8px] font-bold">+4</div>
+</div>
+<span class="text-xs text-on-surface-variant">Milestone: Alpha Release</span>
+</div>
+</div>
+<div class="flex-shrink-0 text-right">
+<div class="text-xs font-bold text-primary mb-1">On Track</div>
+<div class="w-12 h-1 bg-surface-container-highest rounded-full">
+<div class="h-full w-4/5 bg-primary rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 group hover:bg-surface-container transition-colors">
+<div class="w-1.5 h-12 bg-error rounded-full"></div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline font-bold text-on-surface">Aether Infrastructure</h4>
+<div class="flex items-center gap-1 text-[10px] text-on-surface-variant">
+<span class="material-symbols-outlined text-xs" data-icon="query_stats">query_stats</span>
+                                AI CERTAINTY: 62%
+                            </div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<img alt="Team" class="w-6 h-6 rounded-full border border-surface-container-low object-cover" data-alt="creative professional with glasses in a soft lit studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9bkxeJ1_36hXFYctkhLy7LhNoGQ4aTJt-3wB-ifC2jjdWbLYLEPK6F4RM4Kc6TnCs8_zy2TfMZQX2urUUS6LJvl8ul0rr3t-8PJijgwB3hzhqBNQKLTAmAK6Nm66Dou-5yVvdLpYqsKoliWYukqk9yTaAENC7HMBL8tOe1bLk_4JytSDFOgYbq9ztbOimkBAx8MV64LN04KuKgxFoyf5rAh3qLBe2tgzhB6yIgpsQaWdJhvuYKdS4ooFulVnc1jTn90SZID6D5ho"/>
+<div class="w-6 h-6 rounded-full border border-surface-container-low bg-surface-container-highest flex items-center justify-center text-[8px] font-bold">+2</div>
+</div>
+<span class="text-xs text-on-surface-variant">Milestone: Database Migration</span>
+</div>
+</div>
+<div class="flex-shrink-0 text-right">
+<div class="text-xs font-bold text-error mb-1">At Risk</div>
+<div class="w-12 h-1 bg-surface-container-highest rounded-full">
+<div class="h-full w-1/3 bg-error rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 group hover:bg-surface-container transition-colors">
+<div class="w-1.5 h-12 bg-primary-container rounded-full"></div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline font-bold text-on-surface">Nebula CRM</h4>
+<div class="flex items-center gap-1 text-[10px] text-tertiary">
+<span class="material-symbols-outlined text-xs" data-icon="bolt">bolt</span>
+                                AI CERTAINTY: 91%
+                            </div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<img alt="Team" class="w-6 h-6 rounded-full border border-surface-container-low object-cover" data-alt="focused professional woman in a dark workspace with computer screen light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcktRQQ9HzrDXFxEu8QqnWNroHo2HKU7LG-CzL8GEYaQpmGcjFZcpcS3WXSdiHrDvnsb34TkgHxyUQMumXend32GR5Od6W-YOW1vaFhY5VdFWBeVuc4YHj5MpqDWYNCK9ybFZ9A_PAD4SN1HULliLy_a8_C1DS17UAOoT_M2_WNN7gTivU3M7J4GXCLtIO7O9of99SUGI-TlE8lAE0D09tGgcN3owwvPvgeXiFtP6I070VlYt5Mokt9GSxrWGavwiMSphVtD1ORMU"/>
+<img alt="Team" class="w-6 h-6 rounded-full border border-surface-container-low object-cover" data-alt="experienced business leader in a minimal grey setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUNWSE3vRmdgEwXZdVONrRsrZGheyaAXTS7UR4Mapf12yciMyRg2co_L6qG-K-DGzk6-PFRq2TjnCGecnlHzxwjQGqkWt6eMVnZkYh5rpxUXpX8jSGcVYu43Tq_7rv9AESuXcSOsbkVrHzwS110zOj4elZ6RKWDVJdd-HGIj08XROhyjBXzt9aHnLfraGs6tmveGKAzqJ4DvqRXJ2_bX31HIivorwKUWD4ammvCHQYssDrSYVNPhNjEsWRT_WB1_HtW4uiBxSJVwo"/>
+<div class="w-6 h-6 rounded-full border border-surface-container-low bg-surface-container-highest flex items-center justify-center text-[8px] font-bold">+8</div>
+</div>
+<span class="text-xs text-on-surface-variant">Milestone: Beta Feedback</span>
+</div>
+</div>
+<div class="flex-shrink-0 text-right">
+<div class="text-xs font-bold text-primary-fixed-dim mb-1">Healthy</div>
+<div class="w-12 h-1 bg-surface-container-highest rounded-full">
+<div class="h-full w-3/4 bg-primary-fixed-dim rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: AI Command Prompt Bar -->
+<div class="pb-10">
+<div class="glass-panel p-1 rounded-full border border-outline-variant/10 shadow-2xl flex items-center ai-glow">
+<div class="w-10 h-10 rounded-full flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="auto_fix_high">auto_fix_high</span>
+</div>
+<input class="bg-transparent border-none focus:ring-0 text-sm flex-1 text-on-surface placeholder:text-on-surface-variant/50" placeholder="Ask AI to simulate resource shift..." type="text"/>
+<button class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface mr-1">
+<span class="material-symbols-outlined text-lg" data-icon="north_east">north_east</span>
+</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#091328]/80 backdrop-blur-xl dark:bg-[#091328]/80 z-50 rounded-t-xl border-t border-[#40485d]/15 shadow-[0_-10px_30px_rgba(0,0,0,0.4)]">
+<!-- Active Item: Dashboard -->
+<a class="flex flex-col items-center justify-center text-[#a3a6ff] bg-[#192540] rounded-xl px-4 py-2 shadow-[0_0_15px_rgba(163,166,255,0.2)] active:scale-90 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#40485d] px-4 py-2 hover:text-indigo-300 transition-all active:scale-90 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="folder_managed">folder_managed</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Projects</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#40485d] px-4 py-2 hover:text-indigo-300 transition-all active:scale-90 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Insights</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#40485d] px-4 py-2 hover:text-indigo-300 transition-all active:scale-90 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Tenants</span>
+</a>
+</nav>
+</body></html>

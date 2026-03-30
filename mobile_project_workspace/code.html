@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tenant Project Workspace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#9396ff",
+                        "primary-dim": "#6063ee",
+                        "tertiary-fixed-dim": "#c488ff",
+                        "surface-container": "#0f1930",
+                        "surface-container-lowest": "#000000",
+                        "tertiary-dim": "#9c48ea",
+                        "surface": "#060e20",
+                        "secondary-dim": "#ccd4ee",
+                        "on-secondary-fixed-variant": "#535b71",
+                        "on-surface": "#dee5ff",
+                        "primary-container": "#9396ff",
+                        "tertiary-container": "#af5cfe",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "on-background": "#dee5ff",
+                        "primary-fixed-dim": "#8387ff",
+                        "surface-container-high": "#141f38",
+                        "on-secondary-fixed": "#373f54",
+                        "surface-container-highest": "#192540",
+                        "secondary-fixed-dim": "#ccd4ee",
+                        "on-primary": "#0f00a4",
+                        "outline": "#6d758c",
+                        "on-primary-fixed": "#000000",
+                        "tertiary": "#c180ff",
+                        "secondary-fixed": "#dae2fd",
+                        "on-error-container": "#ffb2b9",
+                        "surface-variant": "#192540",
+                        "on-secondary-container": "#c8d0ea",
+                        "inverse-primary": "#494bd7",
+                        "primary": "#a3a6ff",
+                        "error-dim": "#d73357",
+                        "on-primary-container": "#0a0081",
+                        "secondary": "#dae2fd",
+                        "surface-container-low": "#091328",
+                        "outline-variant": "#40485d",
+                        "secondary-container": "#3f465c",
+                        "on-surface-variant": "#a3aac4",
+                        "on-tertiary-fixed-variant": "#560094",
+                        "on-error": "#490013",
+                        "error": "#ff6e84",
+                        "tertiary-fixed": "#ce9bff",
+                        "on-secondary": "#4a5167",
+                        "background": "#060e20",
+                        "on-tertiary": "#33005b",
+                        "inverse-surface": "#faf8ff",
+                        "on-tertiary-fixed": "#270048",
+                        "surface-bright": "#1f2b49",
+                        "surface-tint": "#a3a6ff",
+                        "error-container": "#a70138",
+                        "on-tertiary-container": "#000000",
+                        "surface-dim": "#060e20",
+                        "inverse-on-surface": "#4d556b"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(25, 37, 64, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .ai-glow {
+            box-shadow: 0 0 20px rgba(193, 128, 255, 0.15);
+        }
+        ::-webkit-scrollbar { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 min-h-screen pb-24">
+<!-- TopAppBar -->
+<nav class="bg-[#060e20] docked full-width top-0 z-50 sticky">
+<div class="flex justify-between items-center w-full px-6 py-4 bg-[#091328]">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up professional portrait of a tech executive with soft studio lighting and a clean dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB732I06TraCV-a1M8-N2Ph2zJ_cNnyKCIvNkXQ-U6YqNq4_CyKBXHiUSinfRNInVdg2wUMPXaiWae0ZUggtnKlCbYGwl_4bdoSWHFDUGnj_wMgGFcySdX3sj1Q1VuQPtPVge03W95aHYyJ6Cm4twvK6eHUXGrHyCwESkO983TO4fN2TmQ1EhQyDbH1DUCdnntS6u9N7pq2w0B1_jpFZQMiwbyhBauCQJyFZgv7XJMB1u3BBoLGozKCYy2C9wcxqFdrOJN8o9NQlVc"/>
+</div>
+<span class="font-headline font-bold tracking-tight text-lg text-indigo-400">Tenant</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-400 hover:bg-[#192540] p-2 rounded-xl transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="swap_horiz">swap_horiz</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="px-5 pt-4 space-y-8">
+<!-- Project Health Indicator -->
+<section class="space-y-3">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-[10px] font-label uppercase tracking-[0.2em] text-on-surface-variant font-bold">Current Project</p>
+<h1 class="font-headline text-2xl font-extrabold tracking-tight text-on-surface">Nexus Phase IV</h1>
+</div>
+<div class="text-right">
+<span class="text-[10px] font-bold text-tertiary bg-tertiary/10 px-2 py-0.5 rounded-full uppercase tracking-wider ai-glow">AI Healthy</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-4 flex items-center justify-between border-l-2 border-primary">
+<div class="flex gap-4">
+<div class="flex flex-col">
+<span class="text-[10px] text-on-surface-variant font-semibold">VELOCITY</span>
+<span class="text-lg font-bold text-primary">94%</span>
+</div>
+<div class="w-px bg-outline-variant/20 h-8 self-center"></div>
+<div class="flex flex-col">
+<span class="text-[10px] text-on-surface-variant font-semibold">RISK LEVEL</span>
+<span class="text-lg font-bold text-error">LOW</span>
+</div>
+</div>
+<div class="h-12 w-24 bg-surface-container-highest rounded-lg flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent"></div>
+<!-- Minimal Sparkline Mock -->
+<svg class="w-full h-8 stroke-primary fill-none stroke-2" viewbox="0 0 100 40">
+<path d="M0 30 Q 20 10, 40 25 T 80 5 L 100 20"></path>
+</svg>
+</div>
+</div>
+</section>
+<!-- Status Horizontal Scroll -->
+<section class="overflow-x-auto -mx-5 px-5 scroll-smooth">
+<div class="flex gap-3 min-w-max pb-2">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-highest text-on-surface rounded-full text-xs font-semibold border border-outline-variant/15 active:scale-95 transition-transform">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+                    To Do
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary-container rounded-full text-xs font-bold active:scale-95 transition-transform shadow-lg shadow-primary/20">
+<span class="w-2 h-2 rounded-full bg-on-primary-container"></span>
+                    In Progress
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-tertiary/10 text-tertiary rounded-full text-xs font-semibold border border-tertiary/30 active:scale-95 transition-transform ai-glow">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                    AI-Optimized
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-low text-on-surface-variant rounded-full text-xs font-semibold active:scale-95 transition-transform">
+<span class="w-2 h-2 rounded-full bg-success"></span>
+                    Done
+                </button>
+</div>
+</section>
+<!-- Task List -->
+<section class="space-y-4">
+<div class="flex justify-between items-center">
+<h3 class="text-xs font-label uppercase tracking-widest text-on-surface-variant font-bold">Active Tasks</h3>
+<span class="text-xs text-primary font-medium">8 total</span>
+</div>
+<!-- Task Card 1 -->
+<div class="bg-surface-container-low rounded-2xl p-5 space-y-4 group active:bg-surface-container-high transition-colors">
+<div class="flex justify-between items-start">
+<div class="space-y-1 flex-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-error/10 text-error text-[9px] font-bold uppercase tracking-tighter">High Priority</span>
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="smart_toy" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<h4 class="font-headline font-bold text-on-surface leading-tight">Implement multi-region database replication clusters</h4>
+</div>
+<div class="flex -space-x-2">
+<div class="w-7 h-7 rounded-full border-2 border-surface-container-low overflow-hidden">
+<img alt="Assignee" data-alt="Portrait of a female developer with soft natural lighting in a modern office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANbZ2megLaNyV0BkpT1UHWUbO6i6X1G8Mnxh3wkqZBXwGVaO2FiOqGaAxxxLiUtA8JyyfFJ2x7t9ZQBXHvb-7SmHZnjzlwjASYEnsvqbRPsXQXa2t3EMFNG6OGea8jib01LNSTGanTDkR3EExS2ccFIENOjG8cczcDBSeny3v3eqIa1oVGvb-hohmovKfdPFeUGYzKZ-rZXkdOD2YlTWpfl64eo9C8F2DIcuzUbRaPRNeFZ-CNJ4ytPR98IKtcwA_2CadC8gWyTTg"/>
+</div>
+</div>
+</div>
+<div class="p-3 bg-surface-container-highest/50 rounded-xl border-l-2 border-tertiary/40">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-[12px] text-tertiary" data-icon="bolt">bolt</span>
+<span class="text-[10px] font-bold text-tertiary uppercase tracking-wide">AI Summary</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">Latency predicted to drop by 40ms for EMEA regions. Deployment window suggested: 02:00 UTC.</p>
+</div>
+</div>
+<!-- Task Card 2 -->
+<div class="bg-surface-container-low rounded-2xl p-5 space-y-4 group active:bg-surface-container-high transition-colors">
+<div class="flex justify-between items-start">
+<div class="space-y-1 flex-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary text-[9px] font-bold uppercase tracking-tighter">Standard</span>
+</div>
+<h4 class="font-headline font-bold text-on-surface leading-tight">Refactor GraphQL schema for analytics modules</h4>
+</div>
+<div class="flex -space-x-2">
+<div class="w-7 h-7 rounded-full border-2 border-surface-container-low overflow-hidden">
+<img alt="Assignee" data-alt="Portrait of a male software engineer with glasses in a professional studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc1f4DXDaCL7sp336pyjNOXRTpHbUDBW7lvza0dhYQ8HJFGosj0-PtZf5rdmgUL8-EkebVFsa52FKooWSRLCI-CsZeQHbJDT4GhS5fkyO7dSpGn_g5l2QtqicofUncjodSJ9RiijdlwEON4DOuCyN3TVHxFVed0T2ZylWyCoaxHcE1x90KxsuWfArpbBJp-cvO9hmD_nAUSF-u4FDJBLpoOTq5VK6kPSGGm-W-Fdj9tXwBMT8mR9ZMN1PqKnHsbHlR6Lnv4Atp0Og"/>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-[10px] text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span>
+<span>Due in 3 days</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="chat_bubble">chat_bubble</span>
+<span>12</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="link">link</span>
+<span>4</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Team Comms Snippet -->
+<section class="bg-surface-container-highest/30 rounded-3xl p-6 border border-outline-variant/10">
+<div class="flex justify-between items-center mb-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="forum">forum</span>
+<h3 class="font-headline font-bold text-on-surface">Team Activity</h3>
+</div>
+<button class="text-[10px] font-bold text-primary uppercase tracking-widest px-3 py-1 rounded-full bg-primary/10">Live Feed</button>
+</div>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="relative">
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img alt="User" data-alt="Close-up headshot of a mature businessman with graying hair and a confident expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYimIm05YP6CLudlsyhmJ_p8ZPDJ0PMZ4TdPykkIOEY8QdTUNHh0SG6T44geofOBIxa1SRKJ0Vqsd9_n6vAYQEtiIAivg3Xo8bRK-BfTreCz3lhYzT836JkmIoyaYsKRDfp18i3ctDyncUeVB5nareSzR1opFXe-ky3OCF_OS0x8MjcmFSnkG2fa6oDp-LD8RJhOwwrlG6-92zfMA3Ed1sHnhiQck69GAHaMNoYgDq9g4Cyq_GyCD_JPOW01asgi-74Z5jGcjosoA"/>
+</div>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-tertiary rounded-full border-2 border-background flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-on-tertiary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex justify-between">
+<span class="text-xs font-bold text-on-surface">Marcus Chen</span>
+<span class="text-[10px] text-on-surface-variant">2m ago</span>
+</div>
+<p class="text-xs text-on-surface-variant italic">"AI just flagged the VPC configuration. I'm reviewing the logs now."</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img alt="User" data-alt="Portrait of a young professional woman smiling in a bright office space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArTpvERZ-bv_kd4TmBAQARGYQUXEtUH7_EpyTHReFx_iCZFRmnDdR_BIx1LRfcLqI3lkMtK0fKhLNaskJ1E7BipROd1fF3yNWKK3Bc2U6wqDZ_DJD9OcvxwtZWaQwfCspZEiYco570x9vEZgfSVMO9axGMu8lsco3oAt5AuFuAeTmLvGYaX3IZvrmzldh5B80ISczwy6-E4Crq0eeqjSsTMkNK6W-1sQmqn5aaWJqXhg5i3RHhMtsEgEdI5568Ca2x-DEP-rsq2L4"/>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex justify-between">
+<span class="text-xs font-bold text-on-surface">Sarah Miller</span>
+<span class="text-[10px] text-on-surface-variant">15m ago</span>
+</div>
+<p class="text-xs text-on-surface-variant">Uploaded 4 new assets to the <span class="text-primary">Phase IV</span> folder.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button -->
+<div class="fixed bottom-28 right-6 z-40">
+<button class="w-14 h-14 bg-primary text-on-primary rounded-2xl shadow-2xl shadow-primary/40 flex items-center justify-center active:scale-90 transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50">
+<div class="bg-[#091328]/80 backdrop-blur-xl fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 border-t border-[#40485d]/15 shadow-[0_-10px_30px_rgba(0,0,0,0.4)] rounded-t-xl">
+<!-- Projects is Active -->
+<div class="flex flex-col items-center justify-center text-[#40485d] px-4 py-2 hover:text-indigo-300 transition-all active:scale-90 duration-300">
+<span class="material-symbols-outlined text-2xl" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Dashboard</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#a3a6ff] bg-[#192540] rounded-xl px-4 py-2 shadow-[0_0_15px_rgba(163,166,255,0.2)] active:scale-90 transition-all duration-300">
+<span class="material-symbols-outlined text-2xl" data-icon="folder_managed" style="font-variation-settings: 'FILL' 1;">folder_managed</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Projects</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#40485d] px-4 py-2 hover:text-indigo-300 transition-all active:scale-90 duration-300">
+<span class="material-symbols-outlined text-2xl" data-icon="insights">insights</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Insights</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#40485d] px-4 py-2 hover:text-indigo-300 transition-all active:scale-90 duration-300">
+<span class="material-symbols-outlined text-2xl" data-icon="groups">groups</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Tenants</span>
+</div>
+</div>
+</nav>
+</body></html>

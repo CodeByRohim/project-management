@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina Nexus - Invite Team Members Review</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#0f00a4",
+              "surface-container-lowest": "#000000",
+              "surface-variant": "#192540",
+              "secondary": "#dae2fd",
+              "primary-container": "#9396ff",
+              "on-surface": "#dee5ff",
+              "on-error": "#490013",
+              "tertiary-fixed": "#ce9bff",
+              "on-tertiary": "#33005b",
+              "on-surface-variant": "#a3aac4",
+              "on-secondary-fixed": "#373f54",
+              "surface-container-highest": "#192540",
+              "surface-tint": "#a3a6ff",
+              "on-secondary-container": "#c8d0ea",
+              "error-dim": "#d73357",
+              "inverse-on-surface": "#4d556b",
+              "error-container": "#a70138",
+              "surface-bright": "#1f2b49",
+              "surface-container-high": "#141f38",
+              "primary-fixed-dim": "#8387ff",
+              "background": "#060e20",
+              "tertiary": "#c180ff",
+              "error": "#ff6e84",
+              "on-background": "#dee5ff",
+              "on-tertiary-container": "#000000",
+              "on-primary-container": "#0a0081",
+              "secondary-fixed": "#dae2fd",
+              "primary": "#a3a6ff",
+              "on-tertiary-fixed": "#270048",
+              "inverse-primary": "#494bd7",
+              "surface": "#060e20",
+              "inverse-surface": "#faf8ff",
+              "primary-fixed": "#9396ff",
+              "secondary-dim": "#ccd4ee",
+              "on-error-container": "#ffb2b9",
+              "surface-container": "#0f1930",
+              "secondary-container": "#3f465c",
+              "outline": "#6d758c",
+              "on-primary-fixed-variant": "#0e009d",
+              "surface-container-low": "#091328",
+              "secondary-fixed-dim": "#ccd4ee",
+              "primary-dim": "#6063ee",
+              "outline-variant": "#40485d",
+              "on-tertiary-fixed-variant": "#560094",
+              "on-primary-fixed": "#000000",
+              "on-secondary": "#4a5167",
+              "tertiary-container": "#af5cfe",
+              "tertiary-fixed-dim": "#c488ff",
+              "tertiary-dim": "#9c48ea",
+              "on-secondary-fixed-variant": "#535b71",
+              "surface-dim": "#060e20"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .glass-effect {
+            background: rgba(25, 37, 64, 0.4);
+            backdrop-filter: blur(12px);
+        }
+        .ai-glow {
+            box-shadow: 0 0 20px rgba(193, 128, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#060e20] w-full top-0 sticky flex justify-between items-center px-8 h-16 z-50 transition-all duration-300 ease-in-out">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tighter text-indigo-500 font-['Manrope']">Lumina Nexus</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-slate-400 hover:text-slate-200 transition-colors font-['Manrope'] tracking-tight" href="#">Dashboard</a>
+<a class="text-slate-400 hover:text-slate-200 transition-colors font-['Manrope'] tracking-tight" href="#">Workspaces</a>
+<a class="text-slate-400 hover:text-slate-200 transition-colors font-['Manrope'] tracking-tight" href="#">Analytics</a>
+<a class="text-indigo-400 border-b-2 border-indigo-500 pb-1 font-['Manrope'] tracking-tight" href="#">Settings</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-400 hover:bg-indigo-500/10 p-2 rounded-full transition-all">notifications</button>
+<button class="material-symbols-outlined text-slate-400 hover:bg-indigo-500/10 p-2 rounded-full transition-all">help_outline</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/20">
+<img alt="User profile avatar" data-alt="professional corporate headshot of a female executive with soft studio lighting and a neutral grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1JW3bNaYTh_ITAEK5HJv5kEHAkJtMnc8jcv_R4dYCvUCbmuycGNUdG5yqPzrUw8fIfyr7qR6nI0N8C-V7ZRZyoRN7Zj0UurO6ViKCMKFqacgcwDxB_NiUvpzUJk-Po5MtRqhzlVWj2FKA0lJSKl5B4Cev3b6MIGeOr2g40urA1Yv80EKnC0Te8_hVI3B1wCQglWdg5VJZw0m2My9MotnsOP7oJ3nUUfpGrt0Yff-xOoHHxm4PRTbSQq_zkaYB3VSO_9Wj2WCKrUk"/>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center justify-start py-12 px-6 lg:px-24">
+<!-- Onboarding Header -->
+<div class="w-full max-w-6xl mb-12">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-tertiary text-xs font-bold tracking-widest uppercase">Step 03 — Final Validation</span>
+</div>
+<h1 class="text-5xl font-extrabold font-headline tracking-tighter mb-4 text-white">Review &amp; Deploy</h1>
+<p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">
+                Summary of the new neural access batch. Our AI Permission Guard has verified the alignment with your organization's security protocols.
+            </p>
+</div>
+<div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Main Review Content -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Summary Stats Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-8 rounded-xl border-l-4 border-primary">
+<span class="text-on-surface-variant text-xs font-semibold tracking-wider uppercase mb-2 block">Total Invites</span>
+<div class="text-4xl font-black font-headline text-white">24</div>
+<div class="text-primary-container text-xs mt-1">Pending transmission</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border-l-4 border-secondary-dim">
+<span class="text-on-surface-variant text-xs font-semibold tracking-wider uppercase mb-2 block">Target Tenants</span>
+<div class="text-4xl font-black font-headline text-white">03</div>
+<div class="text-on-surface-variant text-xs mt-1">Global infrastructure</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border-l-4 border-tertiary">
+<span class="text-on-surface-variant text-xs font-semibold tracking-wider uppercase mb-2 block">Role Tiers</span>
+<div class="text-4xl font-black font-headline text-white">05</div>
+<div class="text-tertiary-fixed text-xs mt-1">Permission stratified</div>
+</div>
+</div>
+<!-- Role Breakdown Glass Card -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<div class="p-6 border-b border-outline-variant/10 flex justify-between items-center">
+<h3 class="font-headline font-bold text-xl text-white">Role Breakdown</h3>
+<span class="material-symbols-outlined text-on-surface-variant">analytics</span>
+</div>
+<div class="p-8 space-y-6">
+<div class="space-y-4">
+<div class="flex justify-between items-end mb-1">
+<span class="text-sm font-medium text-on-surface">Architect (Lead)</span>
+<span class="text-xs text-on-surface-variant">4 members</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 16%"></div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-end mb-1">
+<span class="text-sm font-medium text-on-surface">Data Engineer</span>
+<span class="text-xs text-on-surface-variant">12 members</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container" style="width: 50%"></div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-end mb-1">
+<span class="text-sm font-medium text-on-surface">Analyst</span>
+<span class="text-xs text-on-surface-variant">8 members</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-dim" style="width: 33%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tenant List -->
+<div class="bg-surface-container-low rounded-xl p-8">
+<h3 class="font-headline font-bold text-xl text-white mb-6">Destination Clusters</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-center gap-4 p-4 bg-surface-container-high rounded-lg group hover:bg-surface-container-highest transition-all">
+<div class="w-10 h-10 rounded bg-indigo-500/20 flex items-center justify-center text-indigo-400">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<div>
+<div class="text-sm font-bold text-white">EU-Central-01</div>
+<div class="text-xs text-on-surface-variant">Production Node</div>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 bg-surface-container-high rounded-lg group hover:bg-surface-container-highest transition-all">
+<div class="w-10 h-10 rounded bg-indigo-500/20 flex items-center justify-center text-indigo-400">
+<span class="material-symbols-outlined">cloud_sync</span>
+</div>
+<div>
+<div class="text-sm font-bold text-white">US-West-Quantum</div>
+<div class="text-xs text-on-surface-variant">Deep Learning Lab</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: AI Sidebar -->
+<aside class="lg:col-span-4 space-y-6">
+<div class="glass-effect ai-glow border border-tertiary/20 rounded-xl p-8 sticky top-24">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">security</span>
+<h2 class="font-headline font-extrabold text-lg text-white tracking-tight">AI Permission Guard</h2>
+</div>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="mt-1">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-white">Entropy Check Passed</h4>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">No duplicate cognitive profiles detected in the current invite batch.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="mt-1">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-white">Role Proximity Verified</h4>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Access levels match the historical 'Nexus PMS' team management patterns.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="mt-1">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-white">Cluster Alignment</h4>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Invited members have existing clearance for EU-Central-01 clusters.</p>
+</div>
+</div>
+</div>
+<div class="mt-10 pt-8 border-t border-outline-variant/20">
+<p class="text-[10px] text-tertiary-fixed font-mono uppercase tracking-[0.2em] mb-4">Security Integrity: 99.8%</p>
+<div class="h-1 w-full bg-surface-container-highest rounded-full">
+<div class="h-full bg-tertiary rounded-full" style="width: 99.8%"></div>
+</div>
+</div>
+</div>
+<!-- Secondary Actions -->
+<div class="bg-surface-container p-6 rounded-xl flex flex-col gap-3">
+<button class="w-full py-4 px-6 rounded-lg bg-primary text-on-primary font-bold text-sm flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.98] transition-all">
+<span>Send Invites</span>
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+<button class="w-full py-3 px-6 rounded-lg border border-outline-variant/30 text-on-surface-variant font-medium text-sm hover:bg-surface-container-highest transition-colors">
+                        Edit Invite List
+                    </button>
+</div>
+</aside>
+</div>
+</main>
+<!-- Visual Anchor Ornament -->
+<div class="fixed -bottom-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="fixed -top-24 -right-24 w-96 h-96 bg-tertiary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<!-- SideNavBar (Suppressed due to Transactional Focus) -->
+<!-- The Sidebar and BottomNavBar are hidden to prioritize the multi-step onboarding flow and focus the user's cognitive load on the transaction. -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 mt-12 border-t border-outline-variant/10">
+<div class="text-on-surface-variant text-xs font-medium">
+            © 2024 Lumina Nexus Intelligence Architecture. All rights reserved.
+        </div>
+<div class="flex gap-8">
+<a class="text-xs text-on-surface-variant hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs text-on-surface-variant hover:text-white transition-colors" href="#">System Security</a>
+<a class="text-xs text-on-surface-variant hover:text-white transition-colors" href="#">Protocol Support</a>
+</div>
+</footer>
+</body></html>

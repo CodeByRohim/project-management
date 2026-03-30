@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stratum PMS | Advanced Reporting Engine</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline-variant": "#40485d",
+                        "surface-tint": "#a3a6ff",
+                        "on-secondary-container": "#c8d0ea",
+                        "on-primary-fixed": "#000000",
+                        "primary-dim": "#6063ee",
+                        "surface-variant": "#192540",
+                        "on-primary": "#0f00a4",
+                        "surface-container-lowest": "#000000",
+                        "error": "#ff6e84",
+                        "inverse-on-surface": "#4d556b",
+                        "surface-bright": "#1f2b49",
+                        "on-surface": "#dee5ff",
+                        "on-primary-container": "#0a0081",
+                        "primary-fixed": "#9396ff",
+                        "on-tertiary": "#33005b",
+                        "background": "#060e20",
+                        "tertiary": "#c180ff",
+                        "on-secondary": "#4a5167",
+                        "surface-container-high": "#141f38",
+                        "primary-fixed-dim": "#8387ff",
+                        "surface-dim": "#060e20",
+                        "on-surface-variant": "#a3aac4",
+                        "tertiary-fixed": "#ce9bff",
+                        "outline": "#6d758c",
+                        "secondary": "#dae2fd",
+                        "on-tertiary-fixed-variant": "#560094",
+                        "tertiary-dim": "#9c48ea",
+                        "on-error-container": "#ffb2b9",
+                        "inverse-surface": "#faf8ff",
+                        "tertiary-fixed-dim": "#c488ff",
+                        "secondary-fixed-dim": "#ccd4ee",
+                        "primary": "#a3a6ff",
+                        "error-dim": "#d73357",
+                        "tertiary-container": "#af5cfe",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "on-secondary-fixed": "#373f54",
+                        "surface-container": "#0f1930",
+                        "secondary-dim": "#ccd4ee",
+                        "on-background": "#dee5ff",
+                        "inverse-primary": "#494bd7",
+                        "surface-container-highest": "#192540",
+                        "secondary-container": "#3f465c",
+                        "primary-container": "#9396ff",
+                        "surface": "#060e20",
+                        "error-container": "#a70138",
+                        "secondary-fixed": "#dae2fd",
+                        "on-secondary-fixed-variant": "#535b71",
+                        "on-error": "#490013",
+                        "on-tertiary-container": "#000000",
+                        "on-tertiary-fixed": "#270048",
+                        "surface-container-low": "#091328"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(63, 70, 92, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #060e20; }
+        ::-webkit-scrollbar-thumb { background: #192540; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #40485d; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen sticky left-0 w-64 bg-[#091328] no-border shadow-2xl shadow-black/40 py-6">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-lg" style="font-variation-settings: 'FILL' 1;">layers</span>
+</div>
+<div>
+<h1 class="text-lg font-extrabold text-[#a3a6ff] leading-none">Enterprise Tier</h1>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mt-1">AI-Optimized</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-slate-400 px-6 py-3 hover:bg-[#0f1930]/50 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-6 py-3 hover:bg-[#0f1930]/50 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span>Projects</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-6 py-3 hover:bg-[#0f1930]/50 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span>AI Engine</span>
+</a>
+<a class="bg-[#0f1930] text-[#a3a6ff] border-l-4 border-[#c180ff] px-6 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="insights" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span>Insights</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-6 py-3 hover:bg-[#0f1930]/50 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span>Tenants</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-6 py-3 hover:bg-[#0f1930]/50 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span>Audit Logs</span>
+</a>
+</nav>
+<div class="px-6 mt-auto space-y-4">
+<button class="w-full py-3 px-4 bg-surface-container-highest hover:bg-surface-bright text-primary border border-primary/20 rounded-xl transition-all flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined text-sm group-hover:rotate-90 transition-transform">add</span>
+<span class="font-semibold text-sm">New Project</span>
+</button>
+<div class="pt-4 border-t border-outline-variant/10 space-y-1">
+<a class="flex items-center gap-3 text-slate-400 px-2 py-2 hover:text-white transition-colors text-sm" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="help_outline">help_outline</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-2 py-2 hover:text-white transition-colors text-sm" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-[#091328] border-none shadow-none backdrop-blur-md bg-opacity-80 flex justify-between items-center px-6 py-3">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-[#a3a6ff]">Stratum PMS</span>
+<nav class="hidden lg:flex items-center gap-6 font-manrope tracking-tight text-sm">
+<a class="text-slate-400 font-medium hover:text-slate-200 transition-colors" href="#">Dashboards</a>
+<a class="text-slate-400 font-medium hover:text-slate-200 transition-colors" href="#">Workspaces</a>
+<a class="text-[#a3a6ff] font-semibold border-b-2 border-[#a3a6ff] pb-1" href="#">Insights</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-container rounded-full px-4 py-1.5 border border-outline-variant/20">
+<span class="material-symbols-outlined text-on-surface-variant text-lg">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface w-48" placeholder="Search reports..." type="text"/>
+</div>
+<button class="p-2 text-slate-400 hover:bg-[#192540] rounded-md transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-400 hover:bg-[#192540] rounded-md transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border-2 border-primary/30">
+<img alt="User profile with tenant switcher" data-alt="close up of a professional male avatar with stylish hair and glasses in a clean minimalist design style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8qxSHWdQkSv4TfGQLNY_vW85RI_8Zq0NIpthsStq-qKME4bm20fipc7N1IMlHH1aDZH6Hu6KTJ9lBNmxJbGhPu6OhwdN8qO1jl063Gpt-bA7BsJPdqasMJjGrjX6iiYnGs_wRzorgYYzVUL3JAjzz4tPcpDxkYWWeyesBQxPVcaglNIyECWd0L5QM6-Juz5GdZ-XI8trfYVkv8cJbrHpu9Xzu9uWN_75gCBSDX0WSMgkQSR0Urkg6ZPB8T3QFtqoAlX33z_8V7oM"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<div class="p-8 space-y-10 max-w-7xl mx-auto w-full">
+<!-- Page Header & Actions -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-xs font-bold uppercase tracking-[0.2em] font-headline">AI-Driven Engine</span>
+</div>
+<h2 class="text-4xl font-extrabold font-headline tracking-tight text-on-surface">Advanced Reporting</h2>
+<p class="text-on-surface-variant max-w-md">Architect intelligent insights from cross-tenant data streams with our cognitive reporting layer.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-highest hover:bg-surface-bright text-on-surface font-semibold rounded-xl transition-all active:scale-95">
+<span class="material-symbols-outlined text-lg">ios_share</span>
+<span class="text-sm">Share Securely</span>
+</button>
+<button class="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-primary to-tertiary-dim text-on-primary font-bold rounded-xl shadow-lg shadow-primary/20 transition-all hover:shadow-primary/40 active:scale-95">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">download</span>
+<span class="text-sm">Export Data</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid: Report Builder & Templates -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Report Builder Workspace (Asymmetric Focus) -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-low rounded-2xl p-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-xl font-bold font-headline">Report Builder</h3>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-variant text-[10px] font-bold text-tertiary rounded-full uppercase tracking-tighter">Drafting</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Drag Zone: Metrics -->
+<div class="col-span-1 space-y-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm">drag_indicator</span>
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Available Metrics</span>
+</div>
+<div class="space-y-3">
+<div class="p-4 bg-surface-container border border-outline-variant/10 rounded-xl cursor-move hover:border-primary/50 transition-colors flex items-center justify-between group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-dim">payments</span>
+<span class="text-sm font-medium">Tenant Revenue</span>
+</div>
+<span class="material-symbols-outlined text-slate-600 group-hover:text-primary transition-colors">add_circle</span>
+</div>
+<div class="p-4 bg-surface-container border border-outline-variant/10 rounded-xl cursor-move hover:border-primary/50 transition-colors flex items-center justify-between group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">gpp_maybe</span>
+<span class="text-sm font-medium">Audit Risk Index</span>
+</div>
+<span class="material-symbols-outlined text-slate-600 group-hover:text-primary transition-colors">add_circle</span>
+</div>
+<div class="p-4 bg-surface-container border border-outline-variant/10 rounded-xl cursor-move hover:border-primary/50 transition-colors flex items-center justify-between group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">bolt</span>
+<span class="text-sm font-medium">Resource Efficiency</span>
+</div>
+<span class="material-symbols-outlined text-slate-600 group-hover:text-primary transition-colors">add_circle</span>
+</div>
+<div class="p-4 bg-surface-container border border-outline-variant/10 rounded-xl cursor-move hover:border-primary/50 transition-colors flex items-center justify-between group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">group</span>
+<span class="text-sm font-medium">Occupancy Trends</span>
+</div>
+<span class="material-symbols-outlined text-slate-600 group-hover:text-primary transition-colors">add_circle</span>
+</div>
+</div>
+</div>
+<!-- Drop Zone: Report Canvas -->
+<div class="col-span-1 md:col-span-2 glass-panel rounded-2xl border-2 border-dashed border-outline-variant/30 flex flex-col items-center justify-center p-12 text-center">
+<div class="w-16 h-16 rounded-full bg-surface-variant flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">add_chart</span>
+</div>
+<h4 class="text-lg font-bold mb-1">Construct Your View</h4>
+<p class="text-sm text-on-surface-variant max-w-[240px]">Drag metrics here to begin synthesizing your custom organizational report.</p>
+<button class="mt-6 text-primary text-xs font-bold underline underline-offset-4 hover:text-white transition-colors">Browse Datasets</button>
+</div>
+</div>
+</div>
+<!-- Visual Report Templates (Vertical Sidebar) -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold font-headline">Quick Templates</h3>
+<button class="text-primary text-xs font-bold hover:underline transition-all">View All</button>
+</div>
+<div class="space-y-4">
+<!-- Template Card 1 -->
+<div class="group cursor-pointer rounded-2xl overflow-hidden bg-surface-container border border-outline-variant/10 hover:border-tertiary/40 transition-all duration-300">
+<div class="h-24 relative overflow-hidden bg-surface-variant">
+<div class="absolute inset-0 bg-gradient-to-br from-tertiary/20 to-transparent"></div>
+<img alt="Monthly Tenant Health Report" class="w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" data-alt="abstract data visualization with glowing purple lines and nodes on a dark background showing network connectivity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-Y4GcvjRN__M2_LBlI0uBrsYomUhQ-yFV3a5bJKKSzgYyHaQ5lLnnr7uc1ajs1K1R8SzVhMjMM7_eA0TPpaNs7xVoIVieyvxwjE_hxhlJSc73Uj6AhDXQQd-dQNUijrO96ajLsbTpmPiZ1FOwqmBt7S8Ip30eMQWBYPRT31WjGOAUYE0gsvPBuZkhCbRigxFqsbxIB-ddtWZ-ppiu9X3cwahV4RS7ufqKKH2H3nJLQHW1lcB3JeCa03kJLae3M0RbYz5Hr5vxmk4"/>
+<div class="absolute bottom-2 left-3">
+<span class="px-2 py-0.5 bg-surface/80 backdrop-blur-md rounded text-[9px] font-bold text-tertiary-fixed uppercase">High Impact</span>
+</div>
+</div>
+<div class="p-4">
+<p class="font-bold text-sm mb-1">Monthly Tenant Health</p>
+<p class="text-[11px] text-on-surface-variant line-clamp-1">Holistic KPIs including churn, debt, and satisfaction.</p>
+</div>
+</div>
+<!-- Template Card 2 -->
+<div class="group cursor-pointer rounded-2xl overflow-hidden bg-surface-container border border-outline-variant/10 hover:border-primary/40 transition-all duration-300">
+<div class="h-24 relative overflow-hidden bg-surface-variant">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
+<img alt="Quarterly Security Audit" class="w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" data-alt="geometric patterns of blue light and glass textures creating a high-tech architectural feel with dark shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0LxZy-Dh-DF0o5WHImpaDtNGgQy7odgU_Z37Pk3xISRSC_fS_QfiP_1jGSA5rWXKHjYRTbFNBbKTI32KD8CzlWwVFyUE41dgqE7p0enZo6OoK1rZ89F6wRrrPIJb34Jwc9BFTjoULbH70QXX255H9edvFiVqWS2r7H27RZ2jMGBzfR5TtyXfuSE9-P3mgfoL0PAVouL4uMC2IPkj_3qFVVa0iSGKCttQ3CEWpeYeLo-ycyEUyxsES-iYWvUAimaqJ80ecKvSFAYs"/>
+<div class="absolute bottom-2 left-3">
+<span class="px-2 py-0.5 bg-surface/80 backdrop-blur-md rounded text-[9px] font-bold text-primary-fixed uppercase">Security</span>
+</div>
+</div>
+<div class="p-4">
+<p class="font-bold text-sm mb-1">Quarterly Security Audit</p>
+<p class="text-[11px] text-on-surface-variant line-clamp-1">Compliance tracking, access logs, and risk flags.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Scheduled Reports Table Section -->
+<div class="bg-surface-container rounded-2xl overflow-hidden shadow-2xl">
+<div class="p-6 border-b border-outline-variant/10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h3 class="text-xl font-bold font-headline">Scheduled Automations</h3>
+<p class="text-xs text-on-surface-variant mt-1">Managed report delivery pipelines for global tenants.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center bg-surface-container-high rounded-lg px-3 py-1.5 border border-outline-variant/10">
+<span class="material-symbols-outlined text-sm mr-2 text-on-surface-variant">filter_list</span>
+<span class="text-xs font-semibold">Filter: Active</span>
+</div>
+<div class="flex items-center bg-surface-container-high rounded-lg px-3 py-1.5 border border-outline-variant/10">
+<span class="material-symbols-outlined text-sm mr-2 text-on-surface-variant">sort</span>
+<span class="text-xs font-semibold">Next Run</span>
+</div>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-high/50 text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">
+<tr>
+<th class="px-6 py-4">Report Name</th>
+<th class="px-6 py-4">Frequency</th>
+<th class="px-6 py-4">Recipients</th>
+<th class="px-6 py-4">Next Scheduled Run</th>
+<th class="px-6 py-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="hover:bg-surface-container-highest transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-primary shadow-sm shadow-primary/50"></div>
+<span class="font-semibold text-sm">Enterprise Yield Summary</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-2 py-1 bg-secondary-container/30 text-secondary text-[10px] font-bold rounded uppercase">Weekly</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex -space-x-2">
+<img alt="Recipient" class="w-6 h-6 rounded-full border border-surface" data-alt="professional female profile photo minimal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMRQVSYYYD7avJ96wsKpeWKkMrqbkb4ZWM8tkCrDNAuc1zoeBn5dANJ3SOpOLJ1W8ifFHfGq6BOS5eT-r3mgth83a4cTyCI_xMtHilrnfG6jBRYdpr93wW6AnKyli34Oa0fBBAx6wKKZWSI3QRNYHFo_CzLZ1dcmfHsqTKCWUJYs7GCc48YP-wAKYMVHxXClXlOltfEjUcMiLDHP6XwTCCKgUT9r4yYvZg2yU6scyqIy6o2EULQA4Ts47YU-Cv6aggW5hDHo_Vwnw"/>
+<img alt="Recipient" class="w-6 h-6 rounded-full border border-surface" data-alt="professional male profile photo minimal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_qUeAnou5sLrlecl0BAPKIuX5MlnheAMTpmdQ5ZKNGCpj2_u6uGIRTHEsE1eJQ_9E6V_lfMhILpqeKx1tyuRdMMjy1GMtsMrq2zKaD1OEY9d6pi4BLeW4jvys1qsBI0H6J70mKJcDnIfHKZQsE8oKhDsxKJ4vjPyXc-hPxysIL6FfuscCYUp96FjW9vIR2CYk_vpzs5U_9VSG2zQYDYrW0MXO71DNejSwJoF8pHZPJhkgOKGL8ybdGM2q2vluZm34960VcmxtkcU"/>
+<div class="w-6 h-6 rounded-full bg-surface-variant border border-surface flex items-center justify-center text-[8px] font-bold">+3</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-xs">schedule</span>
+<span>Oct 24, 08:00 AM</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 hover:bg-surface-variant rounded-lg transition-colors text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-highest transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-primary shadow-sm shadow-primary/50"></div>
+<span class="font-semibold text-sm">Resource Waste Analytics</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-2 py-1 bg-secondary-container/30 text-secondary text-[10px] font-bold rounded uppercase">Monthly</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex -space-x-2">
+<img alt="Recipient" class="w-6 h-6 rounded-full border border-surface" data-alt="professional female profile photo minimal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvYISSEVfr_9v3xKpzV-E1p7uX9TeftO3GCoD4nzdhdtCYfX5ntdLebz7VDVAizbSWh11CH20PN05E8yIj5uqCTx2seW6pVDPRJfOpIS4pUMlZ29tk5q4MJQiJBKeYUT8ViQv6mRpsT-_K5OZQ1G9r3CNhMw9mx4vSBL73oKo0sYgesfhP71ZFyxdrq_HH89q4_OUdA-UcMGKfuJ1SCzgIy_vqtgVMzN57hWWfDOIfTH7q9NOgpdXiNObCodqyRacSZ0UOf7zCHr8"/>
+<div class="w-6 h-6 rounded-full bg-surface-variant border border-surface flex items-center justify-center text-[8px] font-bold">+1</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-xs">schedule</span>
+<span>Nov 01, 12:00 AM</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 hover:bg-surface-variant rounded-lg transition-colors text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-highest transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-tertiary-dim"></div>
+<span class="font-semibold text-sm">Security Vector Audit</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-2 py-1 bg-secondary-container/30 text-secondary text-[10px] font-bold rounded uppercase">Daily</span>
+</td>
+<td class="px-6 py-5">
+<span class="text-xs text-on-surface-variant italic">System Admin Only</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-xs text-error">error</span>
+<span class="text-error-dim">Paused by Admin</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 hover:bg-surface-variant rounded-lg transition-colors text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Footer Stats / AI Suggestions -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 pb-12">
+<div class="bg-surface-container-high p-5 rounded-2xl border border-outline-variant/5">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Total Reports Generated</p>
+<p class="text-2xl font-extrabold text-on-surface">12,842</p>
+<div class="mt-2 flex items-center gap-1 text-[10px] text-primary">
+<span class="material-symbols-outlined text-[12px]">trending_up</span>
+<span>12% from last period</span>
+</div>
+</div>
+<div class="bg-surface-container-high p-5 rounded-2xl border border-outline-variant/5">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Automated Delivery</p>
+<p class="text-2xl font-extrabold text-on-surface">99.8%</p>
+<div class="mt-2 flex items-center gap-1 text-[10px] text-tertiary">
+<span class="material-symbols-outlined text-[12px]">verified</span>
+<span>Infrastructure stable</span>
+</div>
+</div>
+<div class="md:col-span-2 bg-gradient-to-br from-surface-container-high to-surface-variant p-5 rounded-2xl border border-primary/10 flex items-center justify-between">
+<div>
+<p class="text-[10px] font-bold text-primary-fixed uppercase tracking-widest mb-1">AI Recommendation</p>
+<p class="text-sm font-medium text-on-surface max-w-xs">Users with similar portfolios often include "Occupancy Volatility" in their quarterly audits.</p>
+</div>
+<button class="p-3 bg-primary text-on-primary rounded-xl hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-90">
+<span class="material-symbols-outlined">auto_awesome</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- AI Command Bar (Floating) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 w-[90%] max-w-2xl z-[100]">
+<div class="glass-panel border border-outline-variant/30 rounded-full py-2 px-3 shadow-2xl flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-xl" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-sm placeholder:text-slate-500 font-medium" placeholder="Ask AI to build a report for you..." type="text"/>
+<div class="flex items-center gap-2 pr-2">
+<span class="px-2 py-1 bg-surface-variant text-[10px] font-bold text-on-surface-variant rounded border border-outline-variant/20 uppercase">CMD + K</span>
+<button class="p-2 hover:bg-primary/20 rounded-full text-primary transition-colors">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

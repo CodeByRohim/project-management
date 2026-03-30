@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Audit Intelligence | Event 1248 Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-container": "#c8d0ea",
+                        "primary-fixed-dim": "#8387ff",
+                        "outline-variant": "#40485d",
+                        "surface-container": "#0f1930",
+                        "on-tertiary": "#33005b",
+                        "tertiary-dim": "#9c48ea",
+                        "error-dim": "#d73357",
+                        "on-secondary-fixed-variant": "#535b71",
+                        "error-container": "#a70138",
+                        "tertiary-fixed-dim": "#c488ff",
+                        "surface-tint": "#a3a6ff",
+                        "surface-variant": "#192540",
+                        "on-primary-container": "#0a0081",
+                        "surface-dim": "#060e20",
+                        "secondary": "#dae2fd",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "on-tertiary-fixed-variant": "#560094",
+                        "surface-container-low": "#091328",
+                        "background": "#060e20",
+                        "primary-dim": "#6063ee",
+                        "inverse-on-surface": "#4d556b",
+                        "on-secondary": "#4a5167",
+                        "primary-fixed": "#9396ff",
+                        "on-tertiary-container": "#000000",
+                        "on-secondary-fixed": "#373f54",
+                        "secondary-container": "#3f465c",
+                        "on-background": "#dee5ff",
+                        "secondary-fixed": "#dae2fd",
+                        "tertiary-container": "#af5cfe",
+                        "surface-container-high": "#141f38",
+                        "tertiary": "#c180ff",
+                        "secondary-dim": "#ccd4ee",
+                        "tertiary-fixed": "#ce9bff",
+                        "surface-bright": "#1f2b49",
+                        "on-tertiary-fixed": "#270048",
+                        "surface-container-highest": "#192540",
+                        "surface-container-lowest": "#000000",
+                        "on-error": "#490013",
+                        "surface": "#060e20",
+                        "primary": "#a3a6ff",
+                        "primary-container": "#9396ff",
+                        "inverse-surface": "#faf8ff",
+                        "inverse-primary": "#494bd7",
+                        "on-surface": "#dee5ff",
+                        "error": "#ff6e84",
+                        "on-surface-variant": "#a3aac4",
+                        "on-primary-fixed": "#000000",
+                        "secondary-fixed-dim": "#ccd4ee",
+                        "outline": "#6d758c",
+                        "on-primary": "#0f00a4",
+                        "on-error-container": "#ffb2b9"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #060e20; color: #dee5ff; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(25, 37, 64, 0.4); backdrop-filter: blur(12px); }
+        .ai-glow { box-shadow: 0 0 20px rgba(193, 128, 255, 0.15); }
+        .syntax-key { color: #a3a6ff; }
+        .syntax-string { color: #c180ff; }
+        .syntax-number { color: #ce9bff; }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-8 py-4 bg-[#060e20] fixed top-0 z-50">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black text-[#4F46E5] tracking-tighter">Stratum PMS</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-400 hover:text-slate-200 transition-colors font-['Inter'] text-sm font-medium" href="#">Dashboard</a>
+<a class="text-slate-400 hover:text-slate-200 transition-colors font-['Inter'] text-sm font-medium" href="#">Properties</a>
+<a class="text-slate-400 hover:text-slate-200 transition-colors font-['Inter'] text-sm font-medium" href="#">Analytics</a>
+<a class="text-[#4F46E5] font-bold border-b-2 border-[#4F46E5] pb-1 font-['Inter'] text-sm font-medium" href="#">Audit Logs</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-400 hover:bg-[#192540] rounded-md transition-all material-symbols-outlined">notifications</button>
+<button class="p-2 text-slate-400 hover:bg-[#192540] rounded-md transition-all material-symbols-outlined">settings</button>
+<img alt="User Profile Avatar" class="w-8 h-8 rounded-full border border-outline-variant/30" data-alt="close-up studio portrait of a professional man with clean lighting and neutral grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnZKyrQqRP7rO6eXvhX1wBsa3I3mKa5ribAcXhobDobVcdnR5F6GCNtdEozwLdICg4muNMMT6HSmDAoXD5yWoW4Ng59Z8mcqdS1X0W2-nFfzf_Buc9xdERbQHPNbleUboTsJxuG6ytVIinqHsVknYAB2zmMTx02wCd4_TV7-Y2BRnRiiR3LJuHb3OInWE4Mzaxnq8kmLCRHjePi0Gm8EK4R3XP_fkV2jzdIKu7fbUt3BdlxcAuZBLU-HaWEngbsdpX76nWRhE_ryc"/>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 flex flex-col z-40 bg-[#091328] border-r border-[#40485d]/15 shadow-2xl shadow-black/40">
+<div class="p-6 flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div>
+<p class="font-headline font-bold text-sm text-on-surface">Audit Intelligence</p>
+<p class="font-body text-[10px] text-on-surface-variant tracking-wider uppercase">Tenant: Alpha-9</p>
+</div>
+</div>
+<nav class="flex-1 px-2 space-y-1 mt-4">
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-[#0f1930] rounded-md transition-all font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">sensors</span> Live Stream
+            </a>
+<a class="flex items-center gap-3 bg-[#192540] text-white border-l-4 border-[#4F46E5] px-4 py-3 ml-0 font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">security</span> Security Events
+            </a>
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-[#0f1930] rounded-md transition-all font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">key</span> Access Logs
+            </a>
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-[#0f1930] rounded-md transition-all font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">history</span> System Changes
+            </a>
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-[#0f1930] rounded-md transition-all font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">psychology</span> AI Insights
+            </a>
+</nav>
+<div class="p-4 border-t border-outline-variant/10">
+<button class="w-full py-2.5 bg-primary text-on-primary font-bold rounded-md active:translate-x-1 duration-150 text-sm">
+                Export Report
+            </button>
+</div>
+<div class="p-2 pb-6 space-y-1">
+<a class="flex items-center gap-3 text-slate-400 px-4 py-2 hover:bg-[#0f1930] rounded-md transition-all font-['Inter'] text-xs font-medium" href="#">
+<span class="material-symbols-outlined text-sm">help</span> Support
+            </a>
+<a class="flex items-center gap-3 text-slate-400 px-4 py-2 hover:bg-[#0f1930] rounded-md transition-all font-['Inter'] text-xs font-medium" href="#">
+<span class="material-symbols-outlined text-sm">description</span> Documentation
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pl-64 pt-16 min-h-screen bg-surface">
+<div class="max-w-7xl mx-auto px-10 py-10">
+<!-- 1. Event Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-6">
+<div>
+<nav class="flex items-center gap-2 text-on-surface-variant text-xs mb-3 font-medium">
+<span class="hover:text-primary cursor-pointer transition-colors">Audit Logs</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface">Event 1248</span>
+</nav>
+<h1 class="font-headline text-4xl font-extrabold tracking-tight text-on-surface mb-2">PERMISSION_CHANGE</h1>
+<div class="flex items-center gap-4 text-on-surface-variant text-sm font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">fingerprint</span> EVT-1248-UX9</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> Oct 24, 2023 14:22:09 UTC</span>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-error-container/20 p-4 rounded-xl border border-error-container/30 ai-glow">
+<div class="flex flex-col items-end">
+<span class="text-error-dim font-bold text-3xl font-headline">89%</span>
+<span class="text-error font-label text-[10px] uppercase tracking-widest">Critical Risk</span>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-error-container flex items-center justify-center relative">
+<svg class="absolute inset-0 w-full h-full transform -rotate-90">
+<circle class="text-error-dim/20" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-error-dim" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="13.8" stroke-width="4"></circle>
+</svg>
+<span class="material-symbols-outlined text-error-dim" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<!-- Left Column: Context & Timeline -->
+<div class="col-span-12 lg:col-span-4 space-y-8">
+<!-- 2. Actor & Context -->
+<section class="bg-surface-container-low p-6 rounded-xl border-l-4 border-secondary-dim relative overflow-hidden">
+<h3 class="text-label text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-6">Security Principal</h3>
+<div class="flex items-center gap-4 mb-8">
+<img alt="Alex Rivera" class="w-14 h-14 rounded-full border-2 border-primary/20" data-alt="high-quality profile headshot of a young professional with dark hair and friendly expression against soft office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfTaJKCFOtmsam8hJMFk7UlXb02r2XCUDXR6SOKekLCknkZkPdYRL5-8cape_jztd7_c5rplafy6T7isR4RtRBi585YNxY83jJvGBj_ZuDB09tIdUuebF_MRkEL2-9TMZ7tQaj_Xm012vLcDh5sseKrjTstIsLlht-dvsLvsSwGHW9N4inS0bcPJ-eetQYOh_6Fw2JeWKlPYtVt1jSdNEb7hBGfhM7yWpMSqF4n2EkgXUZMyeCPIfAwQq9ZbDwQfoHe3kNh8Zptuw"/>
+<div>
+<p class="text-on-surface font-bold text-lg">Alex Rivera</p>
+<p class="text-on-surface-variant text-sm">Senior DevOps Engineer</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="text-on-surface-variant text-xs">IP Address</span>
+<span class="text-on-surface font-mono text-xs">192.158.1.38</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="text-on-surface-variant text-xs">Location</span>
+<span class="text-on-surface text-xs">Frankfurt, DE</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="text-on-surface-variant text-xs">Tenant</span>
+<span class="text-secondary font-bold text-xs uppercase">Nexus Cloud Labs</span>
+</div>
+</div>
+</section>
+<!-- 5. Related Activity Timeline -->
+<section class="bg-surface-container-low p-6 rounded-xl">
+<h3 class="text-label text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-8">Contextual Timeline</h3>
+<div class="space-y-8 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-outline-variant/20">
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface-container border-2 border-primary flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px] text-primary">login</span>
+</div>
+<p class="text-on-surface text-sm font-bold">User Login</p>
+<p class="text-on-surface-variant text-[11px]">14:15:02 - Success from usual IP</p>
+</div>
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface-container border-2 border-tertiary flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px] text-tertiary">vpn_key</span>
+</div>
+<p class="text-on-surface text-sm font-bold">MFA Bypass Attempt</p>
+<p class="text-on-surface-variant text-[11px]">14:18:45 - Suppressed by Policy</p>
+</div>
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-error-container border-2 border-error-dim flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px] text-white" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<p class="text-error font-bold text-sm">Critical Change</p>
+<p class="text-on-surface-variant text-[11px]">14:22:09 - Current Event</p>
+</div>
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface-container border-2 border-outline flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px] text-outline">logout</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium">Session Terminated</p>
+<p class="text-on-surface-variant text-[11px]">14:25:30 - Forced by Admin</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: AI Analysis & Data -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<!-- 3. AI Root Cause Analysis -->
+<section class="glass-panel p-8 rounded-xl border border-tertiary/20 relative ai-glow">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary text-3xl" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<h2 class="font-headline text-xl font-bold text-on-surface">Cognitive Summary Analysis</h2>
+</div>
+<div class="bg-surface-container-highest/50 p-6 rounded-lg border-l-4 border-tertiary mb-6">
+<p class="text-on-surface leading-relaxed font-body">
+                                The system detected a <span class="text-tertiary font-bold">Privilege Escalation</span> anomaly. Principal Alex Rivera modified global administrative permissions while originating from an <span class="text-error">unidentified IP (192.158.1.38)</span> located in Frankfurt, which deviates from their typical activity profile (San Francisco, US). This action was taken immediately following a suppressed MFA bypass attempt, indicating a potential session hijacking or account compromise.
+                            </p>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div class="p-4 bg-surface-container rounded-lg">
+<p class="text-[10px] uppercase text-on-surface-variant font-bold mb-1">Impact Radius</p>
+<p class="text-secondary font-bold">Global Tenant</p>
+</div>
+<div class="p-4 bg-surface-container rounded-lg">
+<p class="text-[10px] uppercase text-on-surface-variant font-bold mb-1">Confidence</p>
+<p class="text-secondary font-bold">High (96%)</p>
+</div>
+<div class="p-4 bg-surface-container rounded-lg">
+<p class="text-[10px] uppercase text-on-surface-variant font-bold mb-1">Intent</p>
+<p class="text-secondary font-bold">Malicious Path</p>
+</div>
+</div>
+</section>
+<!-- 4. Raw Payload -->
+<section class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/10">
+<div class="bg-surface-container-high px-6 py-3 flex justify-between items-center border-b border-outline-variant/20">
+<span class="text-xs font-mono text-on-surface-variant">request_payload.json</span>
+<button class="flex items-center gap-2 text-xs text-primary hover:bg-primary/10 px-2 py-1 rounded transition-all">
+<span class="material-symbols-outlined text-sm">content_copy</span> Copy JSON
+                            </button>
+</div>
+<div class="p-8 font-mono text-sm overflow-x-auto leading-loose bg-[#020617]">
+<pre><code>{
+  <span class="syntax-key">"event_id"</span>: <span class="syntax-string">"EVT-1248-UX9"</span>,
+  <span class="syntax-key">"action"</span>: <span class="syntax-string">"PERMISSON_CHANGE"</span>,
+  <span class="syntax-key">"actor"</span>: {
+    <span class="syntax-key">"id"</span>: <span class="syntax-string">"usr_9921"</span>,
+    <span class="syntax-key">"role"</span>: <span class="syntax-string">"DEVOPS_SR"</span>
+  },
+  <span class="syntax-key">"changes"</span>: [
+    {
+      <span class="syntax-key">"scope"</span>: <span class="syntax-string">"TENANT_ROOT"</span>,
+      <span class="syntax-key">"permission"</span>: <span class="syntax-string">"ADMIN_FULL_ACCESS"</span>,
+      <span class="syntax-key">"previous"</span>: <span class="syntax-string">"DENY"</span>,
+      <span class="syntax-key">"new"</span>: <span class="syntax-string">"ALLOW"</span>
+    }
+  ],
+  <span class="syntax-key">"metadata"</span>: {
+    <span class="syntax-key">"user_agent"</span>: <span class="syntax-string">"Mozilla/5.0 (X11; Linux x86_64)..."</span>,
+    <span class="syntax-key">"latency_ms"</span>: <span class="syntax-number">42</span>
+  }
+}</code></pre>
+</div>
+</section>
+</div>
+</div>
+<!-- 6. Action Bar (Floating Sticky) -->
+<div class="fixed bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-surface-container-highest/80 backdrop-blur-xl p-4 rounded-2xl shadow-2xl border border-outline-variant/20 z-50">
+<button class="px-6 py-3 bg-surface-bright text-on-surface hover:bg-surface-container-highest transition-all rounded-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined">check_circle</span>
+                    Mark as Resolved
+                </button>
+<button class="px-6 py-3 bg-error-container text-white hover:bg-error-dim transition-all rounded-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">security</span>
+                    Escalate to Security
+                </button>
+<div class="w-[1px] h-8 bg-outline-variant/30 mx-2"></div>
+<button class="p-3 text-on-surface-variant hover:text-on-surface transition-all material-symbols-outlined">download</button>
+<button class="p-3 text-on-surface-variant hover:text-on-surface transition-all material-symbols-outlined">share</button>
+</div>
+</div>
+</main>
+<!-- FAB Suppression Rule Applied: Not rendered on Detail view -->
+</body></html>

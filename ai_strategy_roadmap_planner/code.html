@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stratum PMS | Strategy &amp; Roadmap</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#560094",
+                        "surface-variant": "#192540",
+                        "inverse-on-surface": "#4d556b",
+                        "primary": "#a3a6ff",
+                        "tertiary-fixed-dim": "#c488ff",
+                        "background": "#060e20",
+                        "tertiary-dim": "#9c48ea",
+                        "on-surface-variant": "#a3aac4",
+                        "on-surface": "#dee5ff",
+                        "error-container": "#a70138",
+                        "surface": "#060e20",
+                        "on-secondary": "#4a5167",
+                        "on-primary-container": "#0a0081",
+                        "on-secondary-fixed": "#373f54",
+                        "on-secondary-container": "#c8d0ea",
+                        "error": "#ff6e84",
+                        "tertiary": "#c180ff",
+                        "primary-fixed": "#9396ff",
+                        "on-error": "#490013",
+                        "secondary-dim": "#ccd4ee",
+                        "primary-dim": "#6063ee",
+                        "surface-dim": "#060e20",
+                        "secondary-fixed": "#dae2fd",
+                        "secondary": "#dae2fd",
+                        "primary-fixed-dim": "#8387ff",
+                        "on-tertiary-container": "#000000",
+                        "secondary-container": "#3f465c",
+                        "secondary-fixed-dim": "#ccd4ee",
+                        "tertiary-fixed": "#ce9bff",
+                        "error-dim": "#d73357",
+                        "outline-variant": "#40485d",
+                        "inverse-primary": "#494bd7",
+                        "on-tertiary": "#33005b",
+                        "outline": "#6d758c",
+                        "on-primary": "#0f00a4",
+                        "surface-container": "#0f1930",
+                        "on-primary-fixed": "#000000",
+                        "surface-container-high": "#141f38",
+                        "inverse-surface": "#faf8ff",
+                        "surface-tint": "#a3a6ff",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "on-tertiary-fixed": "#270048",
+                        "on-error-container": "#ffb2b9",
+                        "on-secondary-fixed-variant": "#535b71",
+                        "surface-container-highest": "#192540",
+                        "tertiary-container": "#af5cfe",
+                        "on-background": "#dee5ff",
+                        "surface-bright": "#1f2b49",
+                        "surface-container-lowest": "#000000",
+                        "primary-container": "#9396ff",
+                        "surface-container-low": "#091328"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(25, 37, 64, 0.4);
+            backdrop-filter: blur(12px);
+        }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #060e20; }
+        ::-webkit-scrollbar-thumb { background: #40485d; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a3a6ff; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- Sidebar Navigation -->
+<aside class="h-screen w-64 left-0 top-0 fixed flex flex-col h-full py-6 px-4 gap-4 bg-[#091328] dark:bg-[#091328] shadow-2xl shadow-black/40 z-50">
+<div class="flex items-center gap-3 px-2 mb-6">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-xl" data-icon="hub">hub</span>
+</div>
+<div>
+<h2 class="text-lg font-black text-[#a3a6ff] font-headline tracking-tighter">Global Enterprise</h2>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">AI Strategy Layer</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-[#0f1930] text-[#a3a6ff] border-l-4 border-[#a3a6ff] rounded-r-lg font-['Manrope'] text-sm font-medium transition-transform active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+                Strategy
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#40485d] hover:bg-[#192540] hover:text-[#a3a6ff] font-['Manrope'] text-sm font-medium transition-all active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="timeline">timeline</span>
+                Roadmap
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#40485d] hover:bg-[#192540] hover:text-[#a3a6ff] font-['Manrope'] text-sm font-medium transition-all active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+                Analytics
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#40485d] hover:bg-[#192540] hover:text-[#a3a6ff] font-['Manrope'] text-sm font-medium transition-all active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="model_training">model_training</span>
+                Simulations
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#40485d] hover:bg-[#192540] hover:text-[#a3a6ff] font-['Manrope'] text-sm font-medium transition-all active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+                Reports
+            </a>
+</nav>
+<div class="mt-auto pt-6 flex flex-col gap-1">
+<button class="mb-4 py-3 px-4 bg-primary text-on-primary font-bold rounded-xl flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                New Simulation
+            </button>
+<a class="flex items-center gap-3 px-4 py-2 text-[#40485d] hover:text-[#a3a6ff] text-sm font-['Manrope'] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                Help
+            </a>
+<a class="flex items-center gap-3 px-4 py-2 text-[#40485d] hover:text-[#a3a6ff] text-sm font-['Manrope'] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen flex flex-col relative pb-32">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky z-40 bg-[#060e20] dark:bg-[#060e20] flex justify-between items-center px-8 h-16 w-full">
+<div class="flex items-center gap-6">
+<span class="text-xl font-bold tracking-tighter text-[#a3a6ff] font-['Manrope']">Stratum PMS</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-[#a3a6ff] font-bold border-b-2 border-[#a3a6ff] pb-1 font-['Manrope'] tracking-tight" href="#">Overview</a>
+<a class="text-[#40485d] hover:text-[#a3a6ff] transition-colors font-['Manrope'] tracking-tight" href="#">Planning</a>
+<a class="text-[#40485d] hover:text-[#a3a6ff] transition-colors font-['Manrope'] tracking-tight" href="#">Resources</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-surface-container-highest px-4 py-1.5 rounded-full flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface text-sm w-48" placeholder="Search strategy..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:bg-[#192540] rounded-md transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-[#192540] rounded-md transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<img alt="Executive User Profile" class="w-8 h-8 rounded-full border border-outline-variant ml-2" data-alt="Close-up portrait of a professional male executive in a dark suit with a sharp, modern office background in soft focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs1DSKEVDUqMUzSDw9ebxvl2KN3eqjomUY1ua0Yo5V1uK3zkF7VTiY_xHyQ_xmcWZ31j26uJuswjB-1sBLtYEhWi9bAKXrNuB3aPDA4aT1e45e9iY6YDZbHohcl4XW0--FHZ0X5KtWAx28zH0BX5feUuLWh7RqjCnkeZdqL2DMWTVoFrJ_DT23X2B5N_PQwcTqaHVtdw5wvzL5QsMbRn3OY-XxIXMeUzDFjHs5PLM2AeRhnhKQdU8ZB2-oxzninU-2JHSW7_IOlSA"/>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="p-8 space-y-10">
+<!-- Strategic Summary Bento -->
+<section class="grid grid-cols-12 gap-6">
+<div class="col-span-12 md:col-span-8 bg-surface-container-low p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-9xl text-primary" data-icon="monitoring">monitoring</span>
+</div>
+<h3 class="text-on-surface-variant text-xs font-bold uppercase tracking-widest mb-4">Executive Strategic Summary</h3>
+<div class="grid grid-cols-3 gap-8 relative z-10">
+<div>
+<p class="text-label-sm text-outline mb-1">AI Predicted Revenue (FY25)</p>
+<p class="text-3xl font-headline font-extrabold text-primary">$42.8M</p>
+<div class="flex items-center gap-1 text-xs text-tertiary mt-2">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+14.2% vs baseline</span>
+</div>
+</div>
+<div>
+<p class="text-label-sm text-outline mb-1">Projected Cost Path</p>
+<p class="text-3xl font-headline font-extrabold text-on-surface">$12.4M</p>
+<div class="flex items-center gap-1 text-xs text-error mt-2">
+<span class="material-symbols-outlined text-sm" data-icon="trending_down">trending_down</span>
+<span>-4% Optimization potential</span>
+</div>
+</div>
+<div>
+<p class="text-label-sm text-outline mb-1">Efficiency Quotient</p>
+<div class="flex items-end gap-2">
+<p class="text-3xl font-headline font-extrabold text-tertiary">88</p>
+<span class="text-on-surface-variant text-xs mb-1.5">/ 100</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 mt-3 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-tertiary h-full w-[88%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar OKR Tracking -->
+<div class="col-span-12 md:col-span-4 bg-surface-container p-6 rounded-xl">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-on-surface-variant text-xs font-bold uppercase tracking-widest">Global OKRs</h3>
+<span class="material-symbols-outlined text-primary" data-icon="track_changes">track_changes</span>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<div class="flex justify-between text-xs">
+<span class="text-on-surface">Market Penetration</span>
+<span class="text-primary font-bold">72%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full">
+<div class="bg-primary h-full w-[72%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs">
+<span class="text-on-surface">AI Feature Adoption</span>
+<span class="text-tertiary font-bold">45%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full">
+<div class="bg-tertiary h-full w-[45%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs">
+<span class="text-on-surface">Infrastructure Scalability</span>
+<span class="text-secondary font-bold">91%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full">
+<div class="bg-secondary h-full w-[91%]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Roadmap Simulation Engine -->
+<section class="space-y-6">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-headline font-extrabold tracking-tight">Roadmap Simulation</h2>
+<p class="text-on-surface-variant text-sm mt-1">Interactive timeline with real-time resource conflict prediction.</p>
+</div>
+<div class="flex gap-3">
+<button class="bg-surface-container-highest text-on-surface px-4 py-2 rounded-lg text-sm border border-outline-variant hover:bg-surface-bright transition-all">
+                            Export PDF
+                        </button>
+<button class="bg-tertiary text-on-tertiary px-4 py-2 rounded-lg text-sm font-bold shadow-lg shadow-tertiary/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome">auto_awesome</span>
+                            Optimize Plan
+                        </button>
+</div>
+</div>
+<!-- Simulation Timeline -->
+<div class="bg-surface-container-low rounded-xl p-1 overflow-hidden">
+<!-- Timeline Header -->
+<div class="grid grid-cols-12 bg-surface-container-high py-3 px-6 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant border-b border-outline-variant/10">
+<div class="col-span-3">Project Stream</div>
+<div class="col-span-3 text-center">Q1 2025</div>
+<div class="col-span-3 text-center">Q2 2025</div>
+<div class="col-span-3 text-center">Q3 2025</div>
+</div>
+<!-- Timeline Rows -->
+<div class="divide-y divide-outline-variant/10">
+<!-- Row 1 -->
+<div class="grid grid-cols-12 px-6 py-6 items-center group hover:bg-surface-container/50 transition-all">
+<div class="col-span-3 flex flex-col">
+<span class="text-sm font-bold text-on-surface">Neural Engine Core</span>
+<span class="text-[10px] text-outline">Resource: 12 Eng / 4 Data Sc</span>
+</div>
+<div class="col-span-6">
+<div class="relative h-10 bg-primary/10 rounded-lg border border-primary/30 flex items-center px-4 cursor-grab active:cursor-grabbing group-hover:shadow-[0_0_15px_rgba(163,166,255,0.2)]">
+<span class="text-xs font-bold text-primary">Phased Model Deployment</span>
+<!-- Risk Indicator -->
+<div class="absolute -right-2 -top-2 w-6 h-6 bg-error rounded-full flex items-center justify-center shadow-lg border-2 border-surface-container-low animate-pulse">
+<span class="material-symbols-outlined text-[14px] text-on-error" data-icon="warning">warning</span>
+</div>
+</div>
+</div>
+<div class="col-span-3 pl-8">
+<div class="flex items-center gap-2">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border border-background" data-alt="Female project manager professional headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPV5p_nhmiMEIV2LbI2oxCsyFOG2a8Chl9XOFiGPyF9JaPa_7PJsULv9l9gLC_ttW-9DxGbQ_rZP1fxafIT1UfXoyxdjGP9y73ZSblLaKO4c4Ea32fvTdXfDnozrV_yudDIFb35RcgPuV6hkjcCDa_aR8S1GLmZ5k549JEY7fCUppZ0Fa85rUNSsnqha4syaWcbFecB-N-bEgwxPIhkv3IH5eUxiKEe8TXUrKMUtzzEvj57g-rFZPL0qlGddIPxtPMXLTv6y1_tnw"/>
+<img class="w-6 h-6 rounded-full border border-background" data-alt="Male engineer profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY-f_3icLxnp59p_q46YKs8dEdDxpYa0IAkzDfenI2ZZ26ytiRTJ9-fwvl3LovzHLuy7VSgUQvfcLwCQJZnd_Kf5cUyZs4JAuIidaOWH62F2Wi2V8Rp2f2DpUSGGNhYfdf3rSaUxKa26JnYkcgiK804iuitvIQ71kKtLKiKo7RPFLaUkzcxNXgGG3_mgt1ki4-SuVV4yidRWFOZLnox4r6Zho9Kza2l6WBePT5vNe1GGDES6ZyFNq4rSQHiTWJNWX5y2tV1ioIyAw"/>
+<div class="w-6 h-6 rounded-full bg-surface-container-highest border border-background flex items-center justify-center text-[8px]">+8</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-12 px-6 py-6 items-center group hover:bg-surface-container/50 transition-all">
+<div class="col-span-3 flex flex-col">
+<span class="text-sm font-bold text-on-surface">API Gateway 3.0</span>
+<span class="text-[10px] text-outline">Resource: 6 Eng / 2 DevOps</span>
+</div>
+<div class="col-span-2"></div>
+<div class="col-span-5">
+<div class="h-10 bg-tertiary/10 rounded-lg border border-tertiary/30 flex items-center px-4 cursor-grab group-hover:shadow-[0_0_15px_rgba(193,128,255,0.2)]">
+<span class="text-xs font-bold text-tertiary">Edge Integration Sweep</span>
+</div>
+</div>
+<div class="col-span-2 pl-8 flex items-center justify-end">
+<span class="text-[10px] text-on-surface-variant italic">On Track</span>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="grid grid-cols-12 px-6 py-6 items-center group hover:bg-surface-container/50 transition-all">
+<div class="col-span-3 flex flex-col">
+<span class="text-sm font-bold text-on-surface">UX Re-Architecting</span>
+<span class="text-[10px] text-outline">Resource: 4 Design / 8 Eng</span>
+</div>
+<div class="col-span-4"></div>
+<div class="col-span-5">
+<div class="relative h-10 bg-secondary-container/30 rounded-lg border border-outline-variant flex items-center px-4 cursor-grab group-hover:bg-secondary-container/50">
+<span class="text-xs font-bold text-on-surface-variant">Cognitive UI Framework</span>
+<!-- Resource Contention Marker -->
+<div class="absolute left-1/2 -top-2 flex items-center gap-1 bg-surface-bright border border-error px-2 py-0.5 rounded shadow-xl">
+<span class="material-symbols-outlined text-[10px] text-error" data-icon="person_off">person_off</span>
+<span class="text-[8px] font-bold text-error">DESIGN BURNOUT RISK</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Predictive Risk Dashboard (Bottom Grid) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container p-5 rounded-xl border-l-4 border-error">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-error" data-icon="bolt">bolt</span>
+<h4 class="text-sm font-bold text-on-surface">Resource Contention</h4>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">Overlap in Q2 between <span class="text-on-surface font-semibold">Project Nexus</span> and <span class="text-on-surface font-semibold">API Gate</span> exceeds backend capacity by <span class="text-error font-bold">18%</span>.</p>
+</div>
+<div class="bg-surface-container p-5 rounded-xl border-l-4 border-tertiary">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="psychology">psychology</span>
+<h4 class="text-sm font-bold text-on-surface">Predicted Burnout</h4>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">Design team has sustained <span class="text-on-surface font-semibold">120% velocity</span> for 6 weeks. High probability of departure for <span class="text-tertiary font-bold">3 key leads</span> in Q3.</p>
+</div>
+<div class="bg-surface-container p-5 rounded-xl border-l-4 border-primary">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="stars">stars</span>
+<h4 class="text-sm font-bold text-on-surface">Strategic Alignment</h4>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">Current roadmap simulation achieves <span class="text-primary font-bold">94%</span> of Q4 revenue targets with optimized resource allocation.</p>
+</div>
+</section>
+</div>
+<!-- Global Strategy Console (Fixed Bottom Bar) -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-full max-w-4xl px-4 z-50">
+<div class="glass-panel border border-outline-variant/30 rounded-2xl shadow-2xl p-2 flex items-center gap-4">
+<div class="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-tertiary-container shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="auto_videocam" style="font-variation-settings: 'FILL' 1;">auto_videocam</span>
+</div>
+<div class="flex-1 flex items-center gap-3 px-2">
+<span class="text-primary font-bold text-sm shrink-0">Ask Strategy AI:</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface text-sm w-full placeholder:text-outline/50" placeholder="e.g. 'Maximize ROI by Q4 under current staffing'..." type="text"/>
+</div>
+<div class="flex items-center gap-1 pr-2">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="mic">mic</span>
+</button>
+<button class="bg-surface-bright hover:bg-surface-container-highest text-on-surface px-6 py-2 rounded-xl text-xs font-black uppercase tracking-widest transition-all">
+                        Execute
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

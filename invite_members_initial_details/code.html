@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Invite Team Members - Lumina Nexus</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#0f00a4",
+              "surface-container-lowest": "#000000",
+              "surface-variant": "#192540",
+              "secondary": "#dae2fd",
+              "primary-container": "#9396ff",
+              "on-surface": "#dee5ff",
+              "on-error": "#490013",
+              "tertiary-fixed": "#ce9bff",
+              "on-tertiary": "#33005b",
+              "on-surface-variant": "#a3aac4",
+              "on-secondary-fixed": "#373f54",
+              "surface-container-highest": "#192540",
+              "surface-tint": "#a3a6ff",
+              "on-secondary-container": "#c8d0ea",
+              "error-dim": "#d73357",
+              "inverse-on-surface": "#4d556b",
+              "error-container": "#a70138",
+              "surface-bright": "#1f2b49",
+              "surface-container-high": "#141f38",
+              "primary-fixed-dim": "#8387ff",
+              "background": "#060e20",
+              "tertiary": "#c180ff",
+              "error": "#ff6e84",
+              "on-background": "#dee5ff",
+              "on-tertiary-container": "#000000",
+              "on-primary-container": "#0a0081",
+              "secondary-fixed": "#dae2fd",
+              "primary": "#a3a6ff",
+              "on-tertiary-fixed": "#270048",
+              "inverse-primary": "#494bd7",
+              "surface": "#060e20",
+              "inverse-surface": "#faf8ff",
+              "primary-fixed": "#9396ff",
+              "secondary-dim": "#ccd4ee",
+              "on-error-container": "#ffb2b9",
+              "surface-container": "#0f1930",
+              "secondary-container": "#3f465c",
+              "outline": "#6d758c",
+              "on-primary-fixed-variant": "#0e009d",
+              "surface-container-low": "#091328",
+              "secondary-fixed-dim": "#ccd4ee",
+              "primary-dim": "#6063ee",
+              "outline-variant": "#40485d",
+              "on-tertiary-fixed-variant": "#560094",
+              "on-primary-fixed": "#000000",
+              "on-secondary": "#4a5167",
+              "tertiary-container": "#af5cfe",
+              "tertiary-fixed-dim": "#c488ff",
+              "tertiary-dim": "#9c48ea",
+              "on-secondary-fixed-variant": "#535b71",
+              "surface-dim": "#060e20"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(25, 37, 64, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(163, 170, 196, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen flex flex-col">
+<!-- Suppressing Global Navigation for Focused Transactional Onboarding Flow -->
+<main class="flex-grow flex flex-col items-center justify-center p-6 md:p-12">
+<div class="w-full max-w-3xl">
+<!-- Branding Header (Anchor) -->
+<div class="mb-12 text-center">
+<h1 class="font-headline font-extrabold text-3xl md:text-4xl tracking-tighter text-white mb-2">
+                    Lumina Nexus
+                </h1>
+<p class="text-on-surface-variant font-medium tracking-tight">Onboarding: Constructing your workspace intelligence</p>
+</div>
+<!-- Stepper Component -->
+<nav class="flex items-center justify-between mb-16 relative">
+<!-- Line background -->
+<div class="absolute top-1/2 left-0 w-full h-px bg-surface-container-highest -z-10"></div>
+<!-- Step 1: Active -->
+<div class="flex flex-col items-center gap-3 bg-background px-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold shadow-[0_0_20px_rgba(163,166,255,0.3)]">
+                        1
+                    </div>
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Invite Details</span>
+</div>
+<!-- Step 2: Inactive -->
+<div class="flex flex-col items-center gap-3 bg-background px-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center text-on-surface-variant font-bold">
+                        2
+                    </div>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Assign Roles</span>
+</div>
+<!-- Step 3: Inactive -->
+<div class="flex flex-col items-center gap-3 bg-background px-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center text-on-surface-variant font-bold">
+                        3
+                    </div>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Review &amp; Send</span>
+</div>
+</nav>
+<!-- Central Focused Card -->
+<section class="glass-panel p-8 md:p-12 rounded-xl shadow-2xl shadow-black/60 relative overflow-hidden">
+<!-- Subtle AI Glow Effect -->
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-tertiary/10 blur-[80px] rounded-full"></div>
+<div class="relative z-10">
+<header class="mb-10">
+<h2 class="font-headline text-2xl font-bold text-white mb-2">Assemble Your Core Team</h2>
+<p class="text-on-surface-variant">Invite the architects who will help define your project flow.</p>
+</header>
+<form class="space-y-8">
+<!-- Bulk Email Field -->
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant ml-1" for="emails">Team Member Emails</label>
+<div class="relative">
+<textarea class="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/50 transition-all resize-none" id="emails" placeholder="Enter emails separated by commas... (e.g. sarah@nexus.ai, tech-leads@nexus.ai)" rows="4"></textarea>
+<div class="absolute bottom-3 right-3 flex items-center gap-2">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-surface-bright text-xs font-semibold text-primary hover:bg-primary/10 transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">upload_file</span>
+                                        Upload CSV
+                                    </button>
+</div>
+</div>
+<p class="text-[11px] text-outline mt-2 italic px-1">Tip: You can paste a list from any spreadsheet or text file.</p>
+</div>
+<!-- Workspace Selection -->
+<div class="space-y-4">
+<label class="block text-sm font-semibold text-on-surface-variant ml-1">Initial Workspace Assignment</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Option 1 (Selected) -->
+<div class="group relative cursor-pointer">
+<input checked="" class="peer hidden" id="ws-global" name="workspace" type="radio"/>
+<label class="flex items-center p-4 rounded-lg bg-surface-container border border-outline-variant peer-checked:border-primary peer-checked:bg-primary/5 transition-all" for="ws-global">
+<div class="w-10 h-10 rounded bg-secondary-container flex items-center justify-center mr-4">
+<span class="material-symbols-outlined text-secondary">hub</span>
+</div>
+<div class="flex-grow">
+<div class="text-sm font-bold text-white">Global Workspace</div>
+<div class="text-xs text-on-surface-variant">Default for all new members</div>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center ml-2">
+<div class="w-2 h-2 rounded-full bg-on-primary opacity-0 peer-checked:opacity-100"></div>
+</div>
+</label>
+</div>
+<!-- Option 2 -->
+<div class="group relative cursor-pointer">
+<input class="peer hidden" id="ws-sandbox" name="workspace" type="radio"/>
+<label class="flex items-center p-4 rounded-lg bg-surface-container border border-outline-variant peer-checked:border-primary peer-checked:bg-primary/5 transition-all" for="ws-sandbox">
+<div class="w-10 h-10 rounded bg-tertiary-container/20 flex items-center justify-center mr-4">
+<span class="material-symbols-outlined text-tertiary">science</span>
+</div>
+<div class="flex-grow">
+<div class="text-sm font-bold text-white">Innovation Sandbox</div>
+<div class="text-xs text-on-surface-variant">Restricted testing environment</div>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-6">
+<button class="text-on-surface-variant hover:text-white transition-colors text-sm font-semibold flex items-center gap-2" type="button">
+<span class="material-symbols-outlined">arrow_back</span>
+                                Skip for now
+                            </button>
+<button class="w-full md:w-auto px-8 py-4 rounded-lg bg-primary text-on-primary font-extrabold tracking-tight flex items-center justify-center gap-3 shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all" type="submit">
+                                Continue to Roles
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</section>
+<!-- Footer Assistance -->
+<footer class="mt-12 text-center">
+<p class="text-on-surface-variant text-sm">
+                    Having trouble? <a class="text-primary hover:underline font-semibold" href="#">View documentation</a> or <a class="text-primary hover:underline font-semibold" href="#">contact Nexus support</a>.
+                </p>
+<div class="mt-8 flex justify-center gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+<img alt="Security badge" class="h-6" data-alt="Monochrome security compliance badge for ISO 27001 on a dark professional background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB71KaHs-G6YjuKeQ9gQC3BHI6Vli1Yq_tiO2k3HyP0DMsixjeZiPosro9kmXIfJ_nJ8BgLzZXcvZE8AdNpBJK1JhGRad3j0bLwF3bcc2LmVEC-_bNIlzguJs9TsCcvmCSkuuKmh3hcvixABMimfEuV1l7Ae87Fpdki_yM4-LwVptW_ixHJvXZ4OXoxOCKDltV_rXEB-fNhzHKb5ysffXe3VmcRY7-g30qVAEWaWb0jxz95wfzYLqxL8DWxUOVTqH433LxMPHrSOhM"/>
+<img alt="Security badge" class="h-6" data-alt="Monochrome SOC2 Type II compliance badge for data security on a dark professional background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYehKw0oBp2g-RwRvAbAQXoekigSFDGUS8Rih9vMBRoi0XIQcMUy7P7r87v5a9TikCNZSIlW37GRmSp1w8hSFoqIH4qorn6DfVRvFR-xu1jWVL0uCg8DAD27b9TBD0bbi8VBpsMOaFSKVBk0rigx0o7ULEYGy7xGl9lGwYqk9b3ZOSfj_Rj1s9tGWwYm594-D37GyKougxyjxf0J3ioSRG28Y0axkj0mkXQYx8_OqWm0mROqdLRHMYjiCQ3d4uncozk-Lp2bg-nUE"/>
+</div>
+</footer>
+</div>
+</main>
+<!-- Contextual Decorative Elements -->
+<div class="fixed top-0 left-0 w-full h-full -z-20 pointer-events-none overflow-hidden">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-tertiary/5 blur-[100px] rounded-full"></div>
+</div>
+</body></html>

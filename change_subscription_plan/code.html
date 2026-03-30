@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Change Plan | Stratum PMS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#141f38",
+              "secondary-container": "#3f465c",
+              "on-error": "#490013",
+              "background": "#060e20",
+              "surface": "#060e20",
+              "surface-dim": "#060e20",
+              "secondary-fixed-dim": "#ccd4ee",
+              "on-tertiary-fixed": "#270048",
+              "on-background": "#dee5ff",
+              "on-secondary": "#4a5167",
+              "secondary-fixed": "#dae2fd",
+              "surface-container-highest": "#192540",
+              "primary": "#a3a6ff",
+              "tertiary-fixed": "#ce9bff",
+              "on-tertiary": "#33005b",
+              "on-tertiary-container": "#000000",
+              "inverse-primary": "#494bd7",
+              "surface-variant": "#192540",
+              "on-surface-variant": "#a3aac4",
+              "secondary": "#dae2fd",
+              "primary-fixed": "#9396ff",
+              "inverse-on-surface": "#4d556b",
+              "on-surface": "#dee5ff",
+              "error-dim": "#d73357",
+              "on-primary-fixed": "#000000",
+              "on-secondary-fixed-variant": "#535b71",
+              "outline": "#6d758c",
+              "surface-container": "#0f1930",
+              "primary-dim": "#6063ee",
+              "error": "#ff6e84",
+              "surface-tint": "#a3a6ff",
+              "surface-container-low": "#091328",
+              "on-primary-container": "#0a0081",
+              "outline-variant": "#40485d",
+              "primary-container": "#9396ff",
+              "error-container": "#a70138",
+              "primary-fixed-dim": "#8387ff",
+              "inverse-surface": "#faf8ff",
+              "tertiary-fixed-dim": "#c488ff",
+              "secondary-dim": "#ccd4ee",
+              "on-tertiary-fixed-variant": "#560094",
+              "tertiary-container": "#af5cfe",
+              "tertiary": "#c180ff",
+              "on-primary-fixed-variant": "#0e009d",
+              "surface-bright": "#1f2b49",
+              "on-secondary-fixed": "#373f54",
+              "on-primary": "#0f00a4",
+              "surface-container-lowest": "#000000",
+              "on-secondary-container": "#c8d0ea",
+              "on-error-container": "#ffb2b9",
+              "tertiary-dim": "#9c48ea"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(25, 37, 64, 0.4);
+            backdrop-filter: blur(12px);
+        }
+        .ai-glow {
+            box-shadow: 0 0 20px rgba(193, 128, 255, 0.15);
+        }
+        body {
+            background-color: #060e20;
+            color: #dee5ff;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #060e20;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #192540;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 z-40 bg-[#060e20] flex flex-col py-6">
+<div class="px-6 mb-10">
+<h1 class="text-lg font-black text-indigo-500 font-headline uppercase tracking-tighter">Enterprise AI</h1>
+<p class="text-xs text-on-surface-variant font-medium">Multi-tenant Layer</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-[#0f1930] hover:text-indigo-200 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-manrope text-sm font-medium">Dashboard</span>
+</a>
+<a class="text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-[#0f1930] hover:text-indigo-200 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-manrope text-sm font-medium">Projects</span>
+</a>
+<a class="text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-[#0f1930] hover:text-indigo-200 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-manrope text-sm font-medium">Team</span>
+</a>
+<a class="text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-[#0f1930] hover:text-indigo-200 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-manrope text-sm font-medium">Analytics</span>
+</a>
+<a class="text-white border-l-2 border-indigo-500 bg-[#0f1930] px-4 py-3 flex items-center gap-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-manrope text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-1 border-t border-outline-variant/10 pt-4">
+<a class="text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-[#0f1930] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="text-sm">Support</span>
+</a>
+<a class="text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-[#0f1930] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="text-sm">Help</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen bg-background">
+<!-- TopAppBar -->
+<header class="w-full h-16 sticky top-0 z-50 bg-[#091328] shadow-2xl shadow-black/40 flex items-center justify-between px-8">
+<div class="flex items-center gap-4">
+<div class="text-xl font-bold text-white tracking-widest uppercase font-headline">Stratum PMS</div>
+<div class="h-4 w-px bg-outline-variant/30 mx-2"></div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm font-medium">
+<span>Billing</span>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<span class="text-indigo-400">Subscription Plans</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="text-slate-400 hover:text-indigo-400 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-slate-400 hover:text-indigo-400 transition-colors">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</button>
+</div>
+<img alt="User avatar" class="w-8 h-8 rounded-full border border-outline-variant" data-alt="Close up portrait of a professional man with modern glasses in a dark office environment with blue ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD40TZ6DPbm8betn7rBcbUVjNerMWJy_cGzh4ie07oAvGQAdmliDRPrv8K4QtJ6bL55Q4a4uQ98rWmkycjrLb7xL4UnD2qJIOI4FqyxalsZSeExJzNmp4KgFn-LcmHSHi8irAjz8cqZ9d2CdlJAq3Pv8303HflCSmC9GpWNYkTuw91oyhfKM_ivDLPOcuxUbc0z2Y4mRIgLDgoa8PUVAAhncif30V1UkAd5iWf-WUNG45AWJ0nUaqIPSIj6HTTXe4qcZbTeKCpuv4A"/>
+</div>
+</header>
+<div class="p-10 max-w-7xl mx-auto space-y-12">
+<!-- Hero & Current Status -->
+<section class="space-y-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="text-4xl font-extrabold font-headline tracking-tight text-white mb-2">Architect Your Growth</h2>
+<p class="text-on-surface-variant max-w-2xl leading-relaxed">Adjust your cognitive layer capacity. Scale resources across multi-tenant clusters with real-time AI-driven optimization.</p>
+</div>
+<div class="bg-surface-container-high px-6 py-4 rounded-xl border-l-4 border-tertiary ai-glow">
+<div class="text-xs font-bold uppercase tracking-widest text-tertiary mb-1">Current Plan</div>
+<div class="flex items-center gap-3">
+<span class="text-2xl font-black font-headline text-white">Enterprise AI Tier</span>
+<span class="bg-tertiary/20 text-tertiary-fixed text-[10px] px-2 py-0.5 rounded font-bold uppercase">Active</span>
+</div>
+</div>
+</div>
+<!-- Billing Toggle -->
+<div class="flex justify-center pt-4">
+<div class="bg-surface-container p-1 rounded-lg flex items-center">
+<button class="px-6 py-2 text-sm font-semibold text-on-surface-variant hover:text-white transition-colors">Monthly</button>
+<button class="px-6 py-2 text-sm font-semibold bg-primary text-on-primary rounded-md shadow-lg shadow-primary/20">
+                            Annual <span class="ml-1 text-[10px] bg-on-primary/20 px-1.5 py-0.5 rounded">Save 24%</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Plan Cards Area -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+<!-- Starter AI -->
+<div class="glass-card p-8 rounded-2xl flex flex-col border border-outline-variant/10 hover:border-outline-variant/30 transition-all group">
+<div class="mb-8">
+<div class="text-on-surface-variant font-bold text-sm tracking-widest uppercase mb-2">Starter AI</div>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-black text-white">$149</span>
+<span class="text-on-surface-variant text-sm">/mo</span>
+</div>
+<p class="mt-4 text-sm text-on-surface-variant">Essential intelligence for boutiques and growing teams.</p>
+</div>
+<ul class="space-y-4 mb-10 flex-1">
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+<span>Up to 10 Active Projects</span>
+</li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+<span>5 Team Members</span>
+</li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+<span>100 AI Compute Hours</span>
+</li>
+<li class="flex items-center gap-3 text-sm text-on-surface-variant/50">
+<span class="material-symbols-outlined text-lg" data-icon="block">block</span>
+<span class="line-through">Custom Training Models</span>
+</li>
+</ul>
+<button class="w-full py-4 rounded-lg border border-primary/40 text-primary font-bold hover:bg-primary/5 active:scale-95 transition-all uppercase tracking-widest text-xs">Downgrade</button>
+</div>
+<!-- Pro AI (Popular) -->
+<div class="bg-surface-container-high p-8 rounded-2xl flex flex-col border-2 border-primary relative shadow-2xl shadow-primary/10 scale-105 z-10">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-tighter">Most Popular Choice</div>
+<div class="mb-8">
+<div class="text-primary font-bold text-sm tracking-widest uppercase mb-2">Pro AI</div>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-black text-white">$499</span>
+<span class="text-on-surface-variant text-sm">/mo</span>
+</div>
+<p class="mt-4 text-sm text-on-surface">The architect's standard. Deep learning for multi-tenant scaling.</p>
+</div>
+<ul class="space-y-4 mb-10 flex-1">
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-semibold">Unlimited Active Projects</span>
+</li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>25 Team Members</span>
+</li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>500 AI Compute Hours</span>
+</li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Predictive Analytics Engine</span>
+</li>
+</ul>
+<button class="w-full py-4 rounded-lg bg-primary text-on-primary font-black hover:bg-primary-fixed active:scale-95 transition-all uppercase tracking-widest text-xs shadow-lg shadow-primary/30">Select Plan</button>
+</div>
+<!-- Enterprise AI -->
+<div class="glass-card p-8 rounded-2xl flex flex-col border border-tertiary/40 ai-glow">
+<div class="mb-8">
+<div class="text-tertiary font-bold text-sm tracking-widest uppercase mb-2">Enterprise AI</div>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-black text-white">Custom</span>
+</div>
+<p class="mt-4 text-sm text-on-surface-variant">Global scale infrastructure with dedicated hardware allocation.</p>
+</div>
+<ul class="space-y-4 mb-10 flex-1">
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-tertiary text-lg" data-icon="verified">verified</span>
+<span>Custom Node Placement</span>
+</li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-tertiary text-lg" data-icon="verified">verified</span>
+<span>Unlimited Members</span>
+</li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-tertiary text-lg" data-icon="verified">verified</span>
+<span>Priority AI Queue</span>
+</li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-tertiary text-lg" data-icon="verified">verified</span>
+<span>SLA Guarantee (99.99%)</span>
+</li>
+</ul>
+<button class="w-full py-4 rounded-lg bg-surface-container-highest text-white font-bold cursor-default uppercase tracking-widest text-xs text-center border border-outline-variant/20">Current Plan</button>
+</div>
+</section>
+<!-- Comparison Table (TanStack Pattern) -->
+<section class="space-y-8 pb-20">
+<div class="flex items-center justify-between">
+<h3 class="text-2xl font-bold font-headline">Feature Comparison</h3>
+<div class="bg-surface-container-low border border-outline-variant/10 rounded-lg flex items-center p-1">
+<span class="material-symbols-outlined p-2 text-primary" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface placeholder:text-on-surface-variant/40 w-48" placeholder="Filter features..." type="text"/>
+</div>
+</div>
+<div class="w-full overflow-hidden rounded-xl border border-outline-variant/10">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/10">
+<th class="p-6 text-xs font-black uppercase tracking-widest text-on-surface-variant">Core Features</th>
+<th class="p-6 text-xs font-black uppercase tracking-widest text-on-surface-variant text-center">Starter</th>
+<th class="p-6 text-xs font-black uppercase tracking-widest text-primary text-center">Pro AI</th>
+<th class="p-6 text-xs font-black uppercase tracking-widest text-tertiary text-center">Enterprise</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="p-6">
+<div class="font-semibold text-sm">Active Projects</div>
+<div class="text-[10px] text-on-surface-variant">Maximum concurrent live environments</div>
+</td>
+<td class="p-6 text-center text-sm font-medium">10</td>
+<td class="p-6 text-center text-sm font-bold text-primary">Unlimited</td>
+<td class="p-6 text-center text-sm font-medium">Unlimited</td>
+</tr>
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="p-6">
+<div class="font-semibold text-sm">Team Members</div>
+<div class="text-[10px] text-on-surface-variant">User seats with full edit access</div>
+</td>
+<td class="p-6 text-center text-sm font-medium">5</td>
+<td class="p-6 text-center text-sm font-medium">25</td>
+<td class="p-6 text-center text-sm font-bold text-tertiary">Unlimited</td>
+</tr>
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="p-6">
+<div class="font-semibold text-sm">AI Compute Hours/Mo</div>
+<div class="text-[10px] text-on-surface-variant">LLM processing and generation time</div>
+</td>
+<td class="p-6 text-center text-sm font-medium">100 hrs</td>
+<td class="p-6 text-center text-sm font-medium">500 hrs</td>
+<td class="p-6 text-center text-sm font-bold text-tertiary">Custom Quote</td>
+</tr>
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="p-6">
+<div class="font-semibold text-sm">Predictive Analytics</div>
+<div class="text-[10px] text-on-surface-variant">ML-driven forecasting modules</div>
+</td>
+<td class="p-6 text-center">
+<span class="material-symbols-outlined text-outline-variant/30" data-icon="remove">remove</span>
+</td>
+<td class="p-6 text-center">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+<td class="p-6 text-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="p-6">
+<div class="font-semibold text-sm">Auto-resource Optimization</div>
+<div class="text-[10px] text-on-surface-variant">Real-time load balancing</div>
+</td>
+<td class="p-6 text-center">
+<span class="material-symbols-outlined text-outline-variant/30" data-icon="remove">remove</span>
+</td>
+<td class="p-6 text-center">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+<td class="p-6 text-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="p-6">
+<div class="font-semibold text-sm">Custom Training Models</div>
+<div class="text-[10px] text-on-surface-variant">Fine-tune AI on your specific data</div>
+</td>
+<td class="p-6 text-center">
+<span class="material-symbols-outlined text-outline-variant/30" data-icon="remove">remove</span>
+</td>
+<td class="p-6 text-center">
+<span class="material-symbols-outlined text-outline-variant/30" data-icon="remove">remove</span>
+</td>
+<td class="p-6 text-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="p-6">
+<div class="font-semibold text-sm">SLA Guarantee</div>
+<div class="text-[10px] text-on-surface-variant">Service level uptime commitment</div>
+</td>
+<td class="p-6 text-center text-sm font-medium text-on-surface-variant/40">99.0%</td>
+<td class="p-6 text-center text-sm font-medium">99.9%</td>
+<td class="p-6 text-center text-sm font-bold text-tertiary">99.99%</td>
+</tr>
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="p-6">
+<div class="font-semibold text-sm">Dedicated Support</div>
+<div class="text-[10px] text-on-surface-variant">24/7 priority response channel</div>
+</td>
+<td class="p-6 text-center">
+<span class="material-symbols-outlined text-outline-variant/30" data-icon="remove">remove</span>
+</td>
+<td class="p-6 text-center">
+<span class="material-symbols-outlined text-outline-variant/30" data-icon="remove">remove</span>
+</td>
+<td class="p-6 text-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low p-6 rounded-xl border border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="support_agent">support_agent</span>
+</div>
+<div>
+<h4 class="font-bold">Need a bespoke solution?</h4>
+<p class="text-sm text-on-surface-variant">Our solutions engineers can help architect a custom plan for your unique multi-tenant requirements.</p>
+</div>
+</div>
+<button class="px-8 py-3 bg-white text-surface font-black rounded-lg uppercase tracking-widest text-xs hover:bg-on-background transition-colors">Contact Sales</button>
+</div>
+</section>
+</div>
+<!-- AI Command Bar (Context Specific) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 w-full max-w-xl px-4 z-50">
+<div class="glass-card bg-surface-container-highest/60 border border-outline-variant/30 rounded-full flex items-center p-2 shadow-2xl ai-glow">
+<span class="material-symbols-outlined ml-4 text-tertiary" data-icon="auto_awesome">auto_awesome</span>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-sm px-4 placeholder:text-on-surface-variant/60" placeholder="Ask AI about plan optimization..." type="text"/>
+<button class="bg-tertiary text-on-tertiary px-4 py-2 rounded-full text-xs font-bold hover:bg-tertiary-fixed transition-colors">
+                    Optimize
+                </button>
+</div>
+</div>
+</main>
+</body></html>

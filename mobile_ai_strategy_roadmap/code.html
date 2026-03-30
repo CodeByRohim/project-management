@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Strategy &amp; Roadmap Planner | Stratum AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#141f38",
+              "inverse-surface": "#faf8ff",
+              "surface-container": "#0f1930",
+              "tertiary-container": "#af5cfe",
+              "on-secondary-fixed": "#373f54",
+              "on-secondary": "#4a5167",
+              "on-error-container": "#ffb2b9",
+              "surface-dim": "#060e20",
+              "primary-fixed": "#9396ff",
+              "on-background": "#dee5ff",
+              "error-container": "#a70138",
+              "primary-fixed-dim": "#8387ff",
+              "primary-dim": "#6063ee",
+              "on-primary": "#0f00a4",
+              "on-primary-fixed-variant": "#0e009d",
+              "inverse-primary": "#494bd7",
+              "primary-container": "#9396ff",
+              "surface-bright": "#1f2b49",
+              "on-error": "#490013",
+              "on-tertiary-fixed-variant": "#560094",
+              "on-primary-container": "#0a0081",
+              "secondary-fixed-dim": "#ccd4ee",
+              "primary": "#a3a6ff",
+              "error-dim": "#d73357",
+              "on-surface-variant": "#a3aac4",
+              "surface-container-highest": "#192540",
+              "secondary": "#dae2fd",
+              "tertiary-dim": "#9c48ea",
+              "outline-variant": "#40485d",
+              "surface-container-lowest": "#000000",
+              "inverse-on-surface": "#4d556b",
+              "on-tertiary": "#33005b",
+              "tertiary-fixed-dim": "#c488ff",
+              "surface-container-low": "#091328",
+              "surface-variant": "#192540",
+              "background": "#060e20",
+              "on-secondary-fixed-variant": "#535b71",
+              "outline": "#6d758c",
+              "secondary-container": "#3f465c",
+              "surface": "#060e20",
+              "on-secondary-container": "#c8d0ea",
+              "on-surface": "#dee5ff",
+              "on-tertiary-fixed": "#270048",
+              "tertiary-fixed": "#ce9bff",
+              "surface-tint": "#a3a6ff",
+              "secondary-fixed": "#dae2fd",
+              "error": "#ff6e84",
+              "secondary-dim": "#ccd4ee",
+              "tertiary": "#c180ff",
+              "on-primary-fixed": "#000000",
+              "on-tertiary-container": "#000000"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { display: none; }
+        body { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-card {
+            background: rgba(25, 37, 64, 0.4);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar Shell -->
+<header class="flex items-center justify-between px-6 h-16 w-full fixed top-0 z-50 bg-[#060e20]">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-sm" data-icon="hub">hub</span>
+</div>
+<h1 class="font-['Manrope'] tracking-tight text-xl font-bold text-[#a3a6ff] tracking-tighter">Stratum AI</h1>
+</div>
+<button class="text-[#40485d] hover:bg-[#0f1930] transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="sync_alt">sync_alt</span>
+</button>
+</header>
+<main class="pt-20 pb-28 px-4 space-y-10">
+<!-- Executive Strategic Summary -->
+<section class="space-y-4">
+<div class="flex justify-between items-end px-2">
+<div>
+<span class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-medium">Executive Overview</span>
+<h2 class="font-headline text-3xl font-extrabold tracking-tight mt-1">Strategic Value</h2>
+</div>
+<div class="bg-surface-container-highest px-3 py-1 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="text-[10px] text-tertiary font-semibold uppercase">Live Forecast</span>
+</div>
+</div>
+<!-- Bento Financials -->
+<div class="grid grid-cols-2 gap-3">
+<div class="col-span-2 glass-card p-6 rounded-xl border border-outline-variant/15 relative overflow-hidden">
+<div class="relative z-10">
+<p class="text-on-surface-variant text-sm font-medium">Net Strategic Impact</p>
+<h3 class="text-4xl font-headline font-bold text-primary mt-1">$4.2M</h3>
+<div class="mt-4 flex items-center gap-2 text-xs text-primary-fixed">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+12.4% vs last quarter simulation</span>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-8xl" data-icon="monetization_on">monetization_on</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+<p class="text-on-surface-variant text-[10px] uppercase tracking-wider mb-2 font-semibold">Cost Efficiency</p>
+<div class="text-2xl font-headline font-bold text-on-surface">$1.8M</div>
+<div class="mt-2 h-1 bg-surface-container-highest w-full rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-[65%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+<p class="text-on-surface-variant text-[10px] uppercase tracking-wider mb-2 font-semibold">Revenue Lift</p>
+<div class="text-2xl font-headline font-bold text-on-surface">$2.4M</div>
+<div class="mt-2 h-1 bg-surface-container-highest w-full rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[82%]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Roadmap Simulation Timeline -->
+<section class="space-y-6">
+<div class="px-2">
+<h2 class="font-headline text-2xl font-bold tracking-tight">Roadmap Simulation</h2>
+<p class="text-on-surface-variant text-sm mt-1">Multi-stream AI project synchronization</p>
+</div>
+<div class="relative pl-6 space-y-8 before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-2 before:w-[2px] before:bg-gradient-to-b before:from-primary/40 before:via-tertiary/40 before:to-transparent">
+<!-- Project Stream 1 -->
+<div class="relative">
+<div class="absolute -left-[1.35rem] top-1 w-4 h-4 rounded-full bg-primary border-4 border-background ring-4 ring-primary/10"></div>
+<div class="bg-surface-container-low rounded-xl p-4 border-l-4 border-primary">
+<div class="flex justify-between items-start mb-3">
+<h4 class="font-bold text-primary">Core LLM Integration</h4>
+<span class="text-[10px] font-bold text-on-surface-variant bg-surface-container px-2 py-1 rounded">Q3-Q4</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between text-xs">
+<span class="text-on-surface/70">Strategic Alignment</span>
+<span class="text-on-surface font-semibold">98%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[98%]"></div>
+</div>
+<div class="flex gap-2 flex-wrap pt-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-[9px] text-on-surface-variant border border-outline-variant/20">Infrastructure</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-[9px] text-on-surface-variant border border-outline-variant/20">NLP</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Stream 2 -->
+<div class="relative">
+<div class="absolute -left-[1.35rem] top-1 w-4 h-4 rounded-full bg-tertiary border-4 border-background ring-4 ring-tertiary/10"></div>
+<div class="bg-surface-container-low rounded-xl p-4 border-l-4 border-tertiary">
+<div class="flex justify-between items-start mb-3">
+<h4 class="font-bold text-tertiary">Customer Sentiment API</h4>
+<span class="text-[10px] font-bold text-on-surface-variant bg-surface-container px-2 py-1 rounded">Q4-Q1</span>
+</div>
+<p class="text-xs text-on-surface-variant mb-4 leading-relaxed">Cross-platform real-time feedback loop integration for support automation.</p>
+<div class="flex items-center gap-4 text-[10px] text-on-surface/50 font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]" data-icon="groups">groups</span> 12 devs</span>
+<span class="flex items-center gap-1 text-error"><span class="material-symbols-outlined text-[12px]" data-icon="warning">warning</span> Resource Risk</span>
+</div>
+</div>
+</div>
+<!-- Project Stream 3 -->
+<div class="relative">
+<div class="absolute -left-[1.35rem] top-1 w-4 h-4 rounded-full bg-secondary-container border-4 border-background ring-4 ring-secondary-container/10"></div>
+<div class="bg-surface-container-low/40 rounded-xl p-4 border-l-4 border-outline-variant">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-bold text-on-surface-variant">Edge Deployment</h4>
+<span class="text-[10px] font-bold text-on-surface-variant/40 bg-surface-container px-2 py-1 rounded">Q2 2025</span>
+</div>
+<div class="text-[10px] text-on-surface-variant italic">Pending Q1 Validation Gate</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Key Insights Section -->
+<section class="space-y-6">
+<div class="px-2">
+<h2 class="font-headline text-2xl font-bold tracking-tight">Governance &amp; Risk</h2>
+</div>
+<div class="space-y-4">
+<!-- Insight Card 1 -->
+<div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/15 flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-error/10 flex-shrink-0 flex items-center justify-center text-error">
+<span class="material-symbols-outlined" data-icon="psychology_alt">psychology_alt</span>
+</div>
+<div>
+<h5 class="font-bold text-on-surface text-base">Resource Contention</h5>
+<p class="text-sm text-on-surface-variant mt-1">3 Parallel projects require Lead DevOps. Potential for 2-week launch slippage.</p>
+<button class="mt-4 text-xs font-bold text-primary flex items-center gap-1">
+                            Optimize Allocation <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Insight Card 2 -->
+<div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/15 flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-tertiary/10 flex-shrink-0 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</div>
+<div>
+<h5 class="font-bold text-on-surface text-base">Efficiency Gains</h5>
+<p class="text-sm text-on-surface-variant mt-1">Shared Embedding layer detected. Consolidating Stream A and B can reduce tokens by 22%.</p>
+<button class="mt-4 text-xs font-bold text-tertiary flex items-center gap-1">
+                            Apply Consolidation <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Insight Card 3 (Visual Data) -->
+<div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/15 overflow-hidden relative">
+<h5 class="font-bold text-on-surface text-base mb-6">Execution Velocity</h5>
+<div class="flex items-end justify-between gap-1 h-24">
+<div class="w-full bg-primary/20 rounded-t h-[40%]"></div>
+<div class="w-full bg-primary/20 rounded-t h-[55%]"></div>
+<div class="w-full bg-primary/20 rounded-t h-[35%]"></div>
+<div class="w-full bg-primary/20 rounded-t h-[70%]"></div>
+<div class="w-full bg-primary/40 rounded-t h-[85%] border-t-2 border-primary"></div>
+<div class="w-full bg-primary/20 rounded-t h-[60%]"></div>
+<div class="w-full bg-primary/20 rounded-t h-[75%]"></div>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-4 text-center font-medium uppercase tracking-widest">Team Burn Rate Monitoring</p>
+</div>
+</div>
+</section>
+<!-- Dynamic Content Section: Strategic Alignment -->
+<section class="bg-surface-container-low rounded-3xl p-8 text-center space-y-4">
+<div class="mx-auto w-16 h-16 rounded-full bg-gradient-to-tr from-primary to-tertiary flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-on-primary text-3xl" data-icon="verified">verified</span>
+</div>
+<h3 class="font-headline text-2xl font-bold">Strategy Validated</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed px-4">Your current roadmap aligns with the Enterprise KPI of "Efficiency First" with 92% confidence score.</p>
+<button class="w-full py-4 bg-primary text-on-primary font-bold rounded-xl active:scale-[0.98] transition-all">
+                Export Executive Summary
+            </button>
+</section>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#060e20]/80 backdrop-blur-xl border-t border-[#40485d]/15 shadow-[0_-10px_30px_rgba(0,0,0,0.4)]">
+<a class="flex flex-col items-center justify-center text-[#a3a6ff] bg-[#192540] rounded-lg px-3 py-1 transition-all cubic-bezier(0.4,0,0.2,1)" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Strategy</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#40485d] opacity-70 hover:text-[#a3a6ff] transition-all cubic-bezier(0.4,0,0.2,1)" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Risks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#40485d] opacity-70 hover:text-[#a3a6ff] transition-all cubic-bezier(0.4,0,0.2,1)" href="#">
+<span class="material-symbols-outlined" data-icon="build_circle">build_circle</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Remedy</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#40485d] opacity-70 hover:text-[#a3a6ff] transition-all cubic-bezier(0.4,0,0.2,1)" href="#">
+<span class="material-symbols-outlined" data-icon="monetization_on">monetization_on</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">ROI</span>
+</a>
+</nav>
+<!-- Floating Action Button - AI Contextual -->
+<button class="fixed right-6 bottom-24 w-14 h-14 rounded-full bg-tertiary-container text-on-tertiary shadow-2xl flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="smart_toy" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</button>
+</body></html>

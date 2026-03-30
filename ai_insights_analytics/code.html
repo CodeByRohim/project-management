@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Insights &amp; Analytics | Stratum AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-on-surface": "#4d556b",
+                        "surface-container-high": "#141f38",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "on-surface": "#dee5ff",
+                        "on-error": "#490013",
+                        "secondary-fixed": "#dae2fd",
+                        "secondary": "#dae2fd",
+                        "primary": "#a3a6ff",
+                        "on-tertiary-container": "#000000",
+                        "background": "#060e20",
+                        "inverse-primary": "#494bd7",
+                        "surface-container-lowest": "#000000",
+                        "surface-dim": "#060e20",
+                        "surface-container-highest": "#192540",
+                        "outline": "#6d758c",
+                        "primary-container": "#9396ff",
+                        "secondary-container": "#3f465c",
+                        "on-tertiary-fixed-variant": "#560094",
+                        "surface-variant": "#192540",
+                        "on-primary": "#0f00a4",
+                        "inverse-surface": "#faf8ff",
+                        "surface-container": "#0f1930",
+                        "tertiary": "#c180ff",
+                        "tertiary-fixed": "#ce9bff",
+                        "surface-container-low": "#091328",
+                        "on-secondary-fixed": "#373f54",
+                        "secondary-dim": "#ccd4ee",
+                        "primary-fixed": "#9396ff",
+                        "on-secondary-container": "#c8d0ea",
+                        "tertiary-container": "#af5cfe",
+                        "on-secondary-fixed-variant": "#535b71",
+                        "primary-dim": "#6063ee",
+                        "surface-bright": "#1f2b49",
+                        "on-tertiary": "#33005b",
+                        "secondary-fixed-dim": "#ccd4ee",
+                        "on-primary-fixed": "#000000",
+                        "tertiary-dim": "#9c48ea",
+                        "error-dim": "#d73357",
+                        "on-background": "#dee5ff",
+                        "error": "#ff6e84",
+                        "on-secondary": "#4a5167",
+                        "on-tertiary-fixed": "#270048",
+                        "on-error-container": "#ffb2b9",
+                        "tertiary-fixed-dim": "#c488ff",
+                        "outline-variant": "#40485d",
+                        "primary-fixed-dim": "#8387ff",
+                        "error-container": "#a70138",
+                        "on-surface-variant": "#a3aac4",
+                        "surface-tint": "#a3a6ff",
+                        "surface": "#060e20",
+                        "on-primary-container": "#0a0081"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 border-r border-[#40485d]/15 bg-[#091328] z-50 py-8 shadow-[20px_0_40px_rgba(0,0,0,0.4)]">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary font-black italic">S</div>
+<div>
+<div class="font-black text-white italic">Project Intel</div>
+<div class="font-manrope text-[10px] font-medium uppercase tracking-widest text-slate-400">AI-Stratum Layer</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-slate-400 hover:text-slate-100 flex items-center gap-3 px-6 py-4 hover:bg-[#192540] transition-all duration-200 transform hover:translate-x-1 font-manrope text-sm font-medium uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Global Dashboard
+            </a>
+<a class="text-slate-400 hover:text-slate-100 flex items-center gap-3 px-6 py-4 hover:bg-[#192540] transition-all duration-200 transform hover:translate-x-1 font-manrope text-sm font-medium uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+                Project Workspace
+            </a>
+<a class="bg-gradient-to-r from-[#4F46E5]/20 to-transparent border-l-4 border-[#a3a6ff] text-[#a3a6ff] flex items-center gap-3 px-6 py-4 font-manrope text-sm font-medium uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+                AI Insights
+            </a>
+<a class="text-slate-400 hover:text-slate-100 flex items-center gap-3 px-6 py-4 hover:bg-[#192540] transition-all duration-200 transform hover:translate-x-1 font-manrope text-sm font-medium uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+                Tenant Management
+            </a>
+</nav>
+<div class="mt-auto border-t border-outline-variant/10 pt-4 px-4">
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary py-3 rounded font-bold transition-all transform active:scale-95 mb-6">
+                New Project
+            </button>
+<a class="text-slate-400 hover:text-slate-100 flex items-center gap-3 px-4 py-3 font-manrope text-sm font-medium uppercase tracking-widest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+<a class="text-slate-400 hover:text-slate-100 flex items-center gap-3 px-4 py-3 font-manrope text-sm font-medium uppercase tracking-widest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                Support
+            </a>
+</div>
+</aside>
+<main class="md:ml-64 min-h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-6 py-3 sticky top-0 z-40 bg-[#060e20]/80 backdrop-blur-md">
+<div class="flex items-center gap-6">
+<div class="text-xl font-extrabold text-[#a3a6ff] tracking-tighter">Stratum AI</div>
+<div class="relative group">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500">
+<span class="material-symbols-outlined text-sm" data-icon="search">search</span>
+</span>
+<input class="bg-surface-container-highest border-none rounded-md pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-primary w-64 transition-all" placeholder="Search analytics..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex gap-2 mr-4 border-r border-outline-variant/20 pr-4">
+<button class="p-2 text-slate-400 hover:bg-[#192540] rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+</button>
+<button class="p-2 text-slate-400 hover:bg-[#192540] rounded-full transition-all relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+</div>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded bg-surface-container text-sm font-medium hover:bg-surface-bright transition-all">
+<span>Tenant Switcher</span>
+<span class="material-symbols-outlined text-xs" data-icon="expand_more">expand_more</span>
+</button>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-primary/30" data-alt="professional portrait of a senior tech executive with modern eyeglasses against a clean studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi_witOZmzD_7g0P1Tq5noBUcsSggxAO5ZNQigvB-AAfg7Zblssd6UJjkUmthe2qB5veBIuxXBdFlcCy1yQoDMrgslGIq-jBCy9xtNPVWVVEQuZb_cLQcq5FuPyMOLVi1KFn2F8vYhmpN-LU-PWTTOqiqtziOcTB8ybLo7acWkwU_FYcxARwzj-MWemdAT8eBQQju-U6RyyUtgzvRbmiHzD2xbsGtS7or16SWqbUe3RpD1CkfVgwxsB1BlKYap8ZdObdqGjb8z-1s"/>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent"></div>
+</header>
+<!-- Content Canvas -->
+<div class="p-8 max-w-7xl mx-auto space-y-10">
+<!-- Hero Insight Section -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+<div class="lg:col-span-2 space-y-4">
+<h1 class="text-4xl font-extrabold tracking-tight text-on-surface">Cognitive Architecture <span class="text-primary">Intelligence</span></h1>
+<p class="text-on-surface-variant max-w-2xl leading-relaxed">
+                        Analyzing 42 parallel project streams across multi-tenant infrastructures. Predictive models suggest a 12% potential slippage in Q3 delivery timelines due to resource clustering.
+                    </p>
+</div>
+<div class="bg-surface-container rounded-xl p-6 border border-primary/10 backdrop-blur-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="query_stats">query_stats</span>
+</div>
+<div class="text-primary font-bold text-xs uppercase tracking-widest mb-2">System Health</div>
+<div class="text-3xl font-black mb-1">98.4%</div>
+<div class="text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-tertiary" data-icon="trending_up">trending_up</span>
+                        Optimized across 4 tenants
+                    </div>
+</div>
+</section>
+<!-- Bento Grid: Predictive & Sentiment -->
+<section class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
+<!-- Predictive Chart: Large Asymmetric -->
+<div class="md:col-span-4 lg:col-span-4 bg-surface-container-low rounded-xl p-8 relative min-h-[400px]">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="text-xl font-bold">Predictive Timeline Analysis</h3>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mt-1">Projected Slippage Probability</p>
+</div>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold">Q3 ESTIMATE</span>
+</div>
+</div>
+<!-- Mock Chart Visualization -->
+<div class="relative h-64 w-full flex items-end gap-2 px-2">
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
+<div class="border-t border-outline-variant w-full h-px"></div>
+<div class="border-t border-outline-variant w-full h-px"></div>
+<div class="border-t border-outline-variant w-full h-px"></div>
+<div class="border-t border-outline-variant w-full h-px"></div>
+</div>
+<!-- Bars -->
+<div class="flex-1 bg-surface-container-highest h-[60%] rounded-t-sm relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 text-[10px] opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-on-primary px-2 py-0.5 rounded">60%</div>
+</div>
+<div class="flex-1 bg-primary/40 h-[75%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[85%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/60 h-[40%] rounded-t-sm relative">
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 w-px h-12 bg-error"></div>
+<div class="absolute -top-16 left-1/2 -translate-x-1/2 bg-error text-white text-[10px] px-2 py-1 rounded whitespace-nowrap">DELAY RISK</div>
+</div>
+<div class="flex-1 bg-surface-container-highest h-[55%] rounded-t-sm"></div>
+<div class="flex-1 bg-surface-container-highest h-[45%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/40 h-[90%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[95%] rounded-t-sm"></div>
+</div>
+<div class="mt-6 flex gap-8">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-xs font-medium text-on-surface-variant">Active Velocity</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="text-xs font-medium text-on-surface-variant">Predicted Constraint</span>
+</div>
+</div>
+</div>
+<!-- Sentiment Trends: Tall Asymmetric -->
+<div class="md:col-span-4 lg:col-span-2 bg-gradient-to-br from-surface-container to-surface-container-low rounded-xl p-8 border border-outline-variant/10">
+<h3 class="text-xl font-bold mb-1">Team Sentiment</h3>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mb-6">NLP-Driven Collaboration Health</p>
+<div class="space-y-6">
+<div class="space-y-2">
+<div class="flex justify-between text-xs">
+<span>Synergy Level</span>
+<span class="text-primary">88%</span>
+</div>
+<div class="h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[88%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs">
+<span>Communication Clarity</span>
+<span class="text-tertiary">64%</span>
+</div>
+<div class="h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[64%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs">
+<span>Bottleneck Frustration</span>
+<span class="text-error">12%</span>
+</div>
+<div class="h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-error w-[12%]"></div>
+</div>
+</div>
+</div>
+<div class="mt-10 p-4 bg-surface-container-highest/40 rounded-lg border border-primary/5">
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="auto_awesome">auto_awesome</span>
+<div>
+<div class="text-sm font-bold">AI Recommendation</div>
+<p class="text-xs text-on-surface-variant mt-1 leading-normal">Tone shift detected in the "Phoenix" project workspace. Recommend immediate sync to align expectations.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Resource Optimization Reports -->
+<section class="space-y-6">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-2xl font-bold tracking-tight">Resource Optimization</h2>
+<p class="text-on-surface-variant text-sm">Automated logic layers for cross-tenant workload distribution.</p>
+</div>
+<button class="text-xs font-bold uppercase tracking-widest text-primary hover:underline transition-all">View Full Report</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Optimization Card 1 -->
+<div class="bg-surface-container-low rounded-xl p-6 border-l-4 border-primary group hover:bg-surface-container transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-bold text-lg">Cluster Delta-9 Rebalance</h4>
+<p class="text-xs text-slate-500">Tenant: Cloud-Scale Dynamics</p>
+</div>
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded">HIGH IMPACT</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-6">AI detected 3 idle developers in Project Alpha while Project Beta is 40h over capacity. Shift recommended.</p>
+<div class="flex items-center justify-between gap-4">
+<div class="flex -space-x-2">
+<img alt="Dev 1" class="w-8 h-8 rounded-full border-2 border-surface-container-low" data-alt="portrait of a focused software engineer with short hair and headphones in a dimly lit modern office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3VJtwFoRHnQhWaEuKf75c0aAWDxnbNrHal2ZZj6rWXKpAK-LBjCifVTQbBWvz9NVpvEw0ZVg7uFBdmLFrCcuhs7-MWxuPO1zFtbPltGzqEp-yZ0-_Ww2Vm7u3AWqwqiIfMR4HaTpwtlxv11eC9u58JaOaiwDhv-g6viuYapPGXrWgnPi4dqSeLSjRi_7v670EVoeruG_gb5hL2NHxL0cZHZjAGmjFRka2vnrCXB8SzCTN6ia5t5AK08Tvl7dSsQAS_BRpdvbaeSM"/>
+<img alt="Dev 2" class="w-8 h-8 rounded-full border-2 border-surface-container-low" data-alt="profile photo of a young professional woman with a bright smile in a daylight-filled architectural office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3c9O9la6ucX96QtsWNvrM8aiLT2xdWJijzzswdCEF_HlsgzHjbaP-Fm7UvinBTORJYo4ha3qKHG9Tt0jJ9I_7x_5MOcEPxLaiT_Pu8S63Afpx8z2SUCDxsUH30TLAHY7BVUizVff1TZ2Wk-pyeh9YhDXe3qtwsuTbfgjQ9C7HDgEm3ZnC0cewv-udIebx3_ihpfMFYDNX0RFjw5yCfn3GlwWzmfK48o1eckMvWoXpTbVlCLe8NjeUpjBB7mr4blQ_Dj-zIOrKs9I"/>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-low bg-surface-container-highest flex items-center justify-center text-[10px] font-bold">+1</div>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 text-sm font-bold rounded hover:shadow-[0_0_15px_rgba(163,166,255,0.4)] transition-all transform active:scale-95">Apply</button>
+</div>
+</div>
+<!-- Optimization Card 2 -->
+<div class="bg-surface-container-low rounded-xl p-6 border-l-4 border-tertiary group hover:bg-surface-container transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-bold text-lg">Server Latency Mitigation</h4>
+<p class="text-xs text-slate-500">Tenant: Apex Global</p>
+</div>
+<span class="bg-tertiary/10 text-tertiary text-[10px] font-bold px-2 py-1 rounded">EFFICIENCY</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-6">Projected load spikes during Tokyo market opening. Automated shard expansion ready for deployment.</p>
+<div class="flex items-center justify-between gap-4">
+<div class="text-xs font-mono text-tertiary">STATUS: READY</div>
+<button class="bg-tertiary text-on-tertiary px-6 py-2 text-sm font-bold rounded hover:shadow-[0_0_15px_rgba(193,128,255,0.4)] transition-all transform active:scale-95">Apply</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Comparative Analytics -->
+<section class="bg-surface-container rounded-2xl p-8 overflow-hidden relative">
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="mb-8">
+<h3 class="text-xl font-bold">Comparative Performance</h3>
+<p class="text-sm text-on-surface-variant mt-1">Cross-tenant efficiency benchmarking.</p>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="border-b border-outline-variant/10">
+<th class="pb-4 font-manrope text-[10px] uppercase tracking-widest text-slate-500">Tenant / Project</th>
+<th class="pb-4 font-manrope text-[10px] uppercase tracking-widest text-slate-500">Velocity</th>
+<th class="pb-4 font-manrope text-[10px] uppercase tracking-widest text-slate-500">Health</th>
+<th class="pb-4 font-manrope text-[10px] uppercase tracking-widest text-slate-500">Cost/Capita</th>
+<th class="pb-4 font-manrope text-[10px] uppercase tracking-widest text-slate-500 text-right">Trend</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="group hover:bg-surface-container-highest/20 transition-colors">
+<td class="py-5">
+<div class="font-bold">Alpha Systems</div>
+<div class="text-[10px] text-slate-500">Project: Horizon-X</div>
+</td>
+<td class="py-5 text-sm">42 pts / week</td>
+<td class="py-5">
+<span class="inline-flex items-center gap-1.5 text-xs text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Optimal
+                                    </span>
+</td>
+<td class="py-5 text-sm">$1.2k</td>
+<td class="py-5 text-right">
+<span class="material-symbols-outlined text-primary" data-icon="trending_up">trending_up</span>
+</td>
+</tr>
+<tr class="group hover:bg-surface-container-highest/20 transition-colors">
+<td class="py-5">
+<div class="font-bold">Meta-Logic Corp</div>
+<div class="text-[10px] text-slate-500">Project: Core-Sync</div>
+</td>
+<td class="py-5 text-sm">38 pts / week</td>
+<td class="py-5">
+<span class="inline-flex items-center gap-1.5 text-xs text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Review Needed
+                                    </span>
+</td>
+<td class="py-5 text-sm">$0.9k</td>
+<td class="py-5 text-right">
+<span class="material-symbols-outlined text-tertiary" data-icon="trending_flat">trending_flat</span>
+</td>
+</tr>
+<tr class="group hover:bg-surface-container-highest/20 transition-colors">
+<td class="py-5">
+<div class="font-bold">Zenith Tech</div>
+<div class="text-[10px] text-slate-500">Project: Data-Stream</div>
+</td>
+<td class="py-5 text-sm">51 pts / week</td>
+<td class="py-5">
+<span class="inline-flex items-center gap-1.5 text-xs text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Optimal
+                                    </span>
+</td>
+<td class="py-5 text-sm">$1.4k</td>
+<td class="py-5 text-right">
+<span class="material-symbols-outlined text-primary" data-icon="trending_up">trending_up</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<!-- AI Command Bar (Floating Bottom) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 w-full max-w-xl px-4 z-40 md:ml-32">
+<div class="bg-surface-container-highest/60 backdrop-blur-xl border border-primary/20 rounded-full px-6 py-3 flex items-center gap-4 shadow-[0_20px_40px_rgba(0,0,0,0.6)] group">
+<span class="material-symbols-outlined text-tertiary" data-icon="auto_awesome">auto_awesome</span>
+<input class="bg-transparent border-none flex-1 text-sm focus:ring-0 placeholder:text-slate-500" placeholder="Ask Stratum AI for deep analysis..." type="text"/>
+<div class="flex gap-2">
+<button class="p-1 text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="mic">mic</span>
+</button>
+<button class="bg-primary w-8 h-8 rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_upward">arrow_upward</span>
+</button>
+</div>
+<!-- Tertiary Glow -->
+<div class="absolute inset-0 rounded-full border border-tertiary/20 animate-pulse pointer-events-none"></div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-[#060e20] flex justify-around py-3 border-t border-outline-variant/10 z-50">
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Dash</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Projects</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Insights</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Settings</span>
+</button>
+</nav>
+</body></html>

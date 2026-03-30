@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stratum PMS | Team Performance &amp; Velocity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "outline-variant": "#40485d",
+            "surface-tint": "#a3a6ff",
+            "on-secondary-container": "#c8d0ea",
+            "on-primary-fixed": "#000000",
+            "primary-dim": "#6063ee",
+            "surface-variant": "#192540",
+            "on-primary": "#0f00a4",
+            "surface-container-lowest": "#000000",
+            "error": "#ff6e84",
+            "inverse-on-surface": "#4d556b",
+            "surface-bright": "#1f2b49",
+            "on-surface": "#dee5ff",
+            "on-primary-container": "#0a0081",
+            "primary-fixed": "#9396ff",
+            "on-tertiary": "#33005b",
+            "background": "#060e20",
+            "tertiary": "#c180ff",
+            "on-secondary": "#4a5167",
+            "surface-container-high": "#141f38",
+            "primary-fixed-dim": "#8387ff",
+            "surface-dim": "#060e20",
+            "on-surface-variant": "#a3aac4",
+            "tertiary-fixed": "#ce9bff",
+            "outline": "#6d758c",
+            "secondary": "#dae2fd",
+            "on-tertiary-fixed-variant": "#560094",
+            "tertiary-dim": "#9c48ea",
+            "on-error-container": "#ffb2b9",
+            "inverse-surface": "#faf8ff",
+            "tertiary-fixed-dim": "#c488ff",
+            "secondary-fixed-dim": "#ccd4ee",
+            "primary": "#a3a6ff",
+            "error-dim": "#d73357",
+            "tertiary-container": "#af5cfe",
+            "on-primary-fixed-variant": "#0e009d",
+            "on-secondary-fixed": "#373f54",
+            "surface-container": "#0f1930",
+            "secondary-dim": "#ccd4ee",
+            "on-background": "#dee5ff",
+            "inverse-primary": "#494bd7",
+            "surface-container-highest": "#192540",
+            "secondary-container": "#3f465c",
+            "primary-container": "#9396ff",
+            "surface": "#060e20",
+            "error-container": "#a70138",
+            "secondary-fixed": "#dae2fd",
+            "on-secondary-fixed-variant": "#535b71",
+            "on-error": "#490013",
+            "on-tertiary-container": "#000000",
+            "on-tertiary-fixed": "#270048",
+            "surface-container-low": "#091328"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-headline { font-family: 'Manrope', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      background: rgba(25, 37, 64, 0.4);
+      backdrop-filter: blur(12px);
+    }
+    .ai-glow {
+      box-shadow: 0 0 20px rgba(193, 128, 255, 0.15);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<div class="flex min-h-screen">
+<!-- SideNavBar (Authority: JSON) -->
+<aside class="h-screen sticky left-0 w-64 bg-[#091328] flex flex-col py-6 shadow-2xl shadow-black/40 z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-lg">domain</span>
+</div>
+<div>
+<h2 class="text-lg font-extrabold text-[#a3a6ff] font-headline tracking-tight">Enterprise Tier</h2>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">AI-Optimized</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Overview active based on intent -->
+<a class="bg-[#0f1930] text-[#a3a6ff] border-l-4 border-[#c180ff] ml-0 px-4 py-3 flex items-center gap-3 transition-transform duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-manrope font-medium text-sm">Overview</span>
+</a>
+<a class="text-slate-400 px-4 py-3 hover:bg-[#0f1930]/50 hover:text-white transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span class="font-manrope font-medium text-sm">Projects</span>
+</a>
+<a class="text-slate-400 px-4 py-3 hover:bg-[#0f1930]/50 hover:text-white transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-manrope font-medium text-sm">AI Engine</span>
+</a>
+<a class="text-slate-400 px-4 py-3 hover:bg-[#0f1930]/50 hover:text-white transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span class="font-manrope font-medium text-sm">Tenants</span>
+</a>
+<a class="text-slate-400 px-4 py-3 hover:bg-[#0f1930]/50 hover:text-white transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-manrope font-medium text-sm">Audit Logs</span>
+</a>
+<a class="text-slate-400 px-4 py-3 hover:bg-[#0f1930]/50 hover:text-white transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="hub">hub</span>
+<span class="font-manrope font-medium text-sm">Resources</span>
+</a>
+</nav>
+<div class="mt-auto px-4 space-y-4">
+<button class="w-full py-2.5 bg-primary text-on-primary font-bold rounded text-sm hover:opacity-90 transition-opacity">
+          New Project
+        </button>
+<div class="pt-4 border-t border-slate-800/50">
+<a class="text-slate-400 px-4 py-2 hover:text-white flex items-center gap-3 text-sm" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help_outline">help_outline</span>
+            Support
+          </a>
+<a class="text-slate-400 px-4 py-2 hover:text-white flex items-center gap-3 text-sm" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="logout">logout</span>
+            Logout
+          </a>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopAppBar (Authority: JSON) -->
+<header class="w-full top-0 sticky z-40 bg-[#091328] border-none flex justify-between items-center px-6 py-3 w-full backdrop-blur-md bg-opacity-80">
+<div class="flex items-center gap-8">
+<h1 class="text-xl font-bold tracking-tighter text-[#a3a6ff] font-headline">Stratum PMS</h1>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-400 font-medium hover:text-slate-200 transition-colors font-manrope text-sm md:text-base" href="#">Dashboards</a>
+<a class="text-slate-400 font-medium hover:text-slate-200 transition-colors font-manrope text-sm md:text-base" href="#">Workspaces</a>
+<a class="text-[#a3a6ff] font-semibold border-b-2 border-[#a3a6ff] pb-1 font-manrope text-sm md:text-base" href="#">Insights</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">search</span>
+<input class="bg-[#192540] border-none rounded-md pl-10 pr-4 py-1.5 text-sm text-on-surface w-64 focus:ring-1 focus:ring-primary" placeholder="Search insights..." type="text"/>
+</div>
+<button class="p-2 text-slate-400 hover:bg-[#192540] rounded-md transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-400 hover:bg-[#192540] rounded-md transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-primary/20 cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a software project manager in a tech setting with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZI2ZCK43t2KBORXEHpfywoB-EX2KGcLQLMzbYu06fd50crIBbN6-ZPP636e5GKU8onaSHJ1XuOC0do5LA_0A2VMBcXaGAgubBNxTibfyzrLNw3V8cAipNClJT95Uet3sL9p6zP5F25rkG5APbeOscJdXpqrGGyBGAO8Nv39Kr4-ILLLLNcXO06p_CU79gu6Mp7vGIZNI1Yi6IibtuftmqxOybmxjs9kbQSZOuO3cHNOrgeebrn4UNzjoT81SRLmG1B7cQXc9t_Xg"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Canvas -->
+<div class="p-8 space-y-10 max-w-7xl mx-auto w-full">
+<!-- Dashboard Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-tertiary font-bold text-xs uppercase tracking-widest">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">bolt</span>
+              AI Engine Live
+            </div>
+<h2 class="text-4xl font-extrabold font-headline tracking-tight text-on-background">Velocity Analytics</h2>
+<p class="text-on-surface-variant max-w-xl">Intelligent performance modeling across multi-tenant infrastructures.</p>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/10">
+<button class="px-4 py-1.5 text-sm font-semibold rounded text-on-surface-variant hover:text-on-surface transition-colors">7 Days</button>
+<button class="px-4 py-1.5 text-sm font-semibold rounded bg-surface-container-highest text-primary shadow-sm">30 Days</button>
+<button class="px-4 py-1.5 text-sm font-semibold rounded text-on-surface-variant hover:text-on-surface transition-colors">Quarter</button>
+</div>
+</div>
+<!-- Executive Summary (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Main Velocity Metric -->
+<div class="md:col-span-2 bg-surface-container-low p-8 rounded-xl relative overflow-hidden flex flex-col justify-between ai-glow">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-[60px] rounded-full"></div>
+<div class="flex justify-between items-start z-10">
+<div>
+<p class="text-sm font-bold text-on-surface-variant uppercase tracking-tighter">Current Project Velocity</p>
+<div class="text-6xl font-black font-headline mt-2 text-primary tracking-tighter">42.8 <span class="text-2xl font-medium text-slate-500">pts</span></div>
+</div>
+<div class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_up</span> +12.4%
+              </div>
+</div>
+<div class="mt-8 z-10">
+<div class="flex justify-between text-xs font-bold text-on-surface-variant mb-2">
+<span>PHASE COMPLETION</span>
+<span>84%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 84%;"></div>
+</div>
+</div>
+</div>
+<!-- Sprint Completion -->
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/5">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4">Sprint Completion</p>
+<div class="flex items-center justify-center py-4 relative">
+<svg class="w-24 h-24 transform -rotate-90">
+<circle class="text-surface-container-highest" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-tertiary" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="20" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-headline text-xl font-bold">92%</div>
+</div>
+<p class="text-center text-xs text-on-surface-variant mt-2 italic">Exceeding benchmark by 5.2%</p>
+</div>
+<!-- AI Blockers -->
+<div class="bg-surface-container-highest/60 glass-card p-6 rounded-xl border border-tertiary/20">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-tertiary text-lg" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<p class="text-xs font-bold text-tertiary uppercase tracking-widest">Predicted Blockers</p>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3 p-2 rounded bg-surface-container/50">
+<div class="w-1.5 h-8 bg-error rounded-full"></div>
+<div>
+<p class="text-xs font-bold text-on-surface">API Dependency Lag</p>
+<p class="text-[10px] text-on-surface-variant">Estimated delay: 2.5 days</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-2 rounded bg-surface-container/50">
+<div class="w-1.5 h-8 bg-secondary-dim rounded-full"></div>
+<div>
+<p class="text-xs font-bold text-on-surface">Resource Conflict</p>
+<p class="text-[10px] text-on-surface-variant">Dev-Ops overlap detected</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Middle Section: Efficiency & Trends -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Tenant Comparison Chart Container -->
+<div class="lg:col-span-2 space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold font-headline">Tenant Efficiency Matrix</h3>
+<span class="material-symbols-outlined text-slate-500 cursor-pointer">more_horiz</span>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl h-80 flex flex-col">
+<div class="flex-1 flex items-end justify-around gap-4">
+<!-- Bar Chart Placeholder -->
+<div class="flex flex-col items-center gap-3 w-full">
+<div class="w-full bg-surface-container-highest rounded-t-lg relative group h-48">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-lg transition-all h-3/4 group-hover:bg-primary-dim"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Tenant Alpha</span>
+</div>
+<div class="flex flex-col items-center gap-3 w-full">
+<div class="w-full bg-surface-container-highest rounded-t-lg relative group h-48">
+<div class="absolute bottom-0 w-full bg-tertiary rounded-t-lg transition-all h-2/3 group-hover:bg-tertiary-dim"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Omega Group</span>
+</div>
+<div class="flex flex-col items-center gap-3 w-full">
+<div class="w-full bg-surface-container-highest rounded-t-lg relative group h-48">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-lg transition-all h-full group-hover:bg-primary-dim"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Flux Systems</span>
+</div>
+<div class="flex flex-col items-center gap-3 w-full">
+<div class="w-full bg-surface-container-highest rounded-t-lg relative group h-48">
+<div class="absolute bottom-0 w-full bg-secondary-container rounded-t-lg transition-all h-1/2 group-hover:bg-secondary"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Quant Core</span>
+</div>
+<div class="flex flex-col items-center gap-3 w-full">
+<div class="w-full bg-surface-container-highest rounded-t-lg relative group h-48">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-lg transition-all h-5/6 group-hover:bg-primary-dim"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Nexus Labs</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Trend Analysis Summary -->
+<div class="space-y-6">
+<h3 class="text-xl font-bold font-headline">Capacity Trends</h3>
+<div class="bg-surface-container p-6 rounded-xl space-y-8">
+<div>
+<p class="text-xs text-on-surface-variant font-bold uppercase mb-4">Capacity vs. Output</p>
+<div class="flex items-center gap-4">
+<div class="h-16 w-16 bg-surface-container-highest rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-primary">analytics</span>
+</div>
+<div>
+<div class="text-2xl font-bold">118% <span class="text-xs text-on-surface-variant font-normal">Utilization</span></div>
+<p class="text-xs text-error font-medium mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span> Over-capacity alert
+                    </p>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant/10">
+<div class="flex justify-between items-center mb-4">
+<span class="text-sm font-semibold">Predicted Bandwidth</span>
+<span class="text-sm text-tertiary">+14.2h</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between text-xs text-on-surface-variant">
+<span>Engineering</span>
+<span class="font-bold">94%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 94%;"></div>
+</div>
+<div class="flex items-center justify-between text-xs text-on-surface-variant">
+<span>Quality Assurance</span>
+<span class="font-bold">78%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary" style="width: 78%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Contributor Velocity Pulse -->
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold font-headline">Contributor Velocity Pulse</h3>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-xs text-on-surface-variant font-medium">High Velocity</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+<span class="text-xs text-on-surface-variant font-medium">Optimal Flow</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Pulse Card 1 -->
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/5 flex items-start gap-4 hover:bg-surface-container-high transition-colors group">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Portrait of a young female developer with a neutral expression in a creative office space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVtkaaE6nXtVIxXkEAC3OlV_Q2mHKOwz5up_5lXYMEKlZjVnEvXfj-UpkbtYrukKXgm66zphtZQ0EXCPfWbyPCfEumuyuBLBpumduad3N9LFYwi78tJfTTK47uHerR_5YJyas00U7MS1881IlrD9qIQ-WnCImShmkvIGIdyKvqVc4pke4_6-Lz_HMtsNFDbeMDoVdH1uIm32MUMGEu0gvDoHfVCiW4Vznb0H-9PY8AvpCk3CoqfsxkNnUvkNORWvNtQtgJposEIVQ"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-primary border-2 border-surface-container-low rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="text-sm font-bold truncate">Sarah Jenkins</h4>
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded">9.4/10</span>
+</div>
+<p class="text-xs text-on-surface-variant mb-3">Senior Engineer</p>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">sentiment_satisfied</span>
+<span class="text-[10px] font-semibold text-tertiary">Sentiment: Highly Productive</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-4/5"></div>
+</div>
+</div>
+</div>
+<!-- Pulse Card 2 -->
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/5 flex items-start gap-4 hover:bg-surface-container-high transition-colors group">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Close up of a male developer with glasses in a modern workspace environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv2bput5UpLc--d2BCBpccWfr4jcUyiu2coK8Fu7RsfUnGS14ZiO51BGQ5tt8IXrXV8JndWGemW-QVFkij3laUeyNrtYkZE9ht804TsOPcbEqEPOLXoiCOLumRFiT2zTCb9gDX4YXm8JER-Z33LS9-3eqWAi_TUskjRsxkfZAO-CAKL3SiKo9L_OcWNOv0rmMqgaAVLL082-hKXsKx2uOgn0bpmjL8NDvOZueBIq9Xjv8C-Si2ErOmXhK4X0YEDySG-GkH7-tUbgw"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-tertiary border-2 border-surface-container-low rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="text-sm font-bold truncate">Marcus Thorne</h4>
+<span class="text-[10px] font-bold text-tertiary bg-tertiary/10 px-1.5 py-0.5 rounded">8.1/10</span>
+</div>
+<p class="text-xs text-on-surface-variant mb-3">Backend Architect</p>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" style="font-variation-settings: 'FILL' 1;">sentiment_neutral</span>
+<span class="text-[10px] font-semibold text-on-surface-variant">Sentiment: At Capacity</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-3/5"></div>
+</div>
+</div>
+</div>
+<!-- Pulse Card 3 -->
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/5 flex items-start gap-4 hover:bg-surface-container-high transition-colors group">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Portrait of a female technical lead in a bright airy studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBffVMT1jLpNKbSGmVTIqrrxhKJySO5M1Dh-RohlDqATG8p_fsoxVOKfPPEmFne7bQuNtr7xCyiLOOEZgP4OKr0nPdpsvRtUBhROXNnkDFiyFd7Hil0CwVc-FpW5i_TC1P5MjI85EAtQQKXnYgb8M_q6lHu-faGUELECmLb-eFUnd-Qj3TCU-QrDie5BZrd4yFpvTr4nN0wdFItH0H7U_hfqOeBg67PN-Tw0y3sPSmZyCmVblWHb2M8fMoo8BLz_yzQttkBmrT1YU0"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-error border-2 border-surface-container-low rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="text-sm font-bold truncate">Lydia Vance</h4>
+<span class="text-[10px] font-bold text-error bg-error/10 px-1.5 py-0.5 rounded">5.2/10</span>
+</div>
+<p class="text-xs text-on-surface-variant mb-3">UX Researcher</p>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-error text-sm" style="font-variation-settings: 'FILL' 1;">sentiment_dissatisfied</span>
+<span class="text-[10px] font-semibold text-error">Sentiment: Risk of Burnout</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="h-full bg-error w-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer spacing -->
+<footer class="py-12"></footer>
+</main>
+</div>
+</body></html>

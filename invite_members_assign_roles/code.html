@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina Nexus - Role Assignment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary": "#0f00a4",
+                        "surface-container-lowest": "#000000",
+                        "surface-variant": "#192540",
+                        "secondary": "#dae2fd",
+                        "primary-container": "#9396ff",
+                        "on-surface": "#dee5ff",
+                        "on-error": "#490013",
+                        "tertiary-fixed": "#ce9bff",
+                        "on-tertiary": "#33005b",
+                        "on-surface-variant": "#a3aac4",
+                        "on-secondary-fixed": "#373f54",
+                        "surface-container-highest": "#192540",
+                        "surface-tint": "#a3a6ff",
+                        "on-secondary-container": "#c8d0ea",
+                        "error-dim": "#d73357",
+                        "inverse-on-surface": "#4d556b",
+                        "error-container": "#a70138",
+                        "surface-bright": "#1f2b49",
+                        "surface-container-high": "#141f38",
+                        "primary-fixed-dim": "#8387ff",
+                        "background": "#060e20",
+                        "tertiary": "#c180ff",
+                        "error": "#ff6e84",
+                        "on-background": "#dee5ff",
+                        "on-tertiary-container": "#000000",
+                        "on-primary-container": "#0a0081",
+                        "secondary-fixed": "#dae2fd",
+                        "primary": "#a3a6ff",
+                        "on-tertiary-fixed": "#270048",
+                        "inverse-primary": "#494bd7",
+                        "surface": "#060e20",
+                        "inverse-surface": "#faf8ff",
+                        "primary-fixed": "#9396ff",
+                        "secondary-dim": "#ccd4ee",
+                        "on-error-container": "#ffb2b9",
+                        "surface-container": "#0f1930",
+                        "secondary-container": "#3f465c",
+                        "outline": "#6d758c",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "surface-container-low": "#091328",
+                        "secondary-fixed-dim": "#ccd4ee",
+                        "primary-dim": "#6063ee",
+                        "outline-variant": "#40485d",
+                        "on-tertiary-fixed-variant": "#560094",
+                        "on-primary-fixed": "#000000",
+                        "on-secondary": "#4a5167",
+                        "tertiary-container": "#af5cfe",
+                        "tertiary-fixed-dim": "#c488ff",
+                        "tertiary-dim": "#9c48ea",
+                        "on-secondary-fixed-variant": "#535b71",
+                        "surface-dim": "#060e20"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(25, 37, 64, 0.4);
+            backdrop-filter: blur(12px);
+        }
+        .ai-glow {
+            box-shadow: 0 0 15px rgba(193, 128, 255, 0.15);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #060e20; }
+        ::-webkit-scrollbar-thumb { background: #192540; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky flex justify-between items-center px-8 h-16 z-50 bg-[#060e20] shadow-none">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tighter text-indigo-500 font-['Manrope']">Lumina Nexus</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-slate-400 font-['Inter'] text-sm">
+<span class="material-symbols-outlined">help_outline</span>
+<span>Onboarding Progress: Step 2 of 3</span>
+</div>
+<div class="h-8 w-8 rounded-full bg-surface-container-highest border border-outline-variant/20 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a professional male user with short hair in soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjZot7844tUwm1ZtLHAHQN-4Z6gC2kueivnRoHVV4ETnjIAq2ayMelAVc_oF4XZoUmhHwXJ3GmvM41k63bqKYxVsB2l2iGTZ9mGqrgHXUUmd5S2YJtVGDQ9hesCX36Qcw9IpOZfwCL29oDTe13XXHlYoE_zYUTvzfzy-5de_vd4Kdi47Jf51zy2oTtF2KfgsV0pLNMN9Y24z7rorOmAwzNrx8RBeokpfBWbgn7t1GnkA_LzEN-aoUj0i652vrnZw8f49iVs5KWPqo"/>
+</div>
+</div>
+</header>
+<main class="min-h-[calc(100vh-64px)] flex items-start justify-center pt-12 px-6">
+<div class="w-full max-w-6xl">
+<!-- Context Header -->
+<div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="font-headline text-4xl font-extrabold tracking-tight mb-2">Assign Team Roles</h1>
+<p class="text-on-surface-variant max-w-xl text-lg">Define access levels for your 12 invited members. Our AI has pre-selected roles based on workspace activity patterns.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container-high transition-all text-sm font-medium">
+                        Cancel Onboarding
+                    </button>
+<button class="px-8 py-2.5 rounded-lg bg-primary text-on-primary hover:opacity-90 transition-all text-sm font-bold shadow-lg shadow-primary/20">
+                        Review Invites
+                    </button>
+</div>
+</div>
+<!-- Bento Layout Content -->
+<div class="grid grid-cols-12 gap-6 pb-20">
+<!-- Main Data Table Container (TanStack Pattern) -->
+<div class="col-span-12 lg:col-span-9">
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-2xl shadow-black/40">
+<!-- Table Header -->
+<div class="px-8 py-5 flex items-center justify-between bg-surface-container">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">group_add</span>
+<h3 class="font-headline font-bold text-lg">Team Invitation List</h3>
+</div>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="bg-surface-container-highest border-none rounded-md pl-9 pr-4 py-1.5 text-sm w-64 focus:ring-1 focus:ring-primary placeholder:text-outline" placeholder="Filter emails..." type="text"/>
+</div>
+</div>
+<!-- The Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/10">
+<th class="px-8 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Member Details</th>
+<th class="px-8 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Role Designation</th>
+<th class="px-8 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant text-right">Access Level</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container/50 transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 font-bold">JD</div>
+<div>
+<div class="font-semibold text-on-surface">jordan.daniels@enterprise.ai</div>
+<div class="text-xs text-on-surface-variant">Invited 2m ago</div>
+</div>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<select class="bg-surface-container-highest border-none rounded-md text-sm py-1.5 pl-3 pr-10 focus:ring-1 focus:ring-primary-container text-on-surface transition-all appearance-none cursor-pointer">
+<option>Administrator</option>
+<option>Architect</option>
+<option>Member</option>
+<option>Viewer</option>
+</select>
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary/10 text-tertiary text-[10px] font-bold uppercase tracking-tighter ai-glow">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">psychology</span>
+                                                    AI Recommended
+                                                </span>
+</div>
+</td>
+<td class="px-8 py-6 text-right">
+<span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">FULL_ACCESS</span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold">SM</div>
+<div>
+<div class="font-semibold text-on-surface">s.miller@design-studio.io</div>
+<div class="text-xs text-on-surface-variant">Invited 2m ago</div>
+</div>
+</div>
+</td>
+<td class="px-8 py-6">
+<select class="bg-surface-container-highest border-none rounded-md text-sm py-1.5 pl-3 pr-10 focus:ring-1 focus:ring-primary-container text-on-surface transition-all appearance-none cursor-pointer">
+<option>Architect</option>
+<option>Administrator</option>
+<option>Member</option>
+<option>Viewer</option>
+</select>
+</td>
+<td class="px-8 py-6 text-right">
+<span class="text-xs font-mono text-on-surface-variant bg-surface-container-highest px-2 py-1 rounded">WRITE_PROD</span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 font-bold">AW</div>
+<div>
+<div class="font-semibold text-on-surface">alex.w@nexus-labs.com</div>
+<div class="text-xs text-on-surface-variant">Invited 1m ago</div>
+</div>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<select class="bg-surface-container-highest border-none rounded-md text-sm py-1.5 pl-3 pr-10 focus:ring-1 focus:ring-primary-container text-on-surface transition-all appearance-none cursor-pointer">
+<option>Member</option>
+<option>Administrator</option>
+<option>Architect</option>
+<option>Viewer</option>
+</select>
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary/10 text-tertiary text-[10px] font-bold uppercase tracking-tighter ai-glow">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">psychology</span>
+                                                    AI Recommended
+                                                </span>
+</div>
+</td>
+<td class="px-8 py-6 text-right">
+<span class="text-xs font-mono text-on-surface-variant bg-surface-container-highest px-2 py-1 rounded">READ_EDIT</span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary-container font-bold">TK</div>
+<div>
+<div class="font-semibold text-on-surface">t.kim@corp.global</div>
+<div class="text-xs text-on-surface-variant">Invited 45s ago</div>
+</div>
+</div>
+</td>
+<td class="px-8 py-6">
+<select class="bg-surface-container-highest border-none rounded-md text-sm py-1.5 pl-3 pr-10 focus:ring-1 focus:ring-primary-container text-on-surface transition-all appearance-none cursor-pointer">
+<option>Viewer</option>
+<option>Administrator</option>
+<option>Architect</option>
+<option>Member</option>
+</select>
+</td>
+<td class="px-8 py-6 text-right">
+<span class="text-xs font-mono text-on-surface-variant bg-surface-container-highest px-2 py-1 rounded">READ_ONLY</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer -->
+<div class="px-8 py-4 bg-surface-container-low flex items-center justify-between text-xs text-on-surface-variant font-medium">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary ai-glow"></span>
+                                2 AI-Assisted Role Assignments
+                            </div>
+<div class="flex items-center gap-4">
+<span>Showing 4 of 12 invitations</span>
+<div class="flex gap-1">
+<button class="p-1 hover:bg-surface-container-highest rounded transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="p-1 hover:bg-surface-container-highest rounded transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Role Definitions & AI Insights -->
+<div class="col-span-12 lg:col-span-3 flex flex-col gap-6">
+<!-- AI Insight Card -->
+<div class="glass-panel p-6 rounded-xl border border-tertiary/10 ai-glow">
+<div class="flex items-center gap-3 mb-4">
+<div class="p-2 bg-tertiary/20 rounded-lg">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<h4 class="font-headline font-bold text-tertiary">Nexus Insight</h4>
+</div>
+<p class="text-sm leading-relaxed text-on-secondary-container mb-4">
+                            We've analyzed the email domains. Users from <span class="text-tertiary font-bold">enterprise.ai</span> are usually assigned <span class="underline decoration-tertiary/40">Administrator</span> roles in your industry cluster.
+                        </p>
+<button class="w-full py-2 bg-surface-container-highest hover:bg-surface-bright rounded text-xs font-bold transition-all text-on-surface">
+                            Apply Auto-Roles to All
+                        </button>
+</div>
+<!-- Role Legend Card -->
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10">
+<h4 class="font-headline font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-sm">info</span>
+                            Role Permissions
+                        </h4>
+<ul class="space-y-6">
+<li class="flex flex-col gap-1">
+<span class="text-xs font-bold text-primary uppercase tracking-tighter">Administrator</span>
+<p class="text-xs text-on-surface-variant">Full access to settings, billing, and all workspace nodes.</p>
+</li>
+<li class="flex flex-col gap-1">
+<span class="text-xs font-bold text-primary-container uppercase tracking-tighter">Architect</span>
+<p class="text-xs text-on-surface-variant">Can create schemas, deploy models, and manage data flows.</p>
+</li>
+<li class="flex flex-col gap-1">
+<span class="text-xs font-bold text-secondary-dim uppercase tracking-tighter">Member</span>
+<p class="text-xs text-on-surface-variant">Default collaborative access. Can edit assets in assigned rooms.</p>
+</li>
+<li class="flex flex-col gap-1">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">Viewer</span>
+<p class="text-xs text-on-surface-variant">Read-only access. Cannot modify or export sensitive data.</p>
+</li>
+</ul>
+</div>
+<!-- Stats Card -->
+<div class="bg-surface-container p-6 rounded-xl relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="text-xs font-bold text-on-surface-variant mb-4">WORKSPACE CAPACITY</h4>
+<div class="flex items-end gap-2 mb-2">
+<span class="text-3xl font-black font-headline">12/50</span>
+<span class="text-sm text-on-surface-variant mb-1 pb-1">Seats Used</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[24%]"></div>
+</div>
+</div>
+<!-- Background decoration -->
+<div class="absolute -bottom-4 -right-4 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-8xl">hub</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB Suppression: Hide FAB as this is a focused transactional screen -->
+<footer class="fixed bottom-0 left-0 w-full px-8 py-4 bg-background/80 backdrop-blur-sm flex justify-between items-center text-[10px] uppercase tracking-[0.2em] text-outline font-bold">
+<span>© 2024 LUMINA NEXUS CORE SYSTEMS</span>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="#">Security Protocol</a>
+<a class="hover:text-primary transition-colors" href="#">Identity API</a>
+<a class="hover:text-primary transition-colors" href="#">System Health</a>
+</div>
+</footer>
+</body></html>

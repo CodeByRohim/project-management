@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stratum PMS | Autonomous Remediation Builder</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#560094",
+                        "surface-variant": "#192540",
+                        "inverse-on-surface": "#4d556b",
+                        "primary": "#a3a6ff",
+                        "tertiary-fixed-dim": "#c488ff",
+                        "background": "#060e20",
+                        "tertiary-dim": "#9c48ea",
+                        "on-surface-variant": "#a3aac4",
+                        "on-surface": "#dee5ff",
+                        "error-container": "#a70138",
+                        "surface": "#060e20",
+                        "on-secondary": "#4a5167",
+                        "on-primary-container": "#0a0081",
+                        "on-secondary-fixed": "#373f54",
+                        "on-secondary-container": "#c8d0ea",
+                        "error": "#ff6e84",
+                        "tertiary": "#c180ff",
+                        "primary-fixed": "#9396ff",
+                        "on-error": "#490013",
+                        "secondary-dim": "#ccd4ee",
+                        "primary-dim": "#6063ee",
+                        "surface-dim": "#060e20",
+                        "secondary-fixed": "#dae2fd",
+                        "secondary": "#dae2fd",
+                        "primary-fixed-dim": "#8387ff",
+                        "on-tertiary-container": "#000000",
+                        "secondary-container": "#3f465c",
+                        "secondary-fixed-dim": "#ccd4ee",
+                        "tertiary-fixed": "#ce9bff",
+                        "error-dim": "#d73357",
+                        "outline-variant": "#40485d",
+                        "inverse-primary": "#494bd7",
+                        "on-tertiary": "#33005b",
+                        "outline": "#6d758c",
+                        "on-primary": "#0f00a4",
+                        "surface-container": "#0f1930",
+                        "on-primary-fixed": "#000000",
+                        "surface-container-high": "#141f38",
+                        "inverse-surface": "#faf8ff",
+                        "surface-tint": "#a3a6ff",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "on-tertiary-fixed": "#270048",
+                        "on-error-container": "#ffb2b9",
+                        "on-secondary-fixed-variant": "#535b71",
+                        "surface-container-highest": "#192540",
+                        "tertiary-container": "#af5cfe",
+                        "on-background": "#dee5ff",
+                        "surface-bright": "#1f2b49",
+                        "surface-container-lowest": "#000000",
+                        "primary-container": "#9396ff",
+                        "surface-container-low": "#091328"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .workflow-dot-grid {
+            background-image: radial-gradient(#192540 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .glass-panel {
+            background: rgba(15, 25, 48, 0.4);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopAppBar Navigation Shell -->
+<header class="w-full top-0 sticky bg-[#060e20] dark:bg-[#060e20] z-50 shadow-none">
+<div class="flex justify-between items-center px-8 h-16 w-full bg-[#091328]">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-[#a3a6ff] font-['Manrope']">Stratum PMS</span>
+<nav class="hidden md:flex items-center gap-6 text-sm font-['Manrope'] tracking-tight">
+<a class="text-[#40485d] hover:text-[#a3a6ff] transition-colors" href="#">Infrastructure</a>
+<a class="text-[#a3a6ff] font-bold border-b-2 border-[#a3a6ff] pb-1" href="#">Remediation</a>
+<a class="text-[#40485d] hover:text-[#a3a6ff] transition-colors" href="#">Clusters</a>
+<a class="text-[#40485d] hover:text-[#a3a6ff] transition-colors" href="#">Security</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined text-[#40485d] p-2 hover:bg-[#192540] rounded-md transition-all cursor-pointer">analytics</span>
+</div>
+<div class="relative group">
+<span class="material-symbols-outlined text-[#40485d] p-2 hover:bg-[#192540] rounded-md transition-all cursor-pointer">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
+</div>
+<div class="relative group">
+<span class="material-symbols-outlined text-[#40485d] p-2 hover:bg-[#192540] rounded-md transition-all cursor-pointer">settings</span>
+</div>
+<div class="ml-4 w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest ring-1 ring-outline-variant">
+<img alt="Executive User Profile" data-alt="professional portrait of a system administrator in dark tech-oriented studio lighting with subtle blue highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhHUMjQNfIFU4-zwfa3rejKMJU5BMcEEzzdoudRLeD9gmwncJMAR5-J4yMLQd6rcljQgJ-fVjxrMU0gY7rxGz4BFO_fD_ImksYtaE1bPWJW-ZIyTVyRvgEOqZwTIVM9Ic4yvYCZQDGvF-tTcO9vDuVAh6wpf30qOYJCSHpbnFkmbj6cAS665raKVhqyl4uN1Qi6-OZJvbfk7Tg4NMMq9gwVoEnxkLf_5_ANyPqqFIyV2YeydEqHmFyQNeos34Vcv0n0PCihJEb-fg"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex min-h-screen">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 left-0 top-0 fixed bg-[#091328] dark:bg-[#091328] flex flex-col h-full py-6 px-4 gap-4 shadow-2xl shadow-black/40 z-40 no-border">
+<div class="mb-6 px-2">
+<h2 class="text-lg font-black text-[#a3a6ff] font-['Manrope'] uppercase tracking-widest">Global Enterprise</h2>
+<p class="text-xs text-outline font-medium tracking-tight">AI Strategy Layer</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 py-3 px-4 text-[#40485d] hover:bg-[#192540] hover:text-[#a3a6ff] transition-all rounded-md group" href="#">
+<span class="material-symbols-outlined group-active:translate-x-1 transition-transform">insights</span>
+<span class="font-['Manrope'] text-sm font-medium">Strategy</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 text-[#40485d] hover:bg-[#192540] hover:text-[#a3a6ff] transition-all rounded-md group" href="#">
+<span class="material-symbols-outlined group-active:translate-x-1 transition-transform">timeline</span>
+<span class="font-['Manrope'] text-sm font-medium">Roadmap</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 text-[#40485d] hover:bg-[#192540] hover:text-[#a3a6ff] transition-all rounded-md group" href="#">
+<span class="material-symbols-outlined group-active:translate-x-1 transition-transform">query_stats</span>
+<span class="font-['Manrope'] text-sm font-medium">Analytics</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 bg-[#0f1930] text-[#a3a6ff] border-l-4 border-[#a3a6ff] rounded-r-lg group" href="#">
+<span class="material-symbols-outlined group-active:translate-x-1 transition-transform">model_training</span>
+<span class="font-['Manrope'] text-sm font-medium">Simulations</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 text-[#40485d] hover:bg-[#192540] hover:text-[#a3a6ff] transition-all rounded-md group" href="#">
+<span class="material-symbols-outlined group-active:translate-x-1 transition-transform">description</span>
+<span class="font-['Manrope'] text-sm font-medium">Reports</span>
+</a>
+</nav>
+<button class="mt-4 mx-2 py-2.5 bg-primary text-on-primary font-bold rounded-lg flex items-center justify-center gap-2 active:scale-95 transition-all text-sm">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Simulation
+            </button>
+<div class="mt-auto border-t border-outline-variant/10 pt-4 px-2 space-y-1">
+<a class="flex items-center gap-3 py-2 text-[#40485d] hover:text-[#a3a6ff] transition-colors text-xs font-medium" href="#">
+<span class="material-symbols-outlined text-lg">help</span>
+                    Help
+                </a>
+<a class="flex items-center gap-3 py-2 text-[#40485d] hover:text-[#a3a6ff] transition-colors text-xs font-medium" href="#">
+<span class="material-symbols-outlined text-lg">logout</span>
+                    Logout
+                </a>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="ml-64 flex-1 p-8 overflow-y-auto">
+<header class="flex justify-between items-end mb-10">
+<div>
+<h1 class="font-headline text-4xl font-extrabold tracking-tight text-on-surface">Remediation Builder</h1>
+<p class="text-on-surface-variant mt-2 font-body max-w-xl">Architect autonomous self-healing workflows for global infrastructure. Design, simulate, and deploy AI-driven remediation logic.</p>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-outline-variant bg-surface-container-low text-on-surface hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="play_circle">play_circle</span>
+                        Simulation Mode
+                    </button>
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-tertiary-container text-on-tertiary-container font-bold hover:brightness-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="publish">publish</span>
+                        Deploy Workflow
+                    </button>
+</div>
+</header>
+<!-- Bento Layout Content -->
+<div class="grid grid-cols-12 gap-6 h-[800px]">
+<!-- Node-based Workflow Editor (The Canvas) -->
+<div class="col-span-8 bg-surface-container-low rounded-xl overflow-hidden relative workflow-dot-grid border border-outline-variant/10">
+<div class="absolute top-4 left-4 z-10 flex gap-2">
+<span class="bg-surface-container-highest/80 backdrop-blur px-3 py-1.5 rounded-lg text-xs font-mono text-primary flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                            ACTIVE_CANVAS_01
+                        </span>
+</div>
+<div class="absolute inset-0 flex items-center justify-around px-12">
+<!-- Trigger Node -->
+<div class="w-56 h-32 bg-surface-container-high rounded-xl border-l-4 border-error p-4 shadow-xl flex flex-col justify-between group cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex justify-between items-start">
+<span class="text-[10px] uppercase font-bold tracking-widest text-error">Trigger</span>
+<span class="material-symbols-outlined text-error text-lg" data-icon="bolt">bolt</span>
+</div>
+<div>
+<h4 class="text-sm font-bold">Latency &gt; 200ms</h4>
+<p class="text-[10px] text-on-surface-variant">p99 Monitoring Service</p>
+</div>
+</div>
+<!-- Connection Line (Visual) -->
+<div class="flex-1 h-[2px] bg-gradient-to-r from-error/40 via-primary/40 to-tertiary/40 relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-outline" data-icon="add">add</span>
+</div>
+</div>
+<!-- Condition Node -->
+<div class="w-56 h-32 bg-surface-container-high rounded-xl border-l-4 border-primary p-4 shadow-xl flex flex-col justify-between group cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex justify-between items-start">
+<span class="text-[10px] uppercase font-bold tracking-widest text-primary">Condition</span>
+<span class="material-symbols-outlined text-primary text-lg" data-icon="filter_alt">filter_alt</span>
+</div>
+<div>
+<h4 class="text-sm font-bold">Tenant = Alpha</h4>
+<p class="text-[10px] text-on-surface-variant">Identity Context Layer</p>
+</div>
+</div>
+<div class="flex-1 h-[2px] bg-gradient-to-r from-primary/40 to-tertiary/40"></div>
+<!-- Action Node -->
+<div class="w-56 h-32 bg-surface-container-high rounded-xl border-l-4 border-tertiary p-4 shadow-xl flex flex-col justify-between group cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex justify-between items-start">
+<span class="text-[10px] uppercase font-bold tracking-widest text-tertiary">Action</span>
+<span class="material-symbols-outlined text-tertiary text-lg" data-icon="settings_input_component">settings_input_component</span>
+</div>
+<div>
+<h4 class="text-sm font-bold">Auto-Scale Node</h4>
+<p class="text-[10px] text-on-surface-variant">K8s Orchestrator v2</p>
+</div>
+</div>
+</div>
+<!-- Canvas Controls -->
+<div class="absolute bottom-4 right-4 flex gap-2">
+<button class="w-10 h-10 rounded-lg bg-surface-container-highest border border-outline-variant flex items-center justify-center text-outline hover:text-on-surface"><span class="material-symbols-outlined">zoom_in</span></button>
+<button class="w-10 h-10 rounded-lg bg-surface-container-highest border border-outline-variant flex items-center justify-center text-outline hover:text-on-surface"><span class="material-symbols-outlined">zoom_out</span></button>
+<button class="w-10 h-10 rounded-lg bg-surface-container-highest border border-outline-variant flex items-center justify-center text-outline hover:text-on-surface"><span class="material-symbols-outlined">center_focus_weak</span></button>
+</div>
+</div>
+<!-- Right Sidebar (Inventory & Monitoring) -->
+<div class="col-span-4 flex flex-col gap-6">
+<!-- Template Library -->
+<section class="flex-1 bg-surface-container-low rounded-xl p-6 border border-outline-variant/10 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline font-bold text-lg">Templates</h3>
+<button class="text-xs text-primary font-bold hover:underline">View All</button>
+</div>
+<div class="space-y-3 overflow-y-auto pr-2">
+<div class="p-4 rounded-xl bg-surface-container border border-outline-variant/20 hover:border-primary/50 cursor-pointer transition-all">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="memory">memory</span>
+<h4 class="font-bold text-sm">OOM-Killer Prevention</h4>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-1">Auto-scales RAM before OOM event occurs.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container border border-outline-variant/20 hover:border-primary/50 cursor-pointer transition-all">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="database">database</span>
+<h4 class="font-bold text-sm">SQL Lock Remediation</h4>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-1">Detects long-running locks and kills sessions.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container border border-outline-variant/20 hover:border-primary/50 cursor-pointer transition-all">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-error" data-icon="cloud_off">cloud_off</span>
+<h4 class="font-bold text-sm">CDN Edge Failover</h4>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-1">Switches traffic to secondary zone on 5xx.</p>
+</div>
+</div>
+</section>
+<!-- Active Automations Monitor -->
+<section class="h-1/2 bg-surface-container-low rounded-xl p-6 border border-outline-variant/10 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline font-bold text-lg">Active Automations</h3>
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider">4 Running</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between group">
+<div class="flex items-center gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(163,166,255,0.6)]"></div>
+<div>
+<p class="text-xs font-bold">Scaling_Lambda_04</p>
+<p class="text-[10px] text-outline">Triggered 2m ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-sm opacity-0 group-hover:opacity-100 cursor-pointer hover:text-error transition-all" data-icon="stop_circle">stop_circle</span>
+</div>
+<div class="flex items-center justify-between group">
+<div class="flex items-center gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(163,166,255,0.6)]"></div>
+<div>
+<p class="text-xs font-bold">Auth_Rate_Limiter</p>
+<p class="text-[10px] text-outline">Continuous Monitoring</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-sm opacity-0 group-hover:opacity-100 cursor-pointer hover:text-error transition-all" data-icon="stop_circle">stop_circle</span>
+</div>
+<div class="flex items-center justify-between group">
+<div class="flex items-center gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(163,166,255,0.6)]"></div>
+<div>
+<p class="text-xs font-bold">Log_Drain_Cleanup</p>
+<p class="text-[10px] text-outline">Maintenance Mode</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-sm opacity-0 group-hover:opacity-100 cursor-pointer hover:text-error transition-all" data-icon="stop_circle">stop_circle</span>
+</div>
+</div>
+<div class="mt-auto pt-6 border-t border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="flex-1 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[72%] rounded-full"></div>
+</div>
+<span class="text-[10px] font-mono text-outline">72% System Health</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Simulation Overlay / Result Section -->
+<section class="mt-12 bg-surface-container-high rounded-2xl p-8 relative overflow-hidden">
+<!-- AI Accent Glow -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-tertiary/10 rounded-full blur-[80px]"></div>
+<div class="grid grid-cols-3 gap-12 relative z-10">
+<div class="col-span-1">
+<h3 class="font-headline font-bold text-2xl mb-4 text-on-surface">Simulation Console</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Run the current workflow against the last 7 days of historical telemetry to validate precision and recall of the remediation logic.</p>
+<div class="flex flex-col gap-2">
+<label class="text-[10px] uppercase font-black text-outline tracking-widest">Dataset Range</label>
+<select class="bg-surface-container-highest border-none rounded-lg text-sm text-on-surface focus:ring-primary">
+<option>Last 7 Days (Stable)</option>
+<option>Incident Horizon (Jan 14-16)</option>
+<option>Heavy Traffic Load (Cyber Monday)</option>
+</select>
+</div>
+</div>
+<div class="col-span-2 bg-background/50 rounded-xl p-6 border border-outline-variant/20 flex flex-col gap-4">
+<div class="flex justify-between items-center pb-4 border-b border-outline-variant/10">
+<span class="text-xs font-mono text-tertiary">SIMULATION_READY</span>
+<div class="flex gap-4">
+<div class="text-center">
+<p class="text-[10px] text-outline uppercase font-bold">Predicted Accuracy</p>
+<p class="text-lg font-bold text-on-surface">98.4%</p>
+</div>
+<div class="text-center">
+<p class="text-[10px] text-outline uppercase font-bold">Cost Savings</p>
+<p class="text-lg font-bold text-primary">-$240/mo</p>
+</div>
+</div>
+</div>
+<div class="flex-1 min-h-[120px] flex items-center justify-center border-2 border-dashed border-outline-variant/20 rounded-lg group hover:border-primary/30 transition-all cursor-pointer">
+<div class="text-center">
+<span class="material-symbols-outlined text-4xl text-outline group-hover:text-primary transition-colors" data-icon="analytics">analytics</span>
+<p class="text-sm font-medium mt-2 text-outline group-hover:text-on-surface">Click to Run Test Suite</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- AI Command Bar -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 w-full max-w-2xl px-6 z-50">
+<div class="glass-panel rounded-full border border-outline-variant/30 flex items-center p-2 shadow-[0_20px_40px_rgba(0,0,0,0.6)]">
+<div class="w-10 h-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-sm placeholder:text-outline text-on-surface mx-2" placeholder="Describe a remediation goal (e.g., 'Restart Docker if CPU &gt; 90% for 5m')..." type="text"/>
+<button class="bg-surface-container-highest hover:bg-surface-bright text-on-surface text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full transition-all border border-outline-variant/40">
+                Ask AI
+            </button>
+</div>
+</div>
+</body></html>

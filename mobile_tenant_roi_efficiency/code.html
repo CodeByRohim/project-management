@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stratum AI - ROI &amp; Efficiency Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#141f38",
+                        "inverse-surface": "#faf8ff",
+                        "surface-container": "#0f1930",
+                        "tertiary-container": "#af5cfe",
+                        "on-secondary-fixed": "#373f54",
+                        "on-secondary": "#4a5167",
+                        "on-error-container": "#ffb2b9",
+                        "surface-dim": "#060e20",
+                        "primary-fixed": "#9396ff",
+                        "on-background": "#dee5ff",
+                        "error-container": "#a70138",
+                        "primary-fixed-dim": "#8387ff",
+                        "primary-dim": "#6063ee",
+                        "on-primary": "#0f00a4",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "inverse-primary": "#494bd7",
+                        "primary-container": "#9396ff",
+                        "surface-bright": "#1f2b49",
+                        "on-error": "#490013",
+                        "on-tertiary-fixed-variant": "#560094",
+                        "on-primary-container": "#0a0081",
+                        "secondary-fixed-dim": "#ccd4ee",
+                        "primary": "#a3a6ff",
+                        "error-dim": "#d73357",
+                        "on-surface-variant": "#a3aac4",
+                        "surface-container-highest": "#192540",
+                        "secondary": "#dae2fd",
+                        "tertiary-dim": "#9c48ea",
+                        "outline-variant": "#40485d",
+                        "surface-container-lowest": "#000000",
+                        "inverse-on-surface": "#4d556b",
+                        "on-tertiary": "#33005b",
+                        "tertiary-fixed-dim": "#c488ff",
+                        "surface-container-low": "#091328",
+                        "surface-variant": "#192540",
+                        "background": "#060e20",
+                        "on-secondary-fixed-variant": "#535b71",
+                        "outline": "#6d758c",
+                        "secondary-container": "#3f465c",
+                        "surface": "#060e20",
+                        "on-secondary-container": "#c8d0ea",
+                        "on-surface": "#dee5ff",
+                        "on-tertiary-fixed": "#270048",
+                        "tertiary-fixed": "#ce9bff",
+                        "surface-tint": "#a3a6ff",
+                        "secondary-fixed": "#dae2fd",
+                        "error": "#ff6e84",
+                        "secondary-dim": "#ccd4ee",
+                        "tertiary": "#c180ff",
+                        "on-primary-fixed": "#000000",
+                        "on-tertiary-container": "#000000"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #060e20; color: #dee5ff; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(25, 37, 64, 0.4); backdrop-filter: blur(12px); border-left: 2px solid #ccd4ee33; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="flex items-center justify-between px-6 h-16 w-full fixed top-0 z-50 bg-[#060e20] shadow-none">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-sm">architecture</span>
+</div>
+<h1 class="font-['Manrope'] tracking-tight text-xl font-bold text-[#a3a6ff] tracking-tighter">Stratum AI</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#0f1930] transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#40485d]">sync_alt</span>
+</button>
+</header>
+<main class="pt-20 px-4 space-y-8">
+<!-- Executive Intelligence Section -->
+<section>
+<div class="flex items-end justify-between mb-4">
+<h2 class="font-headline text-2xl font-extrabold tracking-tight text-on-surface">Executive Intelligence</h2>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Live Feed</span>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<!-- Efficiency Savings Card -->
+<div class="surface-container-low p-6 rounded-xl space-y-4 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl">account_balance_wallet</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Efficiency Savings</span>
+</div>
+<div class="space-y-1">
+<div class="text-4xl font-headline font-bold text-primary">$4.2M</div>
+<div class="flex items-center gap-1 text-xs text-tertiary">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>12.4% vs last quarter</span>
+</div>
+</div>
+<div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-3/4"></div>
+</div>
+</div>
+<!-- Resource Utilization Card -->
+<div class="surface-container-low p-6 rounded-xl space-y-4 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl">memory</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed"></div>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Resource Utilization</span>
+</div>
+<div class="space-y-1">
+<div class="text-4xl font-headline font-bold text-secondary">94.8%</div>
+<div class="flex items-center gap-1 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span>Optimal performance tier</span>
+</div>
+</div>
+<div class="flex gap-1">
+<div class="h-8 flex-1 bg-surface-container-highest rounded-sm flex items-end">
+<div class="w-full bg-secondary h-2/3 opacity-40"></div>
+</div>
+<div class="h-8 flex-1 bg-surface-container-highest rounded-sm flex items-end">
+<div class="w-full bg-secondary h-3/4 opacity-60"></div>
+</div>
+<div class="h-8 flex-1 bg-surface-container-highest rounded-sm flex items-end">
+<div class="w-full bg-secondary h-full opacity-100"></div>
+</div>
+<div class="h-8 flex-1 bg-surface-container-highest rounded-sm flex items-end">
+<div class="w-full bg-secondary h-5/6 opacity-80"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Strategic Insights Carousel -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-headline text-lg font-bold">Strategic Insights</h3>
+<button class="text-primary text-xs font-medium">View All</button>
+</div>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-4 snap-x">
+<div class="min-w-[280px] snap-center glass-panel p-5 rounded-xl space-y-3">
+<span class="inline-block px-2 py-0.5 rounded-full bg-tertiary/20 text-tertiary text-[9px] font-bold uppercase tracking-wider">High Impact</span>
+<p class="text-sm font-medium leading-relaxed">Optimize node clustering in EU-West to reduce latency by 18%.</p>
+<div class="flex items-center justify-between pt-2">
+<span class="text-[10px] text-on-surface-variant">Estimated ROI: $120k</span>
+<span class="material-symbols-outlined text-primary">arrow_forward_ios</span>
+</div>
+</div>
+<div class="min-w-[280px] snap-center bg-surface-container p-5 rounded-xl space-y-3">
+<span class="inline-block px-2 py-0.5 rounded-full bg-primary/20 text-primary text-[9px] font-bold uppercase tracking-wider">Resource Tip</span>
+<p class="text-sm font-medium leading-relaxed">Underutilized GPU cores detected in Project Phoenix workspace.</p>
+<div class="flex items-center justify-between pt-2">
+<span class="text-[10px] text-on-surface-variant">Potential Saving: $45k</span>
+<span class="material-symbols-outlined text-primary">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Tenant Performance Matrix -->
+<section class="space-y-4">
+<h3 class="font-headline text-lg font-bold">Performance Matrix</h3>
+<div class="surface-container-low rounded-xl overflow-hidden">
+<div class="bg-surface-container-highest px-4 py-3 flex justify-between items-center">
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Tenant Entity</span>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant text-right">Health Score</span>
+</div>
+<div class="divide-y divide-outline-variant/10">
+<div class="p-4 flex items-center justify-between bg-surface-container/30 hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" data-weight="fill">hub</span>
+</div>
+<div>
+<div class="text-sm font-semibold">Alpha Core</div>
+<div class="text-[10px] text-on-surface-variant">Enterprise SaaS</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-sm font-headline font-bold">98.2</div>
+<div class="text-[10px] text-tertiary">Exemplary</div>
+</div>
+</div>
+<div class="p-4 flex items-center justify-between bg-surface-container/30 hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-secondary-fixed/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-sm" data-weight="fill">deployed_code</span>
+</div>
+<div>
+<div class="text-sm font-semibold">Nexis Logic</div>
+<div class="text-[10px] text-on-surface-variant">Edge Computing</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-sm font-headline font-bold">84.5</div>
+<div class="text-[10px] text-on-surface-variant">Steady</div>
+</div>
+</div>
+<div class="p-4 flex items-center justify-between bg-surface-container/30 hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-sm" data-weight="fill">database</span>
+</div>
+<div>
+<div class="text-sm font-semibold">Data Stream</div>
+<div class="text-[10px] text-on-surface-variant">Financial API</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-sm font-headline font-bold">72.1</div>
+<div class="text-[10px] text-error">Warning</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low text-center">
+<button class="text-xs font-label uppercase tracking-widest text-primary-fixed font-bold">Deep Scan Full Matrix</button>
+</div>
+</div>
+</section>
+<!-- Dynamic Visualization Placeholder -->
+<section class="rounded-2xl h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover opacity-60 mix-blend-lighten" data-alt="abstract architectural visualization with glowing lines and deep blue data streams showing connectivity and intelligence flow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9PCR5fn1XT8Y45IiDO6KOVHrq-CjsrD3wXcmbqyBMmoVba1LOEQTtdPzVIiDG_j8lZqFVJpRR8iPiqNbQzV0kEOvhoNr7OAjZ-9PBKkplPiMy5R2NehPvWNWavEpTLkA-cvi5xKWDd11XZLxTEdwRLSwKzRIp9-PzE4pqOouVA7mLE05CigQDRu5ThaQCJz5KfI0qtoby2Sbz0h_fX6uFr3JcwqSo3w3ivG4eVoW3l4F13yxfpgDVnfBf7Bk5i4xkjw4oyBjIb2g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="text-xs font-label uppercase tracking-widest text-on-surface-variant mb-1">Infrastructure Load</div>
+<div class="flex items-center gap-2">
+<div class="text-xl font-headline font-bold">Real-time Topography</div>
+<span class="material-symbols-outlined text-primary animate-pulse">sensors</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#060e20]/80 backdrop-blur-xl border-t border-[#40485d]/15 shadow-[0_-10px_30px_rgba(0,0,0,0.4)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-[#40485d] opacity-70 transition-all cubic-bezier(0.4,0,0.2,1) hover:text-[#a3a6ff]" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Strategy</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#40485d] opacity-70 transition-all cubic-bezier(0.4,0,0.2,1) hover:text-[#a3a6ff]" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Risks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#40485d] opacity-70 transition-all cubic-bezier(0.4,0,0.2,1) hover:text-[#a3a6ff]" href="#">
+<span class="material-symbols-outlined">build_circle</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Remedy</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#a3a6ff] bg-[#192540] rounded-lg px-3 py-1 transition-all cubic-bezier(0.4,0,0.2,1)" href="#">
+<span class="material-symbols-outlined">monetization_on</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">ROI</span>
+</a>
+</nav>
+<!-- Floating Action Button: Suppressed per shell rules for details/transactional dashboard view unless primary goal. Here we keep it hidden for maximum clarity of metrics -->
+</body></html>

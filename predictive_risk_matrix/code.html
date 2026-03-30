@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stratum PMS | Predictive Risk Matrix</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#560094",
+                        "surface-variant": "#192540",
+                        "inverse-on-surface": "#4d556b",
+                        "primary": "#a3a6ff",
+                        "tertiary-fixed-dim": "#c488ff",
+                        "background": "#060e20",
+                        "tertiary-dim": "#9c48ea",
+                        "on-surface-variant": "#a3aac4",
+                        "on-surface": "#dee5ff",
+                        "error-container": "#a70138",
+                        "surface": "#060e20",
+                        "on-secondary": "#4a5167",
+                        "on-primary-container": "#0a0081",
+                        "on-secondary-fixed": "#373f54",
+                        "on-secondary-container": "#c8d0ea",
+                        "error": "#ff6e84",
+                        "tertiary": "#c180ff",
+                        "primary-fixed": "#9396ff",
+                        "on-error": "#490013",
+                        "secondary-dim": "#ccd4ee",
+                        "primary-dim": "#6063ee",
+                        "surface-dim": "#060e20",
+                        "secondary-fixed": "#dae2fd",
+                        "secondary": "#dae2fd",
+                        "primary-fixed-dim": "#8387ff",
+                        "on-tertiary-container": "#000000",
+                        "secondary-container": "#3f465c",
+                        "secondary-fixed-dim": "#ccd4ee",
+                        "tertiary-fixed": "#ce9bff",
+                        "error-dim": "#d73357",
+                        "outline-variant": "#40485d",
+                        "inverse-primary": "#494bd7",
+                        "on-tertiary": "#33005b",
+                        "outline": "#6d758c",
+                        "on-primary": "#0f00a4",
+                        "surface-container": "#0f1930",
+                        "on-primary-fixed": "#000000",
+                        "surface-container-high": "#141f38",
+                        "inverse-surface": "#faf8ff",
+                        "surface-tint": "#a3a6ff",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "on-tertiary-fixed": "#270048",
+                        "on-error-container": "#ffb2b9",
+                        "on-secondary-fixed-variant": "#535b71",
+                        "surface-container-highest": "#192540",
+                        "tertiary-container": "#af5cfe",
+                        "on-background": "#dee5ff",
+                        "surface-bright": "#1f2b49",
+                        "surface-container-lowest": "#000000",
+                        "primary-container": "#9396ff",
+                        "surface-container-low": "#091328"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .heatmap-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 0.5rem;
+        }
+        .glass-panel {
+            background: rgba(25, 37, 64, 0.4);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar Shell -->
+<header class="w-full top-0 sticky z-50 bg-[#060e20] dark:bg-[#060e20] shadow-none flex justify-between items-center px-8 h-16 w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-[#a3a6ff] font-['Manrope']">Stratum PMS</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-[#40485d] hover:text-[#a3a6ff] transition-colors font-['Manrope'] tracking-tight" href="#">Overview</a>
+<a class="text-[#a3a6ff] font-bold border-b-2 border-[#a3a6ff] pb-1 font-['Manrope'] tracking-tight" href="#">Strategy</a>
+<a class="text-[#40485d] hover:text-[#a3a6ff] transition-colors font-['Manrope'] tracking-tight" href="#">Roadmap</a>
+<a class="text-[#40485d] hover:text-[#a3a6ff] transition-colors font-['Manrope'] tracking-tight" href="#">Simulations</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">search</span>
+<input class="bg-surface-container-highest border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-primary w-64" placeholder="Search Risk Vector..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-[#192540] rounded-md transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#a3a6ff]">analytics</span>
+</button>
+<button class="p-2 hover:bg-[#192540] rounded-md transition-all active:scale-95 duration-200 relative">
+<span class="material-symbols-outlined text-[#a3a6ff]">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<img alt="User Profile" class="w-8 h-8 rounded-full ml-2 border border-outline-variant" data-alt="Professional portrait of a male executive in a sharp navy suit against a soft-focus office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPeRPpJv2-hV8_b-yBhwh5NwVVJDdYE5gyf4iqWaC5LupRZDJongQpTywq0yxVraYQFQdMm3ZiIsScnIhPnMbDbAXXQ8FTyC4Njk9S1oyRLfvJSQ1VsDXqKpIDocrY5r_cnU1D8bI6ngNiXMjoWZu5i3UT4gsBwJKPudq40cVRWx9SViQj1ArEJ22I2oOP9AmxreFQ0Ma7TouX6U20xA1m0yrk_RbR9hcy9aRi1vXqH9KdE7l9S-NWQLxWN6hB5Qvh2fGrSk-hRu8"/>
+</div>
+</div>
+</header>
+<div class="flex min-h-screen">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 left-0 top-0 fixed flex flex-col h-full py-6 px-4 gap-4 bg-[#091328] dark:bg-[#091328] shadow-2xl shadow-black/40 z-40">
+<div class="mb-8 px-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<div>
+<div class="text-lg font-black text-[#a3a6ff] font-['Manrope'] leading-tight">Global Enterprise</div>
+<div class="text-xs text-on-surface-variant font-medium">AI Strategy Layer</div>
+</div>
+</div>
+</div>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 bg-[#0f1930] text-[#a3a6ff] border-l-4 border-[#a3a6ff] rounded-r-lg active:translate-x-1 transition-transform font-['Manrope'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">insights</span>
+                    Strategy
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#40485d] hover:bg-[#192540] hover:text-[#a3a6ff] hover:backdrop-blur-md transition-all active:translate-x-1 transition-transform font-['Manrope'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">timeline</span>
+                    Roadmap
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#40485d] hover:bg-[#192540] hover:text-[#a3a6ff] hover:backdrop-blur-md transition-all active:translate-x-1 transition-transform font-['Manrope'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+                    Analytics
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#40485d] hover:bg-[#192540] hover:text-[#a3a6ff] hover:backdrop-blur-md transition-all active:translate-x-1 transition-transform font-['Manrope'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">model_training</span>
+                    Simulations
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#40485d] hover:bg-[#192540] hover:text-[#a3a6ff] hover:backdrop-blur-md transition-all active:translate-x-1 transition-transform font-['Manrope'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">description</span>
+                    Reports
+                </a>
+</div>
+<div class="mt-6 px-2">
+<button class="w-full bg-tertiary text-on-tertiary font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-95">
+<span class="material-symbols-outlined">add_circle</span>
+                    New Simulation
+                </button>
+</div>
+<div class="mt-auto space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#40485d] hover:bg-[#192540] hover:text-[#a3a6ff] transition-all font-['Manrope'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">help</span>
+                    Help
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#40485d] hover:bg-[#192540] hover:text-[#a3a6ff] transition-all font-['Manrope'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">logout</span>
+                    Logout
+                </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 p-8">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-10">
+<div class="space-y-1">
+<span class="text-on-surface-variant text-xs font-bold tracking-widest uppercase">Risk Intelligence Engine</span>
+<h1 class="text-4xl font-extrabold font-headline tracking-tight text-on-surface">Predictive Risk Matrix</h1>
+</div>
+<div class="flex gap-4">
+<div class="bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant/10">
+<span class="text-xs text-on-surface-variant block">AI Confidence Score</span>
+<span class="text-xl font-bold text-tertiary">94.2%</span>
+</div>
+<div class="bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant/10">
+<span class="text-xs text-on-surface-variant block">Active Vectors</span>
+<span class="text-xl font-bold text-primary">12 Active</span>
+</div>
+</div>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Risk Heatmap (Large Component) -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-low rounded-xl p-6 shadow-xl border border-outline-variant/5">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="text-lg font-bold font-headline">Enterprise Impact Heatmap</h3>
+<p class="text-sm text-on-surface-variant">Predicted variance for Q4 Multi-tenant infrastructure</p>
+</div>
+<div class="flex gap-2">
+<span class="bg-surface-container-highest px-3 py-1 rounded-full text-xs text-primary border border-primary/20">Live Sync</span>
+<span class="bg-surface-container-highest px-3 py-1 rounded-full text-xs text-on-surface-variant">Real-time Anomaly</span>
+</div>
+</div>
+<div class="flex">
+<!-- Y-Axis Label -->
+<div class="w-12 flex items-center justify-center">
+<span class="rotate-[-90deg] whitespace-nowrap text-xs font-bold tracking-widest text-on-surface-variant uppercase">Probability →</span>
+</div>
+<div class="flex-1">
+<div class="heatmap-grid h-[450px]">
+<!-- Row 5 (Critical Probability) -->
+<div class="bg-error/10 rounded border border-error/20 flex items-center justify-center group cursor-pointer hover:bg-error/30 transition-all"></div>
+<div class="bg-error/20 rounded border border-error/30 flex items-center justify-center group cursor-pointer hover:bg-error/40 transition-all"></div>
+<div class="bg-error/40 rounded border border-error/50 flex items-center justify-center group cursor-pointer hover:bg-error/60 transition-all">
+<div class="w-10 h-10 bg-error rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(255,110,132,0.6)] animate-pulse">
+<span class="text-[10px] font-black text-on-error">8.9</span>
+</div>
+</div>
+<div class="bg-error/60 rounded border border-error/70 flex items-center justify-center group cursor-pointer hover:bg-error/80 transition-all"></div>
+<div class="bg-error/80 rounded border border-error/90 flex items-center justify-center group cursor-pointer hover:bg-error/100 transition-all">
+<div class="w-12 h-12 bg-error-container rounded-lg flex items-center justify-center shadow-lg transform -rotate-12 border border-error">
+<span class="material-symbols-outlined text-on-error">warning</span>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="bg-tertiary-dim/10 rounded border border-tertiary-dim/20"></div>
+<div class="bg-tertiary-dim/20 rounded border border-tertiary-dim/30 flex items-center justify-center">
+<div class="w-8 h-8 rounded-full border-2 border-tertiary-dim border-dashed animate-spin-slow"></div>
+</div>
+<div class="bg-tertiary-dim/40 rounded border border-tertiary-dim/50"></div>
+<div class="bg-tertiary-dim/60 rounded border border-tertiary-dim/70"></div>
+<div class="bg-tertiary-dim/80 rounded border border-tertiary-dim/90"></div>
+<!-- Row 3 -->
+<div class="bg-primary/10 rounded border border-primary/20"></div>
+<div class="bg-primary/20 rounded border border-primary/30"></div>
+<div class="bg-primary/30 rounded border border-primary/40 flex items-center justify-center">
+<span class="text-primary text-xs font-bold">ALPHA-7</span>
+</div>
+<div class="bg-primary/40 rounded border border-primary/50"></div>
+<div class="bg-primary/50 rounded border border-primary/60"></div>
+<!-- Row 2 -->
+<div class="bg-surface-container-highest rounded border border-outline-variant/10"></div>
+<div class="bg-surface-container-highest rounded border border-outline-variant/10"></div>
+<div class="bg-surface-container-highest rounded border border-outline-variant/10"></div>
+<div class="bg-surface-container-highest rounded border border-outline-variant/10"></div>
+<div class="bg-surface-container-highest rounded border border-outline-variant/10"></div>
+<!-- Row 1 (Negligible) -->
+<div class="bg-surface-container-highest rounded border border-outline-variant/5"></div>
+<div class="bg-surface-container-highest rounded border border-outline-variant/5"></div>
+<div class="bg-surface-container-highest rounded border border-outline-variant/5"></div>
+<div class="bg-surface-container-highest rounded border border-outline-variant/5"></div>
+<div class="bg-surface-container-highest rounded border border-outline-variant/5"></div>
+</div>
+<!-- X-Axis Label -->
+<div class="w-full text-center mt-6">
+<span class="text-xs font-bold tracking-widest text-on-surface-variant uppercase">Impact Sensitivity →</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Mitigation Sidebar -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<div class="bg-surface-container-highest rounded-xl p-6 glass-panel border border-tertiary/20">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h3 class="text-lg font-bold font-headline">AI Mitigation Advisor</h3>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-surface-container rounded-lg border-l-4 border-error">
+<div class="flex justify-between mb-2">
+<span class="text-xs font-bold text-error uppercase">Urgent Action</span>
+<span class="text-[10px] text-on-surface-variant">Cloud Outage Risk</span>
+</div>
+<p class="text-sm text-on-surface mb-3">Provision secondary AWS region for Tenant Cluster B-12 immediately.</p>
+<button class="w-full py-2 bg-error-container text-on-error-container text-xs font-bold rounded hover:bg-error transition-colors">EXECUTE AUTO-RECOVERY</button>
+</div>
+<div class="p-4 bg-surface-container rounded-lg border-l-4 border-tertiary">
+<div class="flex justify-between mb-2">
+<span class="text-xs font-bold text-tertiary uppercase">Strategic Pivot</span>
+<span class="text-[10px] text-on-surface-variant">Supply Chain</span>
+</div>
+<p class="text-sm text-on-surface mb-3">Diverge procurement paths for semiconductor components.</p>
+<button class="w-full py-2 bg-tertiary-container text-on-tertiary-container text-xs font-bold rounded hover:opacity-80 transition-colors">INITIATE SIMULATION</button>
+</div>
+</div>
+</div>
+<!-- Silent Failure Detection -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/10">
+<h4 class="text-sm font-bold font-headline mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">visibility_off</span>
+                            Silent Failure Detection
+                        </h4>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded border border-outline-variant/5">
+<div>
+<div class="text-xs font-bold">Project Helios</div>
+<div class="text-[10px] text-primary">AI: High Risk | Manual: Stable</div>
+</div>
+<span class="material-symbols-outlined text-error text-xl">error</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded border border-outline-variant/5">
+<div>
+<div class="text-xs font-bold">Quantum Core</div>
+<div class="text-[10px] text-primary">AI: High Risk | Manual: Stable</div>
+</div>
+<span class="material-symbols-outlined text-error text-xl">error</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Anomaly Correlation Engine (Table) -->
+<div class="col-span-12 bg-surface-container-low rounded-xl p-8 border border-outline-variant/5">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="text-xl font-bold font-headline">Anomaly Correlation Engine</h3>
+<p class="text-sm text-on-surface-variant">Cross-tenant infrastructure dependencies and shared risk vectors</p>
+</div>
+<button class="px-4 py-2 bg-surface-container-highest rounded-lg text-sm font-bold flex items-center gap-2 border border-outline-variant/20 hover:bg-surface-bright transition-all">
+<span class="material-symbols-outlined">filter_list</span>
+                            Advanced Filters
+                        </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="border-b border-outline-variant/10">
+<tr class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">
+<th class="pb-4 px-4">Risk Vector ID</th>
+<th class="pb-4 px-4">Correlation Origin</th>
+<th class="pb-4 px-4">Impacted Tenants</th>
+<th class="pb-4 px-4">Severity Graph</th>
+<th class="pb-4 px-4">Detection Confidence</th>
+<th class="pb-4 px-4 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="group hover:bg-surface-container-highest/50 transition-colors">
+<td class="py-5 px-4">
+<div class="font-bold text-on-surface">ANOM-9021</div>
+<div class="text-[10px] text-on-surface-variant">Shared Cloud Provider Latency</div>
+</td>
+<td class="py-5 px-4">
+<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded">AWS-US-EAST-1</span>
+</td>
+<td class="py-5 px-4">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center text-[8px] border border-background">T1</div>
+<div class="w-6 h-6 rounded-full bg-tertiary-container flex items-center justify-center text-[8px] border border-background">T4</div>
+<div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center text-[8px] border border-background">T9</div>
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-[8px] border border-background text-on-surface-variant">+2</div>
+</div>
+</td>
+<td class="py-5 px-4 w-48">
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error w-4/5 rounded-full shadow-[0_0_8px_rgba(255,110,132,0.4)]"></div>
+</div>
+</td>
+<td class="py-5 px-4">
+<span class="text-sm font-medium">98.1%</span>
+</td>
+<td class="py-5 px-4 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">open_in_new</button>
+</td>
+</tr>
+<tr class="group hover:bg-surface-container-highest/50 transition-colors">
+<td class="py-5 px-4">
+<div class="font-bold text-on-surface">ANOM-4432</div>
+<div class="text-[10px] text-on-surface-variant">DB Lock Contention Leak</div>
+</td>
+<td class="py-5 px-4">
+<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[10px] font-bold rounded">DB-CLUSTER-B</span>
+</td>
+<td class="py-5 px-4">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center text-[8px] border border-background">T2</div>
+<div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center text-[8px] border border-background">T3</div>
+</div>
+</td>
+<td class="py-5 px-4 w-48">
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-3/5 rounded-full shadow-[0_0_8px_rgba(193,128,255,0.4)]"></div>
+</div>
+</td>
+<td class="py-5 px-4">
+<span class="text-sm font-medium">84.5%</span>
+</td>
+<td class="py-5 px-4 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">open_in_new</button>
+</td>
+</tr>
+<tr class="group hover:bg-surface-container-highest/50 transition-colors">
+<td class="py-5 px-4">
+<div class="font-bold text-on-surface">ANOM-1209</div>
+<div class="text-[10px] text-on-surface-variant">Auth Handshake Timeout</div>
+</td>
+<td class="py-5 px-4">
+<span class="px-2 py-1 bg-secondary/10 text-secondary text-[10px] font-bold rounded">GATEWAY-NORTH</span>
+</td>
+<td class="py-5 px-4">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center text-[8px] border border-background">T5</div>
+</div>
+</td>
+<td class="py-5 px-4 w-48">
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/4 rounded-full shadow-[0_0_8px_rgba(163,166,255,0.4)]"></div>
+</div>
+</td>
+<td class="py-5 px-4">
+<span class="text-sm font-medium">72.3%</span>
+</td>
+<td class="py-5 px-4 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">open_in_new</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- AI Command Bar -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 w-full max-w-2xl px-4 z-50">
+<div class="bg-surface-container-highest/60 backdrop-blur-xl border border-tertiary/20 rounded-full p-2 flex items-center shadow-[0_20px_40px_rgba(0,0,0,0.4),0_0_15px_rgba(193,128,255,0.1)]">
+<div class="pl-4 pr-3">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">auto_mode</span>
+</div>
+<input class="flex-1 bg-transparent border-none text-on-surface placeholder-on-surface-variant/50 focus:ring-0 text-sm" placeholder="Ask AI to simulate a new risk vector..." type="text"/>
+<button class="bg-tertiary text-on-tertiary px-5 py-2 rounded-full text-xs font-bold hover:opacity-90 transition-all active:scale-95 ml-2">Analyze</button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina Nexus | Knowledge Base</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#dee5ff",
+                        "surface-container": "#0f1930",
+                        "primary": "#a3a6ff",
+                        "surface-container-lowest": "#000000",
+                        "tertiary-dim": "#9c48ea",
+                        "error-container": "#a70138",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "inverse-on-surface": "#4d556b",
+                        "on-error-container": "#ffb2b9",
+                        "surface-container-low": "#091328",
+                        "primary-container": "#9396ff",
+                        "tertiary-fixed": "#ce9bff",
+                        "on-tertiary-fixed": "#270048",
+                        "surface-container-high": "#141f38",
+                        "surface": "#060e20",
+                        "secondary": "#dae2fd",
+                        "inverse-surface": "#faf8ff",
+                        "error": "#ff6e84",
+                        "on-secondary-fixed": "#373f54",
+                        "tertiary": "#c180ff",
+                        "inverse-primary": "#494bd7",
+                        "surface-variant": "#192540",
+                        "on-surface-variant": "#a3aac4",
+                        "on-primary": "#0f00a4",
+                        "on-tertiary": "#33005b",
+                        "surface-bright": "#1f2b49",
+                        "secondary-fixed": "#dae2fd",
+                        "tertiary-fixed-dim": "#c488ff",
+                        "on-secondary-container": "#c8d0ea",
+                        "on-secondary-fixed-variant": "#535b71",
+                        "on-error": "#490013",
+                        "surface-dim": "#060e20",
+                        "outline": "#6d758c",
+                        "error-dim": "#d73357",
+                        "on-primary-container": "#0a0081",
+                        "on-tertiary-fixed-variant": "#560094",
+                        "primary-dim": "#6063ee",
+                        "on-tertiary-container": "#000000",
+                        "secondary-dim": "#ccd4ee",
+                        "outline-variant": "#40485d",
+                        "primary-fixed": "#9396ff",
+                        "surface-tint": "#a3a6ff",
+                        "on-secondary": "#4a5167",
+                        "on-background": "#dee5ff",
+                        "primary-fixed-dim": "#8387ff",
+                        "on-primary-fixed": "#000000",
+                        "secondary-fixed-dim": "#ccd4ee",
+                        "secondary-container": "#3f465c",
+                        "tertiary-container": "#af5cfe",
+                        "background": "#060e20",
+                        "surface-container-highest": "#192540"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary/30 selection:text-primary min-h-screen">
+<!-- TopNavBar -->
+<nav class="bg-[#060e20] w-full h-16 sticky top-0 z-50 shadow-[0_20px_40px_rgba(0,0,0,0.4)] flex justify-between items-center px-8 border-none">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black text-[#a3a6ff] tracking-tighter">Lumina Nexus</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-slate-400 font-normal hover:text-slate-200 transition-colors font-manrope tracking-tight text-sm font-medium" href="#">Monitoring</a>
+<a class="text-slate-400 font-normal hover:text-slate-200 transition-colors font-manrope tracking-tight text-sm font-medium" href="#">Investigations</a>
+<a class="text-slate-400 font-normal hover:text-slate-200 transition-colors font-manrope tracking-tight text-sm font-medium" href="#">Remediation</a>
+<a class="text-[#a3a6ff] border-b-2 border-[#a3a6ff] pb-1 font-manrope tracking-tight text-sm font-medium" href="#">Knowledge</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-[#0f1930] rounded-md transition-all duration-300 active:scale-95 text-[#a3a6ff]">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:bg-[#0f1930] rounded-md transition-all duration-300 active:scale-95 text-[#a3a6ff]">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden ml-2 border border-outline-variant/15">
+<img alt="User profile avatar" data-alt="professional portrait of a tech systems architect in soft blue lighting with a minimalist tech background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBazVXTfjsH9st7XjYZ-oU6yWbUQPfvdVliZJTXWI-3YaTX5yg22KmNHDiQmxNMBovzYydCc14q9XMT0qMYrxi3pz8YLmE0I8OznURPQhPPU8ViAjid_pD-RGqT8xCq6b531VcOzjaj8sNWUOYqyp5GqrkDht6hhnbzuxeS5uYdrajMcxmPs1sbSLdaxnFMMyO_n0qKKLKP7rrtYA9h-Xwwo6ftGmwXXKwvpj5WF_lUoI2od4EjZYlW68XPyrIb_WyniJ-_jVA08-w"/>
+</div>
+</div>
+</nav>
+<div class="flex min-h-[calc(100vh-64px)]">
+<!-- SideNavBar -->
+<aside class="bg-[#091328] h-screen w-64 fixed left-0 top-16 z-40 border-r border-[#40485d]/15 flex flex-col py-6">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded-md flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-sm" data-icon="memory">memory</span>
+</div>
+<div>
+<h2 class="text-lg font-bold text-white leading-none">Core Engine</h2>
+<span class="text-[10px] text-slate-500 font-manrope tracking-widest uppercase">v2.4.0-stable</span>
+</div>
+</div>
+</div>
+<div class="flex-1 space-y-1">
+<a class="text-slate-500 hover:text-slate-300 px-6 py-3 flex items-center gap-3 font-manrope text-xs font-semibold uppercase tracking-widest transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 duration-300" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-slate-500 hover:text-slate-300 px-6 py-3 flex items-center gap-3 font-manrope text-xs font-semibold uppercase tracking-widest transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 duration-300" data-icon="analytics">analytics</span>
+<span>System Health</span>
+</a>
+<a class="text-slate-500 hover:text-slate-300 px-6 py-3 flex items-center gap-3 font-manrope text-xs font-semibold uppercase tracking-widest transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 duration-300" data-icon="psychology">psychology</span>
+<span>AI Models</span>
+</a>
+<a class="bg-[#0f1930] text-[#a3a6ff] border-l-4 border-[#a3a6ff] rounded-r-lg px-6 py-3 flex items-center gap-3 font-manrope text-xs font-semibold uppercase tracking-widest transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 duration-300" data-icon="database">database</span>
+<span>Logs</span>
+</a>
+</div>
+<div class="px-4 mb-6">
+<button class="w-full py-3 bg-surface-container-highest/40 border border-outline-variant/15 text-primary rounded-md font-manrope text-xs font-bold uppercase tracking-widest hover:bg-surface-container-highest transition-all active:scale-95">
+                    New Analysis
+                </button>
+</div>
+<div class="border-t border-outline-variant/15 pt-4">
+<a class="text-slate-500 hover:text-slate-300 px-6 py-2 flex items-center gap-3 font-manrope text-xs font-semibold uppercase tracking-widest transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>Support</span>
+</a>
+<a class="text-slate-500 hover:text-slate-300 px-6 py-2 flex items-center gap-3 font-manrope text-xs font-semibold uppercase tracking-widest transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span>Documentation</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-64 p-10 bg-surface">
+<!-- Page Header (Editorial Style) -->
+<header class="mb-12">
+<span class="text-tertiary font-label text-sm tracking-widest uppercase mb-2 block">Intelligent Repository</span>
+<h1 class="text-5xl font-extrabold font-manrope text-on-surface tracking-tighter mb-4">Knowledge Base</h1>
+<p class="text-on-surface-variant max-w-2xl text-lg leading-relaxed">
+                    Explore high-fidelity post-mortems, recurring root cause patterns, and neural-mapped resolutions across the Lumina Nexus ecosystem.
+                </p>
+</header>
+<!-- Search & Filter Bar (Glassmorphism) -->
+<div class="bg-surface-container-low/60 backdrop-blur-xl p-4 rounded-xl mb-12 flex flex-wrap gap-4 items-center border-none shadow-lg">
+<div class="flex-1 min-w-[300px] relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full bg-surface-container-highest border-none rounded-md pl-12 pr-4 py-3 text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary transition-all" placeholder="Search incidents by ID, service, or root cause pattern..." type="text"/>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-surface-container-high text-on-surface-variant text-sm font-medium rounded-md hover:bg-surface-bright transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="filter_list">filter_list</span>
+<span>Service: All</span>
+</button>
+<button class="px-4 py-2 bg-surface-container-high text-on-surface-variant text-sm font-medium rounded-md hover:bg-surface-bright transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="history">history</span>
+<span>Date Range</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid Section -->
+<section class="grid grid-cols-12 gap-6 mb-12">
+<!-- Large Post-Mortem Highlight -->
+<article class="col-span-12 lg:col-span-8 bg-surface-container-low rounded-xl p-8 relative overflow-hidden group hover:bg-surface-container transition-colors">
+<div class="absolute top-0 left-0 w-1 h-full bg-tertiary-dim"></div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="px-3 py-1 bg-error-container text-on-error-container text-[10px] font-bold uppercase rounded-full tracking-wider mb-4 inline-block">Critical Resolution</span>
+<h2 class="text-3xl font-bold font-manrope text-white tracking-tight mb-2">Q3 Cascading Gateway Failure</h2>
+<p class="text-on-surface-variant font-label text-sm uppercase tracking-wide">Incident ID: #PX-9928 • Resolved by AI Sentinel • July 14, 2024</p>
+</div>
+<button class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center text-primary hover:bg-primary/10 transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="open_in_new">open_in_new</span>
+</button>
+</div>
+<div class="grid grid-cols-3 gap-6 mb-8">
+<div class="bg-surface-container-highest/40 p-4 rounded-lg">
+<p class="text-xs text-outline uppercase mb-1">Root Cause</p>
+<p class="text-sm text-on-surface font-medium">Redis Out-of-Memory Lock</p>
+</div>
+<div class="bg-surface-container-highest/40 p-4 rounded-lg">
+<p class="text-xs text-outline uppercase mb-1">Impact Radius</p>
+<p class="text-sm text-on-surface font-medium">9.2% Global Traffic</p>
+</div>
+<div class="bg-surface-container-highest/40 p-4 rounded-lg">
+<p class="text-xs text-outline uppercase mb-1">Recovery Time</p>
+<p class="text-sm text-on-surface font-medium">142 Seconds (Auto)</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex -space-x-2">
+<img alt="Reviewer" class="w-8 h-8 rounded-full border-2 border-surface-container-low" data-alt="avatar of female engineer with glasses in soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA80fj1N89dTmkFKbk6ZkshcNPDHbUhIg-F-MizihKyWrgD3eELZ958q4CQPa_qh0U5xXKsXhQLqHIFE8MV9JdoQBEqhECeRLkXiQv8aS0diUdDMjQf6vH4djU0tk-R6J-_hMnpvt9U0DsXW9MSanaTIr2jvr2vS1bEjwKn5vIK2ldDOKEkppeHTu7LXJtg5uP1d0JzXCY0sLhO4gH2IYXgrIzuJgTFAwqoJWlRPCI65qFrTrSbXQhpjzVfTDSD48bTDsUbmYB9adM"/>
+<img alt="Reviewer" class="w-8 h-8 rounded-full border-2 border-surface-container-low" data-alt="avatar of male engineer with headphones in futuristic office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0saPOQSHC9fP2Ma3frUFPvJkHRi6nvrnxZbNbzTLNfxdkf-B4OULjSgOzCSLEfuJnzMfxf_tRk-TF7BzHJPfRQk1mb35Eqc4X23fb-qHOgAZNVgtFGKevsuh7soKFZJq50aFBe8UhihClC7vfhTIlodsPYWvy8ulo3nL5iGDzOZBM2qNhaxc_zZbt8CAfgsX77G_M_OkB68v_ou5FHC7-lw-xt85YKUYQrHquVODLuYM4WNxe6aGk1Z3t6q0U-ykgM9Rl7g0KgLI"/>
+<div class="w-8 h-8 rounded-full bg-tertiary-dim text-[10px] flex items-center justify-center text-white border-2 border-surface-container-low font-bold">+AI</div>
+</div>
+<span class="text-sm text-on-surface-variant italic">Comprehensive document verified by Site Reliability Team</span>
+</div>
+</article>
+<!-- Patterns Sidebar -->
+<aside class="col-span-12 lg:col-span-4 space-y-6">
+<div class="bg-surface-container-highest/30 p-6 rounded-xl border border-outline-variant/5">
+<h3 class="text-white font-manrope font-bold text-lg mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="hub">hub</span>
+                            Common Patterns
+                        </h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center group cursor-pointer">
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Dependency Latency</span>
+<span class="bg-surface-container-high px-2 py-1 rounded text-[10px] text-primary">12 instances</span>
+</div>
+<div class="flex justify-between items-center group cursor-pointer">
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Credential Expiration</span>
+<span class="bg-surface-container-high px-2 py-1 rounded text-[10px] text-primary">8 instances</span>
+</div>
+<div class="flex justify-between items-center group cursor-pointer">
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Memory Leakage (V8)</span>
+<span class="bg-surface-container-high px-2 py-1 rounded text-[10px] text-primary">5 instances</span>
+</div>
+<div class="flex justify-between items-center group cursor-pointer">
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">DNS Resolution Errors</span>
+<span class="bg-surface-container-high px-2 py-1 rounded text-[10px] text-primary">3 instances</span>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-tertiary/20 to-primary/10 p-6 rounded-xl border border-tertiary/20 shadow-[0_0_20px_rgba(193,128,255,0.1)]">
+<h3 class="text-white font-manrope font-bold text-lg mb-2">AI-Synthesized Summary</h3>
+<p class="text-xs text-on-secondary-container leading-relaxed mb-4">
+                            Lumina Nexus has identified a 14% increase in "Resource Starvation" issues this sprint. We recommend reviewing horizontal scaling thresholds for the `nexus-compute-west` cluster.
+                        </p>
+<button class="text-xs font-bold text-tertiary uppercase tracking-widest flex items-center gap-1 hover:gap-2 transition-all">
+                            View Recommendation <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</aside>
+</section>
+<!-- Secondary List Section (Non-Standard Layout) -->
+<section>
+<div class="flex justify-between items-end mb-8">
+<h2 class="text-2xl font-bold font-manrope text-white tracking-tight">Recent Post-Mortems</h2>
+<a class="text-primary text-sm font-medium hover:underline" href="#">View All Documents</a>
+</div>
+<div class="space-y-4">
+<!-- Document Card 1 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high p-5 rounded-xl transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 bg-surface-container-highest rounded-lg flex items-center justify-center text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="article">article</span>
+</div>
+<div>
+<h4 class="text-on-surface font-semibold group-hover:text-white transition-colors">Microservice Auth Token Desync</h4>
+<p class="text-xs text-outline mt-1">Updated 2h ago • Auth-Service • High Severity</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="hidden lg:block text-right">
+<p class="text-xs text-outline mb-1 uppercase tracking-tighter">Confidence</p>
+<div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[95%]"></div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+<button class="p-2 text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Document Card 2 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high p-5 rounded-xl transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 bg-surface-container-highest rounded-lg flex items-center justify-center text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</div>
+<div>
+<h4 class="text-on-surface font-semibold group-hover:text-white transition-colors">Kubernetes Node Pressure Analysis</h4>
+<p class="text-xs text-outline mt-1">Updated 1d ago • Infra-Cluster • Medium Severity</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="hidden lg:block text-right">
+<p class="text-xs text-outline mb-1 uppercase tracking-tighter">Confidence</p>
+<div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[82%]"></div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+<button class="p-2 text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Document Card 3 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high p-5 rounded-xl transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 bg-surface-container-highest rounded-lg flex items-center justify-center text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="bug_report">bug_report</span>
+</div>
+<div>
+<h4 class="text-on-surface font-semibold group-hover:text-white transition-colors">Frontend Asset Delivery Lag</h4>
+<p class="text-xs text-outline mt-1">Updated 3d ago • CDN-Edge • Low Severity</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="hidden lg:block text-right">
+<p class="text-xs text-outline mb-1 uppercase tracking-tighter">Confidence</p>
+<div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[100%]"></div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+<button class="p-2 text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- AI Command Bar (Context Specific Floating Bar) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 w-full max-w-2xl px-6 z-50">
+<div class="bg-surface-container-highest/60 backdrop-blur-2xl border border-outline-variant/20 rounded-full p-2 flex items-center shadow-[0_20px_40px_rgba(0,0,0,0.6)]">
+<div class="flex-1 flex items-center px-4">
+<span class="material-symbols-outlined text-tertiary mr-3" data-icon="auto_awesome">auto_awesome</span>
+<input class="bg-transparent border-none text-on-surface placeholder:text-outline-variant focus:ring-0 w-full text-sm" placeholder="Ask AI about past incidents..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary font-bold px-6 py-2 rounded-full text-xs uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all">
+                Synthesize
+            </button>
+</div>
+</div>
+</body></html>

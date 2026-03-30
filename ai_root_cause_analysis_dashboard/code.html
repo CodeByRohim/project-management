@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stratum RCA | AI Root Cause Analysis</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary-fixed-dim": "#8387ff",
+                "surface-container-low": "#091328",
+                "tertiary-dim": "#9c48ea",
+                "surface-dim": "#060e20",
+                "on-tertiary": "#33005b",
+                "on-secondary-container": "#c8d0ea",
+                "primary-container": "#9396ff",
+                "on-background": "#dee5ff",
+                "secondary-fixed": "#dae2fd",
+                "surface-container": "#0f1930",
+                "surface-container-highest": "#192540",
+                "on-tertiary-container": "#000000",
+                "on-error": "#490013",
+                "on-tertiary-fixed-variant": "#560094",
+                "tertiary-fixed-dim": "#c488ff",
+                "inverse-primary": "#494bd7",
+                "surface-container-lowest": "#000000",
+                "on-error-container": "#ffb2b9",
+                "error": "#ff6e84",
+                "on-secondary-fixed": "#373f54",
+                "primary-fixed": "#9396ff",
+                "outline-variant": "#40485d",
+                "secondary-container": "#3f465c",
+                "on-surface-variant": "#a3aac4",
+                "error-container": "#a70138",
+                "secondary-fixed-dim": "#ccd4ee",
+                "tertiary-fixed": "#ce9bff",
+                "on-primary-container": "#0a0081",
+                "on-primary": "#0f00a4",
+                "secondary": "#dae2fd",
+                "surface-bright": "#1f2b49",
+                "primary-dim": "#6063ee",
+                "surface-variant": "#192540",
+                "inverse-surface": "#faf8ff",
+                "surface": "#060e20",
+                "outline": "#6d758c",
+                "inverse-on-surface": "#4d556b",
+                "tertiary": "#c180ff",
+                "on-primary-fixed-variant": "#0e009d",
+                "on-secondary": "#4a5167",
+                "tertiary-container": "#af5cfe",
+                "surface-tint": "#a3a6ff",
+                "on-tertiary-fixed": "#270048",
+                "background": "#060e20",
+                "on-secondary-fixed-variant": "#535b71",
+                "surface-container-high": "#141f38",
+                "error-dim": "#d73357",
+                "secondary-dim": "#ccd4ee",
+                "on-primary-fixed": "#000000",
+                "on-surface": "#dee5ff",
+                "primary": "#a3a6ff"
+              },
+              fontFamily: {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(25, 37, 64, 0.4);
+            backdrop-filter: blur(12px);
+        }
+        .ai-glow {
+            box-shadow: 0 0 20px rgba(193, 128, 255, 0.15);
+        }
+        body {
+            background-color: #060e20;
+            color: #dee5ff;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="flex min-h-screen overflow-hidden">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-64 left-0 fixed bg-[#091328] flex flex-col p-4 space-y-2 shadow-[20px_0_40px_rgba(0,0,0,0.4)] z-50">
+<div class="flex items-center space-x-3 mb-8 px-2">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-sm" data-icon="hub">hub</span>
+</div>
+<div>
+<h2 class="text-lg font-black text-white leading-none">Global Intelligence</h2>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">PMS Monitoring</p>
+</div>
+</div>
+<button class="bg-primary text-on-primary py-2.5 px-4 rounded-md font-bold text-sm mb-6 flex items-center justify-center space-x-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-lg" data-icon="add_circle">add_circle</span>
+<span>New Investigation</span>
+</button>
+<nav class="flex-1 space-y-1">
+<!-- Anomalies is Active -->
+<a class="flex items-center space-x-3 px-3 py-2 text-[#a3a6ff] bg-[#192540] rounded-md transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="error_med">error_med</span>
+<span class="font-medium">Anomalies</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 text-slate-500 hover:bg-[#0f1930] hover:text-slate-200 rounded-md transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-medium">Active Boards</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 text-slate-500 hover:bg-[#0f1930] hover:text-slate-200 rounded-md transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-medium">Remediation</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 text-slate-500 hover:bg-[#0f1930] hover:text-slate-200 rounded-md transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span class="font-medium">PMS Tenants</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 text-slate-500 hover:bg-[#0f1930] hover:text-slate-200 rounded-md transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-medium">System Health</span>
+</a>
+</nav>
+<div class="pt-4 mt-4 border-t border-slate-800 space-y-1">
+<a class="flex items-center space-x-3 px-3 py-2 text-slate-500 hover:text-slate-200 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="text-sm">Support</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 text-slate-500 hover:text-slate-200 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="text-sm">API</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 ml-64 min-h-screen flex flex-col bg-surface overflow-y-auto">
+<!-- TopNavBar Component -->
+<header class="w-full top-0 sticky bg-[#060e20] z-40">
+<div class="flex justify-between items-center px-8 h-16 w-full max-w-[1920px] mx-auto bg-gradient-to-b from-[#091328] to-transparent">
+<div class="flex items-center space-x-12">
+<span class="text-xl font-bold tracking-tighter text-[#a3a6ff] font-['Manrope']">Stratum RCA</span>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200 font-['Manrope'] tracking-tight" href="#">Monitoring</a>
+<!-- Investigations is Semantic Active Tab -->
+<a class="text-[#a3a6ff] border-b-2 border-[#a3a6ff] pb-1 font-['Manrope'] tracking-tight" href="#">Investigations</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200 font-['Manrope'] tracking-tight" href="#">Remediation</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200 font-['Manrope'] tracking-tight" href="#">Knowledge</a>
+</nav>
+</div>
+<div class="flex items-center space-x-6">
+<div class="relative group">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="notifications">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full"></span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="settings">settings</span>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest border border-outline-variant">
+<img alt="User profile avatar" data-alt="Close-up professional portrait of a tech executive with soft cinematic lighting against a dark navy office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD1K02wQxnQHxdAh2oRjcmULO_60BoyphDt_aq4-pjFecZRFBxH4WXkLRkLHSKGwcF43Sa68NdlLAPZrVxi_S81mzLsCSsSHhvKyb8XExZdgzqcQa46WtUQvGmLOeOpCj5Q88L05bqimNkNbe5Cn3DJD9XCBYVQFv8dL4abnco7quZK53hn3od1QM1AQH0JfXrdY79rCWV3OA5BqnmWHN02Ig2haDjra8FtgRI2cwD4hsEoC2PiLmtuZgrDxinOg-YuC64j3xKZBk"/>
+</div>
+</div>
+</div>
+</header>
+<div class="px-8 py-6 space-y-10 max-w-[1920px] mx-auto w-full">
+<!-- Anomaly Intelligence Header -->
+<section class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+<div class="lg:col-span-2 flex flex-col justify-center">
+<h1 class="text-4xl font-extrabold font-headline tracking-tight mb-2">Intelligence Overview</h1>
+<p class="text-on-surface-variant max-w-lg">Real-time root cause synthesis across 482 active tenant environments. AI confidence currently at 94%.</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center justify-between border-l-4 border-error shadow-lg">
+<div>
+<p class="text-label-sm text-on-surface-variant uppercase tracking-widest font-semibold text-[10px]">Anomaly Score</p>
+<h3 class="text-3xl font-black text-error">8.4<span class="text-sm font-normal text-on-surface-variant ml-1">/10</span></h3>
+</div>
+<div class="w-12 h-12 rounded-full flex items-center justify-center bg-error/10">
+<span class="material-symbols-outlined text-error" data-icon="bolt">bolt</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center justify-between border-l-4 border-primary shadow-lg">
+<div>
+<p class="text-label-sm text-on-surface-variant uppercase tracking-widest font-semibold text-[10px]">Active Incidents</p>
+<h3 class="text-3xl font-black text-primary">12</h3>
+</div>
+<div class="w-12 h-12 rounded-full flex items-center justify-center bg-primary/10">
+<span class="material-symbols-outlined text-primary" data-icon="warning">warning</span>
+</div>
+</div>
+</section>
+<!-- Main RCA Board & Remediation -->
+<section class="grid grid-cols-1 xl:grid-cols-12 gap-10 items-start">
+<!-- RCA Investigation Board -->
+<div class="xl:col-span-8 bg-surface-container-low rounded-xl p-8 relative overflow-hidden min-h-[600px] flex flex-col border border-outline-variant/10">
+<div class="absolute top-0 right-0 p-8">
+<div class="bg-surface-container-highest/60 backdrop-blur px-4 py-2 rounded-full border border-outline-variant/20 flex items-center space-x-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-bold text-primary tracking-widest uppercase">Live Synthesis</span>
+</div>
+</div>
+<div class="mb-12">
+<h2 class="text-2xl font-bold font-headline mb-1">Sudden Latency Spike in Alpha-9</h2>
+<p class="text-on-surface-variant text-sm">Detected 14 minutes ago • Cluster: US-EAST-1</p>
+</div>
+<!-- Simplified Graph Visualization -->
+<div class="flex-1 flex items-center justify-center relative">
+<svg class="absolute inset-0 w-full h-full opacity-10 pointer-events-none">
+<defs>
+<pattern height="40" id="grid" patternunits="userSpaceOnUse" width="40">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+</svg>
+<div class="relative w-full max-w-2xl h-96">
+<!-- Root Node -->
+<div class="absolute top-1/2 left-0 -translate-y-1/2 glass-panel p-4 rounded-lg border border-error w-48 ai-glow z-10">
+<p class="text-[10px] text-error font-bold uppercase mb-1">Impacted Event</p>
+<p class="text-sm font-semibold">Latency Spike (+2400ms)</p>
+</div>
+<!-- Connector Lines (Visual Only) -->
+<div class="absolute top-1/2 left-48 right-1/2 h-px bg-gradient-to-r from-error to-primary"></div>
+<!-- Middle Node 1 -->
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 glass-panel p-4 rounded-lg border border-outline-variant/40 w-48 z-10">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase mb-1">Observed State</p>
+<p class="text-sm font-semibold">DB Query Saturation</p>
+</div>
+<!-- Middle Node 2 -->
+<div class="absolute bottom-1/4 left-1/2 -translate-x-1/2 glass-panel p-4 rounded-lg border border-outline-variant/40 w-48 z-10">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase mb-1">Observed State</p>
+<p class="text-sm font-semibold">API Gateway Timeout</p>
+</div>
+<!-- Root Cause Node -->
+<div class="absolute top-1/2 right-0 -translate-y-1/2 glass-panel p-5 rounded-lg border-2 border-primary w-56 ai-glow z-10 bg-surface-container-highest/80">
+<div class="flex items-center space-x-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="auto_awesome">auto_awesome</span>
+<p class="text-[10px] text-primary font-bold uppercase">Root Cause Identified</p>
+</div>
+<p class="text-sm font-bold">Unoptimized JOIN in v2.4.1 Migrator</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Cognitive Remediation Panel -->
+<div class="xl:col-span-4 space-y-6">
+<div class="bg-surface-container-highest rounded-xl p-6 border border-tertiary/20 ai-glow">
+<div class="flex items-center space-x-3 mb-6">
+<span class="material-symbols-outlined text-tertiary" data-icon="verified_user">verified_user</span>
+<h3 class="text-lg font-bold font-headline">AI Recommendations</h3>
+</div>
+<div class="space-y-4">
+<div class="p-4 rounded bg-surface-container hover:bg-surface-bright transition-colors cursor-pointer group border-l-2 border-primary">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold text-primary uppercase">Critical Fix</span>
+<span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded">98% Match</span>
+</div>
+<p class="text-sm font-semibold mb-1">Scale DB Write Replica</p>
+<p class="text-xs text-on-surface-variant">Immediate offloading of migration-driven IOPS pressure.</p>
+<button class="mt-4 w-full py-2 bg-primary/20 text-primary text-xs font-bold rounded hover:bg-primary hover:text-on-primary transition-all">Execute Action</button>
+</div>
+<div class="p-4 rounded bg-surface-container hover:bg-surface-bright transition-colors cursor-pointer border-l-2 border-tertiary">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold text-tertiary uppercase">Security Fix</span>
+<span class="text-[10px] bg-tertiary/10 text-tertiary px-2 py-0.5 rounded">High Confidence</span>
+</div>
+<p class="text-sm font-semibold mb-1">Rotate Migration API Keys</p>
+<p class="text-xs text-on-surface-variant">Prevent unauthorized schema access during rollback.</p>
+<button class="mt-4 w-full py-2 bg-tertiary/20 text-tertiary text-xs font-bold rounded hover:bg-tertiary hover:text-on-tertiary transition-all">Execute Action</button>
+</div>
+</div>
+</div>
+<!-- System Health Heartbeat Chart placeholder -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/10">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-sm font-bold uppercase tracking-wider text-on-surface-variant">Health Heartbeat</h3>
+<span class="text-[10px] text-primary font-mono tracking-tighter">LIVE_TELEMETRY</span>
+</div>
+<div class="h-24 flex items-end space-x-1">
+<!-- Visual Chart Mockup -->
+<div class="flex-1 bg-surface-container-highest rounded-t h-[20%]"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t h-[30%]"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t h-[25%]"></div>
+<div class="flex-1 bg-primary/40 rounded-t h-[60%]"></div>
+<div class="flex-1 bg-error/40 rounded-t h-[90%] animate-pulse"></div>
+<div class="flex-1 bg-primary/40 rounded-t h-[75%]"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t h-[40%]"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t h-[35%]"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t h-[20%]"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t h-[15%]"></div>
+</div>
+<p class="text-[10px] text-center mt-3 text-slate-500">Anomaly Frequency (Last 24 Hours)</p>
+</div>
+</div>
+</section>
+<!-- Impacted Tenants Module -->
+<section class="space-y-6 pb-20">
+<div class="flex items-center justify-between">
+<h2 class="text-2xl font-bold font-headline">Impacted Tenant Ecosystem</h2>
+<div class="flex space-x-2">
+<button class="px-4 py-2 bg-surface-container-highest rounded text-xs font-bold hover:bg-surface-bright">Filter by Severity</button>
+<button class="px-4 py-2 bg-surface-container-highest rounded text-xs font-bold hover:bg-surface-bright">Export Logs</button>
+</div>
+</div>
+<div class="overflow-hidden bg-surface-container-low rounded-xl border border-outline-variant/10">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-highest/50">
+<th class="px-6 py-4 text-xs font-bold uppercase text-on-surface-variant tracking-wider">Organization</th>
+<th class="px-6 py-4 text-xs font-bold uppercase text-on-surface-variant tracking-wider">Severity</th>
+<th class="px-6 py-4 text-xs font-bold uppercase text-on-surface-variant tracking-wider">Current Latency</th>
+<th class="px-6 py-4 text-xs font-bold uppercase text-on-surface-variant tracking-wider">Estimated TTR</th>
+<th class="px-6 py-4 text-xs font-bold uppercase text-on-surface-variant tracking-wider">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-6 py-4 flex items-center space-x-3">
+<div class="w-8 h-8 rounded bg-secondary-container flex items-center justify-center font-bold text-xs">NL</div>
+<span class="font-medium">Nexus Logistics</span>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-error-container/20 text-error text-[10px] font-bold border border-error/20 uppercase">Critical</span>
+</td>
+<td class="px-6 py-4 font-mono text-sm text-error">3,420ms</td>
+<td class="px-6 py-4 text-sm font-medium">12 mins</td>
+<td class="px-6 py-4">
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="text-xs">Remediating</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-6 py-4 flex items-center space-x-3">
+<div class="w-8 h-8 rounded bg-secondary-container flex items-center justify-center font-bold text-xs">VH</div>
+<span class="font-medium">Vanguard Health</span>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-primary-container/20 text-primary text-[10px] font-bold border border-primary/20 uppercase">High</span>
+</td>
+<td class="px-6 py-4 font-mono text-sm text-primary">840ms</td>
+<td class="px-6 py-4 text-sm font-medium">4 mins</td>
+<td class="px-6 py-4">
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-xs">Stable</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-6 py-4 flex items-center space-x-3">
+<div class="w-8 h-8 rounded bg-secondary-container flex items-center justify-center font-bold text-xs">GF</div>
+<span class="font-medium">Global FinTech</span>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-tertiary-container/20 text-tertiary text-[10px] font-bold border border-tertiary/20 uppercase">Medium</span>
+</td>
+<td class="px-6 py-4 font-mono text-sm">120ms</td>
+<td class="px-6 py-4 text-sm font-medium">--</td>
+<td class="px-6 py-4">
+<div class="flex items-center space-x-2 text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-on-surface-variant"></span>
+<span class="text-xs">Healthy</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+<!-- Floating AI Command Bar -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 w-full max-w-xl px-4 z-50">
+<div class="glass-panel rounded-full p-2 border border-tertiary/30 shadow-[0_20px_40px_rgba(0,0,0,0.6)] flex items-center">
+<div class="bg-tertiary w-10 h-10 rounded-full flex items-center justify-center text-on-tertiary mr-4 shrink-0">
+<span class="material-symbols-outlined" data-icon="auto_fix_high">auto_fix_high</span>
+</div>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder-slate-500 font-medium" placeholder="Ask Stratum to analyze cluster performance..." type="text"/>
+<button class="bg-surface-container-highest p-2 rounded-full hover:bg-surface-bright transition-colors text-tertiary shrink-0">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</div>
+</body></html>

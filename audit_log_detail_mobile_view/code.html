@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Audit Log Detail - Lumina Nexus</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#0f1930",
+                        "on-error-container": "#ffb2b9",
+                        "secondary-container": "#3f465c",
+                        "surface": "#060e20",
+                        "surface-tint": "#a3a6ff",
+                        "tertiary-dim": "#9c48ea",
+                        "secondary-dim": "#ccd4ee",
+                        "secondary-fixed-dim": "#ccd4ee",
+                        "on-tertiary-container": "#000000",
+                        "on-secondary-fixed-variant": "#535b71",
+                        "tertiary-fixed-dim": "#c488ff",
+                        "on-secondary": "#4a5167",
+                        "primary-fixed-dim": "#8387ff",
+                        "secondary-fixed": "#dae2fd",
+                        "primary-container": "#9396ff",
+                        "tertiary-container": "#af5cfe",
+                        "inverse-primary": "#494bd7",
+                        "secondary": "#dae2fd",
+                        "on-primary": "#0f00a4",
+                        "primary-fixed": "#9396ff",
+                        "on-tertiary": "#33005b",
+                        "on-error": "#490013",
+                        "surface-container-highest": "#192540",
+                        "on-primary-container": "#0a0081",
+                        "on-background": "#dee5ff",
+                        "inverse-surface": "#faf8ff",
+                        "surface-container-high": "#141f38",
+                        "on-surface-variant": "#a3aac4",
+                        "error": "#ff6e84",
+                        "outline-variant": "#40485d",
+                        "on-secondary-fixed": "#373f54",
+                        "error-container": "#a70138",
+                        "on-secondary-container": "#c8d0ea",
+                        "tertiary": "#c180ff",
+                        "on-tertiary-fixed": "#270048",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "on-surface": "#dee5ff",
+                        "surface-container-low": "#091328",
+                        "on-tertiary-fixed-variant": "#560094",
+                        "surface-dim": "#060e20",
+                        "error-dim": "#d73357",
+                        "primary": "#a3a6ff",
+                        "inverse-on-surface": "#4d556b",
+                        "surface-container-lowest": "#000000",
+                        "background": "#060e20",
+                        "surface-bright": "#1f2b49",
+                        "primary-dim": "#6063ee",
+                        "outline": "#6d758c",
+                        "tertiary-fixed": "#ce9bff",
+                        "on-primary-fixed": "#000000",
+                        "surface-variant": "#192540"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(25, 37, 64, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .ai-glow {
+            box-shadow: 0 0 20px rgba(193, 128, 255, 0.15);
+        }
+        body {
+            background-color: #060e20;
+            color: #dee5ff;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- TopAppBar Shared Component Implementation -->
+<header class="fixed top-0 w-full z-50 bg-[#060e20] flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform text-[#40485d] hover:bg-[#192540]/50 transition-colors duration-200 p-1 rounded-full">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] font-bold text-lg tracking-tight text-[#4F46E5]">Event Details</h1>
+</div>
+<button class="active:scale-95 transition-transform text-[#40485d] hover:bg-[#192540]/50 transition-colors duration-200 p-1 rounded-full">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+<div class="absolute bottom-0 left-0 bg-gradient-to-b from-[#091328] to-transparent h-px w-full"></div>
+</header>
+<main class="flex-grow pt-20 pb-32 px-6">
+<!-- AI Risk Score Section -->
+<section class="mb-10">
+<div class="glass-panel rounded-xl p-6 border-l-4 border-error ai-glow">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-xs font-bold font-label uppercase tracking-widest text-on-surface-variant mb-1 block">Risk Assessment</span>
+<h2 class="text-4xl font-headline font-extrabold text-error">89% <span class="text-lg font-medium opacity-70">Critical</span></h2>
+</div>
+<div class="bg-error/20 p-3 rounded-lg">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-error h-full" style="width: 89%"></div>
+</div>
+<p class="mt-4 text-sm text-on-surface-variant leading-relaxed">High probability of unauthorized administrative access sequence detected across multiple nodes.</p>
+</div>
+</section>
+<!-- Cognitive Summary Analysis -->
+<section class="mb-10">
+<h3 class="font-headline font-bold text-secondary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm">psychology</span>
+                Cognitive Summary Analysis
+            </h3>
+<div class="bg-surface-container-low rounded-lg p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl">auto_awesome</span>
+</div>
+<p class="text-on-surface leading-relaxed text-sm">
+                    Our AI models identified a <span class="text-tertiary font-semibold">Privilege Escalation</span> anomaly. The sequence initiated from an unmanaged device in a known high-risk geolocation. Following an MFA bypass, the actor immediately modified global permission sets for the <span class="italic text-primary">Nexus-Alpha</span> tenant. This behavior deviates from Alex Rivera's historical baseline by 94.2%.
+                </p>
+</div>
+</section>
+<!-- User Details Card -->
+<section class="mb-10">
+<h3 class="font-headline font-bold text-secondary mb-4">Identity Intelligence</h3>
+<div class="bg-surface-container rounded-xl overflow-hidden">
+<div class="p-6 flex items-center gap-4 bg-surface-container-high">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-dim">
+<img class="w-full h-full object-cover" data-alt="professional headshot of a middle-aged hispanic man with a short beard and confident expression, neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6P_neg2QonT-XuIGnmjFutMJoTBShLIymz29EDFFroOrOvJwUv9psIfiNPUU2meP9uWJBtkGGWuD6_-U1ukDYWvb537ZuO1oTrBT_GtLjQ1o4lBUX2AcibvYCYis7e3qIfGWOiR72EmsLJh9A8nKDWCWDoNVV6Y2URAlPkTGECNhCDYRiDvFAmXqE8em6byBPcfD6n5mAQpyEHi4v8be1AxwGRa55Doq6dzdB6zsxl8shKnmGRGKsNPXlBfA1s_Uz_6x_zVpvDtg"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Alex Rivera</h4>
+<p class="text-xs text-on-surface-variant">Senior DevOps Engineer</p>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-center py-2">
+<span class="text-xs text-on-surface-variant font-label">IP Address</span>
+<span class="text-sm font-mono text-primary">192.168.1.104</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="text-xs text-on-surface-variant font-label">Location</span>
+<span class="text-sm text-on-surface">Bogotá, Colombia</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="text-xs text-on-surface-variant font-label">Tenant</span>
+<span class="text-sm text-secondary">Lumina-Core-Production</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Contextual Timeline -->
+<section class="mb-10">
+<h3 class="font-headline font-bold text-secondary mb-6">Contextual Timeline</h3>
+<div class="relative ml-4 space-y-8 before:content-[''] before:absolute before:left-0 before:top-2 before:bottom-2 before:w-px before:bg-outline-variant">
+<!-- Login -->
+<div class="relative pl-8">
+<div class="absolute left-[-4.5px] top-1.5 w-2 h-2 rounded-full bg-secondary-container ring-4 ring-surface"></div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter block mb-1">08:14:22 AM</span>
+<h5 class="text-sm font-bold text-on-surface">Login Detected</h5>
+<p class="text-xs text-on-surface-variant">Authenticated via browser session token.</p>
+</div>
+<!-- MFA Bypass -->
+<div class="relative pl-8">
+<div class="absolute left-[-4.5px] top-1.5 w-2 h-2 rounded-full bg-error ring-4 ring-surface"></div>
+<span class="text-[10px] font-bold text-error uppercase tracking-tighter block mb-1">08:14:45 AM</span>
+<h5 class="text-sm font-bold text-error">MFA Bypass</h5>
+<p class="text-xs text-on-surface-variant">Successful authentication without second-factor challenge.</p>
+</div>
+<!-- Critical Change -->
+<div class="relative pl-8">
+<div class="absolute left-[-4.5px] top-1.5 w-2 h-2 rounded-full bg-tertiary-dim ring-4 ring-surface"></div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter block mb-1">08:15:30 AM</span>
+<h5 class="text-sm font-bold text-on-surface">Critical Change</h5>
+<p class="text-xs text-on-surface-variant">Global Admin role assigned to service account 'nexus_temp'.</p>
+</div>
+<!-- Session Terminated -->
+<div class="relative pl-8">
+<div class="absolute left-[-4.5px] top-1.5 w-2 h-2 rounded-full bg-primary ring-4 ring-surface"></div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter block mb-1">08:16:10 AM</span>
+<h5 class="text-sm font-bold text-on-surface">Session Terminated</h5>
+<p class="text-xs text-on-surface-variant">Automated lock-out triggered by Lumina Shield.</p>
+</div>
+</div>
+</section>
+<!-- Raw Request Payload -->
+<section class="mb-6">
+<h3 class="font-headline font-bold text-secondary mb-4">Raw Request Payload</h3>
+<div class="bg-surface-container-lowest rounded-lg p-4 font-mono text-[10px] text-on-surface-variant overflow-x-auto border border-outline-variant/20">
+<pre><code>{
+  "action": "iam.roles.update",
+  "actor": {
+    "uid": "user_882910",
+    "name": "Alex Rivera"
+  },
+  "resource": "roles/admin.global",
+  "parameters": {
+    "add_members": ["service-acc@nexus.internal"],
+    "correlation_id": "tx_99a-22x-bc0"
+  },
+  "metadata": {
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64)...",
+    "threat_intel_score": 0.92
+  }
+}</code></pre>
+</div>
+</section>
+</main>
+<!-- Sticky Bottom Actions -->
+<footer class="fixed bottom-0 w-full bg-[#060e20]/80 backdrop-blur-md p-6 flex gap-3 border-t border-outline-variant/10 z-50">
+<button class="flex-1 bg-surface-container-highest text-on-surface font-bold py-4 rounded-xl text-sm active:scale-95 transition-transform">
+            Mark as Resolved
+        </button>
+<button class="flex-1 bg-primary text-on-primary font-bold py-4 rounded-xl text-sm shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+            Escalate to Security
+        </button>
+</footer>
+</body></html>
